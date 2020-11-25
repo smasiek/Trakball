@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f5745737-4c3f-4299-8fdc-ed9040571d63" name="Default Changelist" comment="Backup before implementing slider">
+      <change afterPath="$PROJECT_DIR$/src/controllers/SecurityController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routing.php" beforeDir="false" afterPath="$PROJECT_DIR$/Routing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/places.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/places.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/new_squad.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/new_squad.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/settings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/squads.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/squads.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/your_places.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/your_places.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/your_squads.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/your_squads.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/AppController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/DefaultController.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1iuMeYP6vb6005LISXH4gDuhGLl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/views" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="Docker" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Rzeczy na zajęcia\3 rok\5 sem\WdPAI\Lab 1\public\views" />
+      <recent name="F:\Rzeczy na zajęcia\3 rok\5 sem\WdPAI\Lab 1\public\css" />
+      <recent name="F:\Rzeczy na zajęcia\3 rok\5 sem\WdPAI\Lab 1\public\img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Rzeczy na zajęcia\3 rok\5 sem\WdPAI\Lab 1\public\img\uploads" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Docker.php/Dockerfile">
+    <configuration name="ngnix/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="" />
+          <option name="buildCliOptions" value="" />
+          <option name="buildOnly" value="true" />
+          <option name="command" value="" />
+          <option name="containerName" value="" />
+          <option name="entrypoint" value="" />
+          <option name="commandLineOptions" value="" />
+          <option name="sourceFilePath" value="docker/ngnix/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="php/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="" />
+          <option name="buildCliOptions" value="" />
+          <option name="command" value="" />
+          <option name="containerName" value="" />
+          <option name="entrypoint" value="" />
+          <option name="commandLineOptions" value="" />
+          <option name="sourceFilePath" value="docker/php/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.ngnix/Dockerfile" />
+      <item itemvalue="Docker.php/Dockerfile" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f5745737-4c3f-4299-8fdc-ed9040571d63" name="Default Changelist" comment="" />
+      <created>1602753119281</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602753119281</updated>
+      <workItem from="1602753120326" duration="3238000" />
+      <workItem from="1602769505582" duration="598000" />
+      <workItem from="1604257172323" duration="4942000" />
+      <workItem from="1604262875705" duration="3470000" />
+      <workItem from="1604569837436" duration="17764000" />
+      <workItem from="1604952196010" duration="9138000" />
+      <workItem from="1605185016245" duration="238000" />
+      <workItem from="1605185292950" duration="4480000" />
+      <workItem from="1605280989787" duration="23160000" />
+      <workItem from="1605718907668" duration="2624000" />
+      <workItem from="1605777221412" duration="2745000" />
+      <workItem from="1606324339906" duration="303000" />
+    </task>
+    <task id="LOCAL-00001" summary="Backup before implementing slider">
+      <created>1605312339423</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605312339423</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Backup before implementing slider" />
+    <option name="LAST_COMMIT_MESSAGE" value="Backup before implementing slider" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="426" y="182" key="#Docker" timestamp="1602753325939">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="426" y="182" key="#Docker/0.0.1680.1010@0.0.1680.1010" timestamp="1602753325939" />
+    <state x="489" y="153" key="#Plugins" timestamp="1602753469283">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="489" y="153" key="#Plugins/0.0.1680.1010@0.0.1680.1010" timestamp="1602753469283" />
+    <state x="588" y="196" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602753334218">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="588" y="196" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1602753334218" />
+    <state x="1245" y="259" key="#com.intellij.ide.util.MemberChooser" timestamp="1605779760232">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1245" y="259" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1605779760232" />
+    <state x="1186" y="266" key="NewPhpClassDialog" timestamp="1605777437379">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1186" y="266" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605777437379" />
+    <state x="656" y="235" key="RollbackChangesDialog" timestamp="1606324486708">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="750" y="242" key="RollbackChangesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605719014653" />
+    <state x="656" y="235" key="RollbackChangesDialog/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1606324486708" />
+    <state x="398" y="157" key="SettingsEditor" timestamp="1602753493087">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="398" y="157" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1602753493087" />
+    <state x="432" y="258" key="Vcs.Push.Dialog.v2" timestamp="1606324640323">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="432" y="258" key="Vcs.Push.Dialog.v2/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1606324640323" />
+    <state x="560" y="238" width="672" height="678" key="search.everywhere.popup" timestamp="1602753432021">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="560" y="238" width="672" height="678" key="search.everywhere.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1602753432021" />
+  </component>
+</project>

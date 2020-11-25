@@ -1,0 +1,32 @@
+.main_content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    width: 100%;
+    height: 100%;
+}
+
+.new_squad_form{
+    width: 35%;
+    height: 90%;
+    margin: auto;
+}
+
+.ball_logo{
+    width: 30vh;
+    height: 30vh;
+    overflow: auto;
+    object-fit: fill;
+    margin: auto;
+}
+
+div>form>input{
+    width: 90%;
+}
+
+#publish{
+    height: 4em;
+    width: 100%;
+    box-shadow: 0 3px 6px #00000029;
+}
