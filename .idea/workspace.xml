@@ -135,7 +135,7 @@
       <workItem from="1605280989787" duration="23160000" />
       <workItem from="1605718907668" duration="2624000" />
       <workItem from="1605777221412" duration="2745000" />
-      <workItem from="1606324339906" duration="303000" />
+      <workItem from="1606324339906" duration="1703000" />
     </task>
     <task id="LOCAL-00001" summary="Backup before implementing slider">
       <created>1605312339423</created>
@@ -196,10 +196,14 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="398" y="157" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1602753493087" />
-    <state x="432" y="258" key="Vcs.Push.Dialog.v2" timestamp="1606324640323">
+    <state x="92" y="92" width="1496" height="866" key="ShowDiffWithBranchDialog" timestamp="1606326044009">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="432" y="258" key="Vcs.Push.Dialog.v2/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1606324640323" />
+    <state x="92" y="92" width="1496" height="866" key="ShowDiffWithBranchDialog/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1606326044009" />
+    <state x="432" y="258" key="Vcs.Push.Dialog.v2" timestamp="1606326043092">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="432" y="258" key="Vcs.Push.Dialog.v2/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1606326043092" />
     <state x="560" y="238" width="672" height="678" key="search.everywhere.popup" timestamp="1602753432021">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
