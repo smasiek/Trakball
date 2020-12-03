@@ -12,7 +12,7 @@ class AppController {
         return $this->request==='POST';
     }
 
-    public function __construct($request)
+    public function __construct()
     {
         $this->request = $_SERVER['REQUEST_METHOD'];
     }

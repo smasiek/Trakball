@@ -59,9 +59,25 @@
         <div class="main_content">
             <div class="edit_photo">
                 <img src="public/img/uploads/meme2.jpg">
-                <button id="edit_photo_button" type="submit">edit photo</button>
+                <form action="edit_photo" method="POST" ENCTYPE="multipart/form-data">
+                    <?php if(isset($messages)){
+                        foreach ($messages as $message){
+                            echo $message;
+                        }
+                    }
+                    ?>
+                    <input type="file" name="file">
+                    <button id="edit_photo_button" type="submit">edit photo</button>
+                </form>
+
             </div>
-            <form class="edit_data_form">
+            <form class="edit_data_form" action="edit_data" method="POST" ENCTYPE="multipart/form-data">
+                <?php if(isset($messages)){
+                    foreach ($messages as $message){
+                        echo $message;
+                    }
+                }
+                ?>
                 <input name="email" placeholder="email" type="email">
 
                 <input name="password_1" placeholder="password" type="password">

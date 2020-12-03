@@ -9,7 +9,7 @@
     <div class="container">
         <div class="logo"></div>
         <div class="login-container">
-            <form class="login" action="login" method="post">
+            <form class="login" action="login" method="POST">
                 <div class="messages">
                     <?php if(isset($messages)){
                         foreach ($messages as $message){
