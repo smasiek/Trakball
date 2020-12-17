@@ -1,42 +1,73 @@
 <?php
 
-require_once  'AppController.php';
+require_once 'AppController.php';
 
-class DefaultController extends AppController {
+class DefaultController extends AppController
+{
 
-    public function login(){
+    public function login()
+    {
+        //TODO display login.php
+        if (isset($_COOKIE['user_email'])) {
+            return $this->render('squads');
+        }
+        $this->render('login');
+    }
+
+    public function register()
+    {
         //TODO display login.php
         $this->render('login');
     }
 
-    public function register(){
-    //TODO display login.php
-    $this->render('register');
-}
-
-    public function  squads(){
+    public function squads()
+    {
         //TODO display squads.php
-        $this->render('squads');
+        if (isset($_COOKIE['user_email'])) {
+            return $this->render('squads');
+        }
+
+        $this->render('login');
     }
 
-    public function  new_squad(){
+    public function new_squad()
+    {
         //TODO display squads.php
-        $this->render('new_squad');
+        if (isset($_COOKIE['user_email'])) {
+            return $this->render('new_squad');
+        }
+
+        $this->render('login');
     }
 
-    public function  your_places(){
+    public function your_places()
+    {
         //TODO display squads.php
-        $this->render('your_places');
+        if (isset($_COOKIE['user_email'])) {
+            return $this->render('your_places');
+        }
+
+        $this->render('login');
     }
 
-    public function  your_squads(){
+    public function your_squads()
+    {
         //TODO display squads.php
-        $this->render('your_squads');
+        if (isset($_COOKIE['user_email'])) {
+            return $this->render('your_squads');
+        }
+
+        $this->render('login');
     }
 
-    public function  settings(){
+    public function settings()
+    {
         //TODO display squads.php
-        $this->render('settings');
+        if (isset($_COOKIE['user_email'])) {
+            return $this->render('settings');
+        }
+
+        $this->render('login');
     }
 
 

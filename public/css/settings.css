@@ -40,7 +40,7 @@
     height: 30vh;
     border-radius: 100%;
     overflow: auto;
-    object-fit: cover;
+    object-fit: scale-down;
     margin: auto;
 }
 

@@ -3,7 +3,7 @@
 require_once "Repository.php";
 require_once __DIR__.'/../models/Squad.php';
 
-class SquadRepository extends Repository
+class NewSquadRepository extends Repository
 {
     public function getSquad(int $int): ?Squad
     {
@@ -40,7 +40,6 @@ class SquadRepository extends Repository
             //todo POBRAC TO Z SESJI A NIE KODOWANE NA SZTYWNO
 
         $id_squad_creator=1;
-
 
             $stmt->execute([
                 $id_squad_creator,

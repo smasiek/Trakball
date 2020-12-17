@@ -5,16 +5,23 @@ class User
 {
     private $email;
     private $password;
+
     private $name;
     private $surname;
+    private $phone;
+    private $age;
+    private $photo;
 
 
-    public function __construct(string $email, string $password, string $name, string $surname)
+    public function __construct(string $email, string $password, string $name, string $surname, string $phone, string $age, string $photo)
     {
         $this->email = $email;
         $this->password = $password;
         $this->name = $name;
         $this->surname = $surname;
+        $this->phone = $phone;
+        $this->age = $age;
+        $this->photo = $photo;
     }
 
 
@@ -62,6 +69,11 @@ class User
     public function setSurname(string $surname)
     {
         $this->surname = $surname;
+    }
+
+    public function getPhoto()
+    {
+        return $this->photo;
     }
 
 }

@@ -4,8 +4,8 @@ require_once __DIR__.'/../models/Place.php';
 
 class Squad{
     //TODO zaimplementowac cookie i dodać tutaj obiekt user
-    //private $user
 
+    private $user;
     private $sport;
     private $noMembers;
     private $fee;

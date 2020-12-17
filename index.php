@@ -11,7 +11,7 @@ Routing::get('squads', 'DefaultController');
 Routing::get('new_squad', 'DefaultController');
 Routing::get('your_squads', 'DefaultController');
 Routing::get('your_places', 'DefaultController');
-Routing::get('settings', 'DefaultController');
+Routing::get('settings', 'SettingsController');
 Routing::get('register', 'DefaultController');
 Routing::get('edit_photo', 'SettingsController');
 Routing::get('edit_data', 'SettingsController');

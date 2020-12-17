@@ -58,7 +58,8 @@
 
         <div class="main_content">
             <div class="edit_photo">
-                <img src="public/img/uploads/meme2.jpg">
+
+                <img src="public/img/uploads/<?=$image?>">
                 <form action="edit_photo" method="POST" ENCTYPE="multipart/form-data">
                     <?php if(isset($messages)){
                         foreach ($messages as $message){
