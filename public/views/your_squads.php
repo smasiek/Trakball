@@ -59,7 +59,7 @@
         <section class="squads">
 
             <div id="squad1">
-                <div>
+
                     <img src="public/img/uploads/meme.jpg">
                     <h2>Name Surname</h2>
                     <p name="sport">Sport</p>
@@ -82,133 +82,138 @@
                             <a href="#" class="squad-hyper">Leave squad</a>
                         </div>
                     </div>
-                </div>
-            </div><div id="squad2">
-            <div>
-                <img src="public/img/uploads/meme.jpg">
-                <h2>Name Surname</h2>
-                <p name="sport">Sport</p>
-                <p name="max-members">Max squad members</p>
-                <p name="fee">Hall rent fee</p>
-                <p name="place">Place</p>
-                <p name="address">Address</p>
-                <a href="#" class="squad-hyper">Show on map</a>
-                <div class="footer">
-                    <h3>Squad</h3>
-                    <div class="members">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
-                    </div>
-                    <div class="decision">
-                        <a href="#" class="squad-hyper">Text organizator</a>
-                        <a href="#" class="squad-hyper">Join squad</a>
-                    </div>
-                </div>
+
             </div>
-        </div><div id="squad3">
-            <div>
-                <img src="public/img/uploads/meme.jpg">
-                <h2>Name Surname</h2>
-                <p name="sport">Sport</p>
-                <p name="max-members">Max squad members</p>
-                <p name="fee">Hall rent fee</p>
-                <p name="place">Place</p>
-                <p name="address">Address</p>
-                <a href="#" class="squad-hyper">Show on map</a>
-                <div class="footer">
-                    <h3>Squad</h3>
-                    <div class="members">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
+            <div id="squad2">
+
+                    <img src="public/img/uploads/meme.jpg">
+                    <h2>Name Surname</h2>
+                    <p name="sport">Sport</p>
+                    <p name="max-members">Max squad members</p>
+                    <p name="fee">Hall rent fee</p>
+                    <p name="place">Place</p>
+                    <p name="address">Address</p>
+                    <a href="#" class="squad-hyper">Show on map</a>
+                    <div class="footer">
+                        <h3>Squad</h3>
+                        <div class="members">
+                            <img src="public/img/uploads/meme.jpg">
+                            <img src="public/img/uploads/meme.jpg">
+                            <img src="public/img/uploads/meme.jpg">
+                            <img src="public/img/uploads/meme.jpg">
+                            <img src="public/img/uploads/meme.jpg">
+                        </div>
+                        <div class="decision">
+                            <a href="#" class="squad-hyper">Text organizator</a>
+                            <a href="#" class="squad-hyper">Join squad</a>
+                        </div>
                     </div>
-                    <div class="decision">
-                        <a href="#" class="squad-hyper">Text organizator</a>
-                        <a href="#" class="squad-hyper">Join squad</a>
-                    </div>
-                </div>
+
             </div>
-        </div><div id="squad4">
-            <div>
-                <img src="public/img/uploads/meme.jpg">
-                <h2>Name Surname</h2>
-                <p name="sport">Sport</p>
-                <p name="max-members">Max squad members</p>
-                <p name="fee">Hall rent fee</p>
-                <p name="place">Place</p>
-                <p name="address">Address</p>
-                <a href="#" class="squad-hyper">Show on map</a>
-                <div class="footer">
-                    <h3>Squad</h3>
-                    <div class="members">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
+            <div id="squad3">
+
+                    <img src="public/img/uploads/meme.jpg">
+                    <h2>Name Surname</h2>
+                    <p name="sport">Sport</p>
+                    <p name="max-members">Max squad members</p>
+                    <p name="fee">Hall rent fee</p>
+                    <p name="place">Place</p>
+                    <p name="address">Address</p>
+                    <a href="#" class="squad-hyper">Show on map</a>
+                    <div class="footer">
+                        <h3>Squad</h3>
+                        <div class="members">
+                            <img src="public/img/uploads/meme.jpg">
+                            <img src="public/img/uploads/meme.jpg">
+                            <img src="public/img/uploads/meme.jpg">
+                            <img src="public/img/uploads/meme.jpg">
+                            <img src="public/img/uploads/meme.jpg">
+                        </div>
+                        <div class="decision">
+                            <a href="#" class="squad-hyper">Text organizator</a>
+                            <a href="#" class="squad-hyper">Join squad</a>
+                        </div>
                     </div>
-                    <div class="decision">
-                        <a href="#" class="squad-hyper">Text organizator</a>
-                        <a href="#" class="squad-hyper">Join squad</a>
-                    </div>
-                </div>
+
             </div>
-        </div><div id="squad5">
-            <div>
-                <img src="public/img/uploads/meme.jpg">
-                <h2>Name Surname</h2>
-                <p name="sport">Sport</p>
-                <p name="max-members">Max squad members</p>
-                <p name="fee">Hall rent fee</p>
-                <p name="place">Place</p>
-                <p name="address">Address</p>
-                <a href="#" class="squad-hyper">Show on map</a>
-                <div class="footer">
-                    <h3>Squad</h3>
-                    <div class="members">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
+            <div id="squad4">
+
+                    <img src="public/img/uploads/meme.jpg">
+                    <h2>Name Surname</h2>
+                    <p name="sport">Sport</p>
+                    <p name="max-members">Max squad members</p>
+                    <p name="fee">Hall rent fee</p>
+                    <p name="place">Place</p>
+                    <p name="address">Address</p>
+                    <a href="#" class="squad-hyper">Show on map</a>
+                    <div class="footer">
+                        <h3>Squad</h3>
+                        <div class="members">
+                            <img src="public/img/uploads/meme.jpg">
+                            <img src="public/img/uploads/meme.jpg">
+                            <img src="public/img/uploads/meme.jpg">
+                            <img src="public/img/uploads/meme.jpg">
+                            <img src="public/img/uploads/meme.jpg">
+                        </div>
+                        <div class="decision">
+                            <a href="#" class="squad-hyper">Text organizator</a>
+                            <a href="#" class="squad-hyper">Join squad</a>
+                        </div>
                     </div>
-                    <div class="decision">
-                        <a href="#" class="squad-hyper">Text organizator</a>
-                        <a href="#" class="squad-hyper">Join squad</a>
-                    </div>
-                </div>
+
             </div>
-        </div><div id="squad6">
-            <div>
-                <img src="public/img/uploads/meme.jpg">
-                <h2>Name Surname</h2>
-                <p name="sport">Sport</p>
-                <p name="max-members">Max squad members</p>
-                <p name="fee">Hall rent fee</p>
-                <p name="place">Place</p>
-                <p name="address">Address</p>
-                <a href="#" class="squad-hyper">Show on map</a>
-                <div class="footer">
-                    <h3>Squad</h3>
-                    <div class="members">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
+            <div id="squad5">
+
+                    <img src="public/img/uploads/meme.jpg">
+                    <h2>Name Surname</h2>
+                    <p name="sport">Sport</p>
+                    <p name="max-members">Max squad members</p>
+                    <p name="fee">Hall rent fee</p>
+                    <p name="place">Place</p>
+                    <p name="address">Address</p>
+                    <a href="#" class="squad-hyper">Show on map</a>
+                    <div class="footer">
+                        <h3>Squad</h3>
+                        <div class="members">
+                            <img src="public/img/uploads/meme.jpg">
+                            <img src="public/img/uploads/meme.jpg">
+                            <img src="public/img/uploads/meme.jpg">
+                            <img src="public/img/uploads/meme.jpg">
+                            <img src="public/img/uploads/meme.jpg">
+                        </div>
+                        <div class="decision">
+                            <a href="#" class="squad-hyper">Text organizator</a>
+                            <a href="#" class="squad-hyper">Join squad</a>
+                        </div>
                     </div>
-                    <div class="decision">
-                        <a href="#" class="squad-hyper">Text organizator</a>
-                        <a href="#" class="squad-hyper">Join squad</a>
-                    </div>
-                </div>
+
             </div>
-        </div>
+            <div id="squad6">
+
+                    <img src="public/img/uploads/meme.jpg">
+                    <h2>Name Surname</h2>
+                    <p name="sport">Sport</p>
+                    <p name="max-members">Max squad members</p>
+                    <p name="fee">Hall rent fee</p>
+                    <p name="place">Place</p>
+                    <p name="address">Address</p>
+                    <a href="#" class="squad-hyper">Show on map</a>
+                    <div class="footer">
+                        <h3>Squad</h3>
+                        <div class="members">
+                            <img src="public/img/uploads/meme.jpg">
+                            <img src="public/img/uploads/meme.jpg">
+                            <img src="public/img/uploads/meme.jpg">
+                            <img src="public/img/uploads/meme.jpg">
+                            <img src="public/img/uploads/meme.jpg">
+                        </div>
+                        <div class="decision">
+                            <a href="#" class="squad-hyper">Text organizator</a>
+                            <a href="#" class="squad-hyper">Join squad</a>
+                        </div>
+                    </div>
+
+            </div>
         </section>
     </main>
 </div>

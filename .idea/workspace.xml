@@ -16,22 +16,36 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/dev" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5745737-4c3f-4299-8fdc-ed9040571d63" name="Default Changelist" comment="Implemented postgres database and files upload">
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repository/PlaceRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routing.php" beforeDir="false" afterPath="$PROJECT_DIR$/Routing.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/new_squad.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/new_squad.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/settings.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/settings.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/AppController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/squads.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/squads.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/new_squad.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/new_squad.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/squads.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/squads.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/your_squads.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/your_squads.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/NewSquadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/NewSquadController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SecurityController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SettingsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Place.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Place.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Squad.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Squad.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/SquadRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/NewSquadRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/NewSquadRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/NewSquadRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/UserRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -144,7 +158,8 @@
       <workItem from="1606990798346" duration="15541000" />
       <workItem from="1607011053129" duration="144000" />
       <workItem from="1607610029465" duration="11774000" />
-      <workItem from="1608204426358" duration="15511000" />
+      <workItem from="1608204426358" duration="20971000" />
+      <workItem from="1609868454260" duration="14058000" />
     </task>
     <task id="LOCAL-00001" summary="Backup before implementing slider">
       <created>1605312339423</created>
@@ -178,7 +193,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -212,11 +239,11 @@
     </state>
     <state x="588" y="196" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1602753334218" />
     <state x="2284" y="149" key="#com.intellij.execution.impl.EditConfigurationsDialog/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607000645791" />
-    <state x="1089" y="252" key="#com.intellij.ide.util.MemberChooser" timestamp="1607618897684">
+    <state x="1089" y="252" key="#com.intellij.ide.util.MemberChooser" timestamp="1609869572867">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="1245" y="259" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1605779760232" />
-    <state x="1089" y="252" key="#com.intellij.ide.util.MemberChooser/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1607618897684" />
+    <state x="1245" y="259" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1608224129467" />
+    <state x="1089" y="252" key="#com.intellij.ide.util.MemberChooser/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609869572867" />
     <state x="2925" y="231" key="#com.intellij.ide.util.MemberChooser/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607001014493" />
     <state x="981" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1608221255753">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -242,10 +269,10 @@
     </state>
     <state width="1124" height="195" key="GridCell.Tab.0.right/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1607618832202" />
     <state width="1292" height="195" key="GridCell.Tab.0.right/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616040722" />
-    <state x="1038" y="259" key="NewPhpClassDialog" timestamp="1607618812596">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="1186" y="266" key="NewPhpClassDialog" timestamp="1608223893537">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1186" y="266" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605777437379" />
+    <state x="1186" y="266" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1608223893537" />
     <state x="1038" y="259" key="NewPhpClassDialog/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1607618812596" />
     <state x="2866" y="238" key="NewPhpClassDialog/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607001376042" />
     <state x="2474" y="435" key="NewPhpFileDialog" timestamp="1607000781348">
@@ -265,9 +292,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="92" y="92" width="1496" height="866" key="ShowDiffWithBranchDialog/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1606326044009" />
-    <state x="432" y="258" key="Vcs.Push.Dialog.v2" timestamp="1607011175304">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="494" y="265" key="Vcs.Push.Dialog.v2" timestamp="1608221778485">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state x="494" y="265" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1608221778485" />
     <state x="432" y="258" key="Vcs.Push.Dialog.v2/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1607011175304" />
     <state x="751" y="389" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1607611974413">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -278,15 +306,16 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="345" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1608207530175" />
-    <state x="531" y="213" width="800" height="519" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1608210121348">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="471" y="364" width="493" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1609878432927">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="531" y="213" width="800" height="519" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1608210121348" />
-    <state x="471" y="364" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1607612005487" />
+    <state x="471" y="364" width="493" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609878432927" />
     <state x="2211" y="250" width="664" height="664" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616077308" />
-    <state x="560" y="238" width="672" height="678" key="search.everywhere.popup" timestamp="1602753432021">
-      <screen x="0" y="0" width="1680" height="1010" />
+    <state x="560" y="247" width="672" height="705" key="search.everywhere.popup" timestamp="1609879237832">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="560" y="238" width="672" height="678" key="search.everywhere.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1602753432021" />
+    <state x="560" y="247" width="672" height="705" key="search.everywhere.popup/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609879237832" />
   </component>
 </project>

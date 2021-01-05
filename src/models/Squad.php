@@ -5,12 +5,35 @@ require_once __DIR__.'/../models/Place.php';
 class Squad{
     //TODO zaimplementowac cookie i dodać tutaj obiekt user
 
-    private $user;
+    private $userId;
     private $sport;
     private $noMembers;
     private $fee;
     private $place;
     private $address;
+    private $date;
+
+    public function __construct(int $userId,string $sport,int $noMembers, float $fee, int $place,string $address, $date){
+        $this->userId=$userId;
+        $this->sport=$sport;
+        $this->noMembers=$noMembers;
+        $this->fee=$fee;
+        $this->place=$place;
+        $this->address=$address;
+        $this->date=$date;
+        //die(var_dump($this->date));
+}
+
+
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    public function setDate($date): void
+    {
+        $this->date = $date;
+    }
 
     public function getSport() :string
     {
@@ -42,7 +65,7 @@ class Squad{
         $this->fee = $fee;
     }
 
-    public function getPlace() :Place
+    public function getPlace() :int
     {
         return $this->place;
     }

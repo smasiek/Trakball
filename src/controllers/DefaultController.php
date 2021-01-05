@@ -8,7 +8,7 @@ class DefaultController extends AppController
     public function login()
     {
         //TODO display login.php
-        if (isset($_COOKIE['user_email'])) {
+        if (isset($_COOKIE['user_id'])) {
             return $this->render('squads');
         }
         $this->render('login');
@@ -23,7 +23,7 @@ class DefaultController extends AppController
     public function squads()
     {
         //TODO display squads.php
-        if (isset($_COOKIE['user_email'])) {
+        if (isset($_COOKIE['user_id'])) {
             return $this->render('squads');
         }
 
@@ -33,7 +33,7 @@ class DefaultController extends AppController
     public function new_squad()
     {
         //TODO display squads.php
-        if (isset($_COOKIE['user_email'])) {
+        if (isset($_COOKIE['user_id'])) {
             return $this->render('new_squad');
         }
 
@@ -43,7 +43,7 @@ class DefaultController extends AppController
     public function your_places()
     {
         //TODO display squads.php
-        if (isset($_COOKIE['user_email'])) {
+        if (isset($_COOKIE['user_id'])) {
             return $this->render('your_places');
         }
 
@@ -53,7 +53,7 @@ class DefaultController extends AppController
     public function your_squads()
     {
         //TODO display squads.php
-        if (isset($_COOKIE['user_email'])) {
+        if (isset($_COOKIE['user_id'])) {
             return $this->render('your_squads');
         }
 
@@ -63,7 +63,7 @@ class DefaultController extends AppController
     public function settings()
     {
         //TODO display squads.php
-        if (isset($_COOKIE['user_email'])) {
+        if (isset($_COOKIE['user_id'])) {
             return $this->render('settings');
         }
 

@@ -15,6 +15,7 @@ Routing::get('settings', 'SettingsController');
 Routing::get('register', 'DefaultController');
 Routing::get('edit_photo', 'SettingsController');
 Routing::get('edit_data', 'SettingsController');
+Routing::get('publish_squad', 'NewSquadController');
 
 Routing::post('login', 'SecurityController');
 Routing::run($path);

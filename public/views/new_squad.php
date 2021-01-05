@@ -57,7 +57,7 @@
         </header>
 
         <div class="main_content">
-            <form class="new_squad_form">
+            <form class="new_squad_form" action="publish_squad" method="POST">
                 <input list="cities" name="city" placeholder="City">
                 <datalist id="cities">
                     <option value ="Kraków"></option>
@@ -67,7 +67,7 @@
                 <input list="streets" name="street" placeholder="Street">
                 <datalist id="streets">
                     <option value ="Nowa Huta 15"></option>
-                    <option value ="Kamienna"></option>
+                    <option value ="Kamienna 17"></option>
                 </datalist>
 
                 <input list="names" name="name" placeholder="Place name">
@@ -98,7 +98,12 @@
 
                 <input name="fee" type="text" placeholder="Entry fee">
 
-                <button id="publish">publish</button>
+                <input name="date" type="datetime-local">
+                <!-- TODO zrobic zabezpieczenie przed dodaniem daty wczesnieszej niz dzis-->
+
+                <!--TODO DODAĆ POLE Z DATĄ WYDARZENIA!!!!!! i potem wystylować i dodać do kontrollera, klasy squad i repozytorium-->
+
+                <button id="publish" type="submit">publish</button>
             </form>
             <img class="ball_logo" src="public/img/Logo.png">
         </div>

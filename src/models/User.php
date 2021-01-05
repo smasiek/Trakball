@@ -3,24 +3,25 @@
 
 class User
 {
+    private $id;
     private $email;
     private $password;
-
     private $name;
     private $surname;
     private $phone;
-    private $age;
+    private $dateOfBirth;
     private $photo;
 
 
-    public function __construct(string $email, string $password, string $name, string $surname, string $phone, string $age, string $photo)
+    public function __construct(string $id,string $email, string $password, string $name, string $surname, string $phone, $dateOfBirth, string $photo)
     {
+        $this->id = $id;
         $this->email = $email;
         $this->password = $password;
         $this->name = $name;
         $this->surname = $surname;
         $this->phone = $phone;
-        $this->age = $age;
+        $this->dateOfBirth = $dateOfBirth;
         $this->photo = $photo;
     }
 
@@ -74,6 +75,10 @@ class User
     public function getPhoto()
     {
         return $this->photo;
+    }
+
+    public function getId(){
+        return $this->id;
     }
 
 }

@@ -11,7 +11,7 @@ class SecurityController extends AppController
         $userRepository = new UserRepository();
 
         if (!$this->isPost()) {
-            if(isset($_COOKIE['user_email'])){
+            if(isset($_COOKIE['user_id'])){
                 return $this->render('squads');
             }
             return $this->render('login');
@@ -36,7 +36,8 @@ class SecurityController extends AppController
 
         //return $this->render('squads');
 
-        setcookie("user_email", $user->getEmail(), time() + 3600, '/'); // expires after 1 hour)
+      //  setcookie("user_email", $user->getEmail(), time() + 3600, '/'); // expires after 1 hour)
+        setcookie("user_id", $user->getId(), time() + 3600, '/'); // expires after 1 hour)
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/squads");

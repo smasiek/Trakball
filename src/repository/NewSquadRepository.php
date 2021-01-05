@@ -35,11 +35,11 @@ class NewSquadRepository extends Repository
         $date=new DateTime();
         $stmt=$this->database->connect()->prepare('
         INSERT INTO squads (id_squad_creator,sport,max_members,fee,created_at,date,id_place)
-        VALUES(?,?,?,?,?,?,)
+        VALUES(?,?,?,?,?,?,?)
         ');
             //todo POBRAC TO Z SESJI A NIE KODOWANE NA SZTYWNO
 
-        $id_squad_creator=1;
+        $id_squad_creator=$_COOKIE["user_id"];
 
             $stmt->execute([
                 $id_squad_creator,
@@ -47,9 +47,12 @@ class NewSquadRepository extends Repository
                 $squad->getNoMembers(),
                 $squad->getFee(),
                 $date->format('Y-m-d'),
-                $squad->getPlace()->getId()
+                $squad->getDate(),
+                $squad->getPlace()
             ]);
     }
+
+
 }
 
 

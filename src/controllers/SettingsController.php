@@ -28,9 +28,9 @@ class SettingsController extends AppController
                 dirname(__DIR__) . self::UPLOAD_DIRECTORY . $_FILES['file']['name']
             );
 
-            $this->userRepository->setPhoto($_COOKIE['user_email'],$_FILES['file']['name']);
+            $this->userRepository->setPhoto($_COOKIE['user_id'],$_FILES['file']['name']);
+            return $this->render('settings', ['messages' => $this->messages,'image'=>$this->userRepository->getPhoto($_COOKIE['user_id'])]);
 
-            return $this->render('settings', ['messages' => $this->messages,'image'=>$this->userRepository->getPhoto($_COOKIE['user_email'])]);
         }
         //For debugging purpose
         $this->render('squads', ['messages' => $this->messages]);
@@ -40,9 +40,10 @@ class SettingsController extends AppController
     {
         if ($this->isPost()) {
 
-            //TODO obsluga formularza zmieniania danych
-            return $this->render('settings', ['messages' => $this->messages]);
+            $this->userRepository->editUserData($_COOKIE['user_id']);
+            return $this->render('settings',  ['messages' => $this->messages,'image'=>$this->userRepository->getPhoto($_COOKIE['user_id'])]);
         }
+        //For debugging purpose
         $this->render('squads', ['messages' => $this->messages]);
     }
 
@@ -62,8 +63,8 @@ class SettingsController extends AppController
 
     public function settings(){
 
-        if (isset($_COOKIE['user_email'])) {
-            return $this->render('settings',['image'=>$this->userRepository->getPhoto($_COOKIE['user_email'])]);
+        if (isset($_COOKIE['user_id'])) {
+            return $this->render('settings',['image'=>$this->userRepository->getPhoto($_COOKIE['user_id'])]);
         }
 
         $this->render('login');
