@@ -5,29 +5,51 @@ require_once __DIR__.'/../models/Place.php';
 class Squad{
     //TODO zaimplementowac cookie i dodać tutaj obiekt user
 
-    private $userId;
+    private $id;
+    private $creatorID;
+    private $creatorName;
     private $sport;
-    private $noMembers;
+    private $maxMembers;
     private $fee;
-    private $place;
+    private $placeName;
+    private $placeID;
     private $address;
     private $date;
 
-    public function __construct(int $userId,string $sport,int $noMembers, float $fee, int $place,string $address, $date){
-        $this->userId=$userId;
+    public function __construct(int $id,int $userId, string $creatorName,string $sport,int $maxMembers, float $fee, int $placeID, string $placeName, string $address, $date){
+        $this->id=$id;
+        $this->creatorID=$userId;
+        $this->creatorName=$creatorName;
         $this->sport=$sport;
-        $this->noMembers=$noMembers;
+        $this->maxMembers=$maxMembers;
         $this->fee=$fee;
-        $this->place=$place;
+        $this->placeName=$placeName;
+        $this->placeID=$placeID;
         $this->address=$address;
         $this->date=$date;
         //die(var_dump($this->date));
 }
 
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function getCreatorID(): int
+    {
+        return $this->creatorID;
+    }
+
+    public function getCreatorName(): string
+    {
+        return $this->creatorName;
+    }
 
     public function getDate()
     {
-        return $this->date;
+        $splited=explode("T",$this->date);
+
+        return $splited[0]." ".$splited[1];
     }
 
     public function setDate($date): void
@@ -45,14 +67,14 @@ class Squad{
         $this->sport = $sport;
     }
 
-    public function getNoMembers() :int
+    public function getMaxMembers() :int
     {
-        return $this->noMembers;
+        return $this->maxMembers;
     }
 
-    public function setNoMembers($noMembers): void
+    public function setMaxMembers($maxMembers): void
     {
-        $this->noMembers = $noMembers;
+        $this->maxMembers = $maxMembers;
     }
 
     public function getFee() :float
@@ -65,14 +87,14 @@ class Squad{
         $this->fee = $fee;
     }
 
-    public function getPlace() :int
+    public function getPlaceName() :string
     {
-        return $this->place;
+        return $this->placeName;
     }
 
-    public function setPlace($place): void
+    public function setPlaceName($placeName): void
     {
-        $this->place = $place;
+        $this->placeName = $placeName;
     }
 
     public function getAddress() :string
@@ -83,6 +105,11 @@ class Squad{
     public function setAddress($address): void
     {
         $this->address = $address;
+    }
+
+    public function getPlaceID(): int
+    {
+        return $this->placeID;
     }
 
 

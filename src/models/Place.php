@@ -10,9 +10,10 @@ class Place
     private $street;
     private $latitude;
     private $longitude;
+    private $photo;
 
 
-    public function __construct(int $id, string $name, string $city, string $postal_code, string $street, float $latitude, float $longitude)
+    public function __construct(int $id, string $name, string $city, string $postal_code, string $street, float $latitude, float $longitude,string $photo)
     {
         $this->id = $id;
         $this->name = $name;
@@ -21,6 +22,13 @@ class Place
         $this->street = $street;
         $this->latitude = $latitude;
         $this->longitude = $longitude;
+        $this->photo=$photo;
+    }
+
+
+    public function getName(): string
+    {
+        return $this->name;
     }
 
 
@@ -28,6 +36,11 @@ class Place
     {
         return $this->id;
     }
+    public function getAddress(): string
+    {
+        return $this->city. " " . $this->street;
+    }
+
 
 
 }

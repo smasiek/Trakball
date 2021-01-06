@@ -9,7 +9,7 @@
 
 .new_squad_form{
     width: 35%;
-    height: 100%;
+    height: 90%;
     margin: auto;
 }
 
@@ -24,10 +24,13 @@
 div>form>input{
     width: 90%;
 }
+input{
+    margin: 0.5em;
+}
 
 #publish{
     height: 4em;
     width: 100%;
     box-shadow: 0 3px 6px #00000029;
-    margin: 1em;
+    margin: 0.5em;
 }

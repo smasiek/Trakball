@@ -32,4 +32,10 @@ class AppController {
         print $output;
 
     }
+
+    protected function cookieCheck(){
+        if (!isset($_COOKIE['user_id'])) {
+            $this->render('login');
+        }
+    }
 }

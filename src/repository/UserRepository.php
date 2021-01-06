@@ -5,13 +5,8 @@ require_once __DIR__ . '/../models/User.php';
 
 class UserRepository extends Repository
 {
-    public function getUser(string $id): ?User
-    {
-        $stmt = $this->database->connect()->prepare('
-            SELECT * FROM (SELECT * FROM public.users NATURAL JOIN public.user_details)as alias WHERE alias.id=:id
-        ');
 
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    public function executeGetUserStmt(PDOStatement $stmt): ?User{
         $stmt->execute();
 
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -30,12 +25,33 @@ class UserRepository extends Repository
             $user['age'],
             $user['photo']
         );
+    }
+
+    public function getUserUsingID(int $id): ?User
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM (SELECT * FROM public.users NATURAL JOIN public.user_details)as alias WHERE alias.id=:id
+        ');
+
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        return $this->executeGetUserStmt($stmt);
+
+    }
+
+    public function getUserUsingEmail(string $email): ?User
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM (SELECT * FROM public.users NATURAL JOIN public.user_details)as alias WHERE alias.email=:email
+        ');
+
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        return $this->executeGetUserStmt($stmt);
 
     }
 
     public function getPhoto(string $id): ?string
     {
-        $user = $this->getUser($id);
+        $user = $this->getUserUsingID($id);
         return $user->getPhoto();
     }
 
@@ -121,6 +137,7 @@ class UserRepository extends Repository
 
         $stmt->execute();
     }
+
     public function editDateOfBirth(int $userID,string $data)
     {
         $stmt = $this->database->connect()->prepare('
@@ -133,7 +150,6 @@ class UserRepository extends Repository
 
         $stmt->execute();
     }
-
 
     public function editUserData(string $userID): void
     {
@@ -189,6 +205,41 @@ class UserRepository extends Repository
 
 
 
+    }
+
+    public function newUser($email, $password, $name, $surname, $phone, $date_of_birth)
+    {
+        //TODO przydaloby sie to zamienic na transakcje ale nie wiem jak, lub w jakis sposob pozyskac ID tworzonego user_details
+
+
+        $stmt = $this->database->connect()->prepare('
+            INSERT INTO public.user_details (name,surname,phone,date_of_birth)
+            VALUES(?,?,?,?)
+        ');
+        $stmt->execute([
+            $name,
+            $surname,
+            $phone,
+            $date_of_birth
+        ]);
+
+        $stmt = $this->database->connect()->prepare('  
+            SELECT MAX(id)
+            FROM public.user_details
+        ');
+        $stmt->execute();
+        $userDetails=$stmt->fetch(PDO::FETCH_ASSOC);
+        $newUserDetailID=$userDetails['max'];
+
+        $stmt = $this->database->connect()->prepare('
+            INSERT INTO public.users (email,password,id_user_details)
+            VALUES(?,?,?)
+        ');
+        return $stmt->execute([
+            $email,
+            $password,
+            $newUserDetailID
+        ]);
     }
 
 }

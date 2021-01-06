@@ -79,7 +79,7 @@ input {
     color: #707070;
 }
 
-.sign-up {
+.sign-up, .sign-in {
     text-align: left;
     text-decoration: underline;
     font: italic normal normal 20px/27px Segoe UI;
@@ -197,8 +197,8 @@ header {
     border-radius: 1.5em;
     color: white;
     letter-spacing: 0.1em;
-    text-align: center;
     width: 20%;
+    font-family: "Segoe UI", sans-serif;
 }
 
 .add-squad > i{
@@ -219,6 +219,12 @@ header {
     color: gray;
     margin: 0;
     box-sizing: border-box;
+}
+
+.messages{
+    margin: 1% 35% 0 35%;
+    color: RED;
+    font-family: "Segoe UI", sans-serif;
 }
 
 @media only screen and (max-device-width: 420px) {

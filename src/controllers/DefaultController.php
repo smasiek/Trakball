@@ -17,7 +17,7 @@ class DefaultController extends AppController
     public function register()
     {
         //TODO display login.php
-        $this->render('login');
+        $this->render('register');
     }
 
     public function squads()

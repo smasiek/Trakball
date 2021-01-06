@@ -4,6 +4,7 @@ section {
     grid-gap: 2em;
     padding: 2em;
     overflow: auto;
+
 }
 .squads > div {
     display: flex;
@@ -23,9 +24,11 @@ section {
 }
 
 .squads > div >   img {
-    width: 50%;
+    width: 15vh;
+    height: 15vh;
     border-radius: 100%;
     margin: 1em auto auto auto;
+    object-fit: cover;
 }
 
 h2 {

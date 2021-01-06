@@ -23,7 +23,7 @@
                 <button type="submit" class="sign">sign in</button>
                 <div class="tease-container">
                     <p name="tease">Click here to </p>
-                    <a href="" class="sign-up"> sign up!</a>
+                    <a href="<?"http://$_SERVER[HTTP_HOST]"?>register" class="sign-up"> sign up!</a>
                 </div>
             </form>
         </div>

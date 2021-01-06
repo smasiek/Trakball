@@ -26,26 +26,33 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5745737-4c3f-4299-8fdc-ed9040571d63" name="Default Changelist" comment="Implemented postgres database and files upload">
-      <change afterPath="$PROJECT_DIR$/src/repository/PlaceRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="f5745737-4c3f-4299-8fdc-ed9040571d63" name="Default Changelist" comment="Safer cookies using user id instead of email, edit photo and user data in settings">
+      <change afterPath="$PROJECT_DIR$/src/controllers/SquadsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repository/SquadRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Routing.php" beforeDir="false" afterPath="$PROJECT_DIR$/Routing.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/new_squad.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/new_squad.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/settings.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/settings.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/squads.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/squads.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/views/new_squad.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/new_squad.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/settings.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/views/squads.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/squads.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/your_places.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/your_places.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/views/your_squads.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/your_squads.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/AppController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/DefaultController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/NewSquadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/NewSquadController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SettingsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Place.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Place.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Squad.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Squad.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/NewSquadRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/NewSquadRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/NewSquadRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/PlaceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/PlaceRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/Repository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/Repository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/UserRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,22 +89,22 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img/uploads" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/controllers" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Docker" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Rzeczy na zajęcia\3 rok\5 sem\WdPAI\Lab 1\public\img\uploads" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Rzeczy na zajęcia\3 rok\5 sem\WdPAI\Lab 1\src\controllers" />
       <recent name="F:\Rzeczy na zajęcia\3 rok\5 sem\WdPAI\Lab 1\public\img\uploads" />
       <recent name="F:\Rzeczy na zajęcia\3 rok\5 sem\WdPAI\Lab 1\src\repository" />
-      <recent name="F:\Rzeczy na zajęcia\3 rok\5 sem\WdPAI\Lab 1\src\controllers" />
       <recent name="F:\Rzeczy na zajęcia\3 rok\5 sem\WdPAI\Lab 1\public\views" />
       <recent name="F:\Rzeczy na zajęcia\3 rok\5 sem\WdPAI\Lab 1\public\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Rzeczy na zajęcia\3 rok\5 sem\WdPAI\Lab 1\public\img\uploads" />
     </key>
   </component>
   <component name="RunManager" selected="Docker.php/Dockerfile">
@@ -159,7 +166,9 @@
       <workItem from="1607011053129" duration="144000" />
       <workItem from="1607610029465" duration="11774000" />
       <workItem from="1608204426358" duration="20971000" />
-      <workItem from="1609868454260" duration="14058000" />
+      <workItem from="1609868454260" duration="14235000" />
+      <workItem from="1609922348150" duration="9615000" />
+      <workItem from="1609942048068" duration="25489000" />
     </task>
     <task id="LOCAL-00001" summary="Backup before implementing slider">
       <created>1605312339423</created>
@@ -182,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607011155061</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Safer cookies using user id instead of email, edit photo and user data in settings">
+      <created>1609882571435</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1609882571435</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,7 +231,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Backup before implementing slider" />
     <MESSAGE value="Implemented postgres database and files upload" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented postgres database and files upload" />
+    <MESSAGE value="Safer cookies using user id instead of email, edit photo and user data in settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Safer cookies using user id instead of email, edit photo and user data in settings" />
   </component>
   <component name="WindowStateProjectService">
     <state x="426" y="182" key="#Docker" timestamp="1602753325939">
@@ -239,35 +256,36 @@
     </state>
     <state x="588" y="196" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1602753334218" />
     <state x="2284" y="149" key="#com.intellij.execution.impl.EditConfigurationsDialog/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607000645791" />
-    <state x="1089" y="252" key="#com.intellij.ide.util.MemberChooser" timestamp="1609869572867">
+    <state x="1089" y="252" key="#com.intellij.ide.util.MemberChooser" timestamp="1609967027135">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="1245" y="259" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1608224129467" />
-    <state x="1089" y="252" key="#com.intellij.ide.util.MemberChooser/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609869572867" />
+    <state x="1089" y="252" key="#com.intellij.ide.util.MemberChooser/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609967027135" />
     <state x="2925" y="231" key="#com.intellij.ide.util.MemberChooser/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607001014493" />
-    <state x="981" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1608221255753">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="458" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1609957191084">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="981" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1608221255753" />
-    <state width="1124" height="195" key="GridCell.Tab.0.bottom" timestamp="1607618832202">
+    <state x="458" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609957191084" />
+    <state width="1124" height="195" key="GridCell.Tab.0.bottom" timestamp="1609963301129">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1124" height="195" key="GridCell.Tab.0.bottom/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1607618832202" />
+    <state width="1124" height="195" key="GridCell.Tab.0.bottom/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609963301129" />
     <state width="1292" height="195" key="GridCell.Tab.0.bottom/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616040722" />
-    <state width="1124" height="195" key="GridCell.Tab.0.center" timestamp="1607618832202">
+    <state width="1124" height="195" key="GridCell.Tab.0.center" timestamp="1609963301129">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1124" height="195" key="GridCell.Tab.0.center/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1607618832202" />
+    <state width="1124" height="195" key="GridCell.Tab.0.center/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609963301129" />
     <state width="1292" height="195" key="GridCell.Tab.0.center/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616040722" />
-    <state width="1124" height="195" key="GridCell.Tab.0.left" timestamp="1607618832201">
+    <state width="1124" height="195" key="GridCell.Tab.0.left" timestamp="1609963301129">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1124" height="195" key="GridCell.Tab.0.left/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1607618832201" />
+    <state width="1124" height="195" key="GridCell.Tab.0.left/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609963301129" />
     <state width="1292" height="195" key="GridCell.Tab.0.left/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616040722" />
-    <state width="1124" height="195" key="GridCell.Tab.0.right" timestamp="1607618832202">
+    <state width="1124" height="195" key="GridCell.Tab.0.right" timestamp="1609963301129">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1124" height="195" key="GridCell.Tab.0.right/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1607618832202" />
+    <state width="1124" height="195" key="GridCell.Tab.0.right/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609963301129" />
     <state width="1292" height="195" key="GridCell.Tab.0.right/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616040722" />
     <state x="1186" y="266" key="NewPhpClassDialog" timestamp="1608223893537">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -292,11 +310,11 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="92" y="92" width="1496" height="866" key="ShowDiffWithBranchDialog/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1606326044009" />
-    <state x="494" y="265" key="Vcs.Push.Dialog.v2" timestamp="1608221778485">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="432" y="258" key="Vcs.Push.Dialog.v2" timestamp="1609882587680">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="494" y="265" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1608221778485" />
-    <state x="432" y="258" key="Vcs.Push.Dialog.v2/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1607011175304" />
+    <state x="432" y="258" key="Vcs.Push.Dialog.v2/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609882587680" />
     <state x="751" y="389" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1607611974413">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -306,16 +324,28 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="345" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1608207530175" />
-    <state x="471" y="364" width="493" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1609878432927">
+    <state x="739" y="466" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1609963273734">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="739" y="466" key="com.intellij.database.run.ParametersPanel.Standalone/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609963273734" />
+    <state x="471" y="364" width="493" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1609959562088">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="531" y="213" width="800" height="519" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1608210121348" />
-    <state x="471" y="364" width="493" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609878432927" />
+    <state x="471" y="364" width="493" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609959562088" />
     <state x="2211" y="250" width="664" height="664" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616077308" />
-    <state x="560" y="247" width="672" height="705" key="search.everywhere.popup" timestamp="1609879237832">
+    <state x="657" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609961321449">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="657" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609961321449" />
+    <state x="496" y="243" key="run.anything.popup" timestamp="1609960727834">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="496" y="243" key="run.anything.popup/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609960727834" />
+    <state x="560" y="247" width="672" height="705" key="search.everywhere.popup" timestamp="1609942709144">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="560" y="238" width="672" height="678" key="search.everywhere.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1602753432021" />
-    <state x="560" y="247" width="672" height="705" key="search.everywhere.popup/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609879237832" />
+    <state x="560" y="247" width="672" height="705" key="search.everywhere.popup/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609942709144" />
   </component>
 </project>

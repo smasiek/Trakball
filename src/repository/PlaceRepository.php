@@ -5,9 +5,45 @@ require_once __DIR__ . '/../models/Place.php';
 
 class PlaceRepository extends Repository
 {
-    public function getPlace(string $name, string $city, string $street): ?Place
+    public function getPlaceUsingID(int $id): ?Place
     {
+        if ($id == null ){
+            //make sql will have all needed parameters
+            return null;
+        }
         $stmt = $this->database->connect()->prepare('
+            SELECT * FROM places WHERE  id_place=:id
+        ');
+
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $place = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($place == false) {
+            //TODO zwrocic exception i potem w security controllerze odebrac ten bladi poprawnie obsluzyc
+            return null;
+        }
+        return new Place(
+            $place['id_place'],
+            $place['name'],
+            $place['city'],
+            $place['postal_code'],
+            $place['street'],
+            $place['latitude'],
+            $place['longitude'],
+            $place['place_photo']
+        );
+
+    }
+
+    public function getPlaceUsingAddress(string $name, string $city, string $street): ?Place
+    {
+        if ($name == null || $city == null || $street == null){
+            //make sql will have all needed parameters
+            return null;
+        }
+            $stmt = $this->database->connect()->prepare('
             SELECT * FROM places WHERE  name=:name AND city=:city AND street=:street
         ');
 
@@ -29,7 +65,8 @@ class PlaceRepository extends Repository
             $place['postal_code'],
             $place['street'],
             $place['latitude'],
-            $place['longitude']
+            $place['longitude'],
+            $place['place_photo']
         );
 
     }
@@ -37,8 +74,16 @@ class PlaceRepository extends Repository
     public function getPlaceID(string $name, string $city, string $street): int
     {
 
-        $place=$this->getPlace( $name,  $city,  $street);
-        //die(var_dump($street));
+        if ($name == null || $city == null || $street == null){
+            //make sql will have all needed parameters
+            return 0;
+        }
+
+        $place = $this->getPlaceUsingAddress($name, $city, $street);
+
         return $place->getId();
     }
+
+    //TODO: Dodac obsluge join squad, leave squad, ładowanie awatarow ludzi ktorzy dolaczyli, search place w pasku i sklady z tego miejsca
+    // Java script do weryfikacji danych i do sortowania itemkow prawdopodobnie
 }

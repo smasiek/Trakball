@@ -43,7 +43,7 @@ input{
     height: 30vh;
     border-radius: 100%;
     overflow: auto;
-    object-fit: scale-down ;
+    object-fit: cover;
     margin: auto;
 }
 
