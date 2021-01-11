@@ -70,7 +70,7 @@ class NewSquadController extends AppController
 
         $newSquadRepository->addSquad( $userId,$sport,$noMembers,$fee,$date,$placeId);
         $publishedSquad=$newSquadRepository->getPublishedSquad($userId,$date,$placeId);
-        $newSquadRepository->addYourSquad($publishedSquad->getId());
+        $newSquadRepository->addYourSquad($publishedSquad->getID());
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/squads");

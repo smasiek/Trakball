@@ -14,43 +14,41 @@
         <ul>
             <li>
                 <i class="fas fa-map-marked-alt"></i>
-                <a href="<? "http://$_SERVER[HTTP_HOST]" ?>map" class="button">map</a>
+                <a href="<?= "http://$_SERVER[HTTP_HOST]/mapa" ?>" class="button">map</a>
             </li>
             <li>
                 <i class="fas fa-user-plus"></i>
-                <a href="<? "http://$_SERVER[HTTP_HOST]" ?>squads" class="button">squads</a>
+                <a href="squads" class="button">squads</a>
             </li>
             <li>
                 <i class="fas fa-map-marker-alt"></i>
-                <a href="<? "http://$_SERVER[HTTP_HOST]" ?>your_places" class="button">your places</a>
+                <a href="your_places" class="button">your places</a>
             </li>
             <li>
                 <i class="fas fa-user-friends"></i>
-                <a href="<? "http://$_SERVER[HTTP_HOST]" ?>your_squads" class="button">your squads</a>
+                <a href="your_squads" class="button">your squads</a>
             </li>
             <li name="sign-in">
                 <i class="fas fa-user-alt"></i>
-                <a href="<? "http://$_SERVER[HTTP_HOST]" ?>" class="button">sign in</a>
+                <a href="" class="button">sign in</a>
             </li>
             <li name="log-out">
                 <i class="fas fa-user-alt-slash"></i>
-                <a href="<? "http://$_SERVER[HTTP_HOST]" ?>log_out" class="button">log out</a>
+                <a href="log_out" class="button">log out</a>
             </li>
             <li>
                 <i class="fas fa-cog"></i>
-                <a href="<? "http://$_SERVER[HTTP_HOST]" ?>settings" class="button">settings</a>
+                <a href="settings" class="button">settings</a>
             </li>
         </ul>
     </nav>
     <main>
         <header>
             <div class="search-bar">
-                <form>
-                    <input placeholder="search project">
-                </form>
+                <input placeholder="search squad">
             </div>
 
-            <div class="add-squad" onclick="location.href='<? "http://$_SERVER[HTTP_HOST]" ?>new_squad'">
+            <div class="add-squad" onclick="location.href='new_squad'">
                 <i class="fas fa-plus"></i>
                 add squad
             </div>
@@ -58,35 +56,47 @@
 
         <section class="squads">
             <?php require_once __DIR__ . '/../../src/repository/UserRepository.php';
-            $userRepository=new UserRepository();
+            require_once __DIR__ . '/../../src/repository/SquadRepository.php';
+            $userRepository = new UserRepository();
+            $squadRepository = new SquadRepository();
 
-            foreach ($squads as $squad):
-            $user=$userRepository->getUserUsingID($squad->getCreatorID());?>
-            <div id="squad1">
-                <img src="public/img/uploads/<?=$user->getPhoto()?>">
-                <h2><?= $squad->getCreatorName();?></h2>
-                <p name="sport">Sport: <?= $squad->getSport();?></p>
-                <p name="max-members">Zawodników: <?= $squad->getMaxMembers();?></p>
-                <p name="fee">Opłata: <?= $squad->getFee();?> zł</p>
-                <p name="place"><?= $squad->getPlaceName();?></p>
-                <p name="address"><?= $squad->getAddress();?></p>
-                <p name="date"><?= $squad->getDate();?></p>
-                <a href="#" class="squad-hyper">Show on map</a>
-                <div class="footer">
-                    <h3>Squad</h3>
-                    <div class="members">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
-                        <img src="public/img/uploads/meme.jpg">
-                    </div>
-                    <div class="decision">
-                        <a href="#" class="squad-hyper">Text organizator</a>
-                        <a href="#" class="squad-hyper">Leave squad</a>
+            foreach ($squads as $squad):{
+                $user = $userRepository->getUserUsingID($squad->getCreatorID());
+                $squadMembers = $squadRepository->getSquadMembers($squad->getID());}
+                ?>
+                <div id="<?= $squad->getID(); ?>">
+                    <img src="public/img/uploads/<?= $user->getPhoto() ?>">
+                    <h2><?= $squad->getCreatorName(); ?></h2>
+                    <p name="sport">Sport: <?= $squad->getSport(); ?></p>
+                    <p name="max-members">Zawodników: <?= $squad->getMaxMembers(); ?></p>
+                    <p name="fee">Opłata: <?= $squad->getFee(); ?> zł</p>
+                    <p name="place"><?= $squad->getPlaceName(); ?></p>
+                    <p name="address"><?= $squad->getAddress(); ?></p>
+                    <p name="date"><?= $squad->getDate(); ?></p>
+                    <a href="#" class="squad-hyper">Show on map</a>
+                    <div class="footer">
+                        <h3>Squad</h3>
+                        <div class="members">
+                            <? $iter = 0;
+                            while ($iter < 5):
+                                if ($squadMembers[$iter] == null) {
+                                    break;
+                                } ?>
+                                <img src="public/img/uploads/<?= $squadMembers[$iter]->getPhoto() ?>">
+                                <? $iter++;
+                                ?>
+                            <? endwhile; ?>
+                            <?php if (sizeof($squadMembers) > 5): ?>
+                                <img src="public/img/uploads/numbers/<?= sizeof($squadMembers) - 5 ?>.png">
+
+                            <?php endif; ?>
+                        </div>
+                        <div class="decision">
+                            <a href="#" class="squad-hyper" id="text_organizator">Text organizator</a>
+                            <a href="leave_squad/<?= $squad->getID() ?>" class="squad-hyper">Leave squad</a>
+                        </div>
                     </div>
                 </div>
-            </div>
             <?php endforeach; ?>
         </section>
     </main>

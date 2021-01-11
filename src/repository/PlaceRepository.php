@@ -84,6 +84,8 @@ class PlaceRepository extends Repository
         return $place->getId();
     }
 
-    //TODO: Dodac obsluge join squad, leave squad, ładowanie awatarow ludzi ktorzy dolaczyli, search place w pasku i sklady z tego miejsca
-    // Java script do weryfikacji danych i do sortowania itemkow prawdopodobnie
+    //TODO: Dodac obsluge join squad, leave squad, ładowanie awatarow ludzi ktorzy dolaczyli(foreach, if >7 zamien na +1,+2 itd)
+    // search place w pasku i sklady z tego miejsca
+    // JS do sortowania squadow prawdopodobnie
+
 }

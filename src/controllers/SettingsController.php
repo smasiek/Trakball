@@ -72,6 +72,7 @@ class SettingsController extends AppController
 
         //$this->render('settings',['image'=>$this->userRepository->getImage($_COOKIE['user_email'])]);
     }
+
 }
 
 

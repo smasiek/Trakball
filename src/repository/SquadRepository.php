@@ -15,7 +15,6 @@ class SquadRepository extends Repository
             SELECT * FROM squads
         ');
 
-        $this->cookieCheck();
 
         $stmt->execute();
         $squads = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -58,9 +57,8 @@ class SquadRepository extends Repository
             WHERE users.id=:id
         ');
 
-        $this->cookieCheck();
 
-        $stmt->bindParam(':id',$_COOKIE['user_id']);
+        $stmt->bindParam(':id', $_COOKIE['user_id']);
         $stmt->execute();
         $squads = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -73,7 +71,7 @@ class SquadRepository extends Repository
 
 
             $result[] = new Squad(
-                $squad['id'],
+                $squad['id_squad'],
                 $squad['id_squad_creator'],
                 $user->getName() . " " . $user->getSurname(),
                 $squad['sport'],
@@ -89,13 +87,13 @@ class SquadRepository extends Repository
         return $result;
     }
 
-    public function addYourSquad(int $squadID){
+    public function addYourSquad(int $squadID)
+    {
         $stmt = $this->database->connect()->prepare('
             INSERT INTO users_squads
             VALUES (?,?)
         ');
 
-        $this->cookieCheck();
 
         $stmt->execute([
             $_COOKIE['user_id'],
@@ -139,7 +137,8 @@ class SquadRepository extends Repository
 
     }
 
-    public function getPublishedSquad($creatorID,$date,$placeID): ?Squad{
+    public function getPublishedSquad($creatorID, $date, $placeID): ?Squad
+    {
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM squads WHERE  id_squad_creator=:creatorID AND date=:date AND id_place=:placeID 
         ');
@@ -176,7 +175,7 @@ class SquadRepository extends Repository
         );
     }
 
-    public function addSquad($creatorID,$sport,$maxMembers,$fee,$date,$placeID): void
+    public function addSquad($creatorID, $sport, $maxMembers, $fee, $date, $placeID): void
     {
         $currDate = new DateTime();
         $stmt = $this->database->connect()->prepare('
@@ -249,6 +248,104 @@ class SquadRepository extends Repository
         } else {
             return true;
         }
+    }
+
+    public function getSquadMembers(int $squadID): array
+    {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM users_squads where id_squad=:squadID
+        ');
+
+        $stmt->bindParam(':squadID', $squadID);
+
+
+        $stmt->execute();
+        $membersID = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if ($squadID == 2) {
+            die(var_dump($membersID));
+        }
+        $userRepository = new UserRepository();
+
+        foreach ($membersID as $memberID) {
+            $result[] = $userRepository->getUserUsingID($memberID['id_user']);
+        }
+
+        return $result;
+    }
+
+    public function getSquadBySearch(string $searchString)
+    {
+        $searchString = '%' . strtolower($searchString) . '%';
+
+        $stmt = $this->database->connect()->prepare('
+        SELECT * FROM squads
+        INNER JOIN places ON squads.id_place=places.id_place
+        INNER JOIN users ON squads.id_squad_creator=users.id
+        INNER JOIN user_details on users.id_user_details = user_details.id
+        WHERE LOWER(places.name) LIKE :search OR LOWER(user_details.surname) LIKE :search OR date LIKE :search;
+        ');
+
+        $stmt->bindParam(':search', $searchString);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function join_squad($userID, $squadID): bool
+    {
+        $stmt = $this->database->connect()->prepare('
+        SELECT * FROM users_squads WHERE id_user=:id_user AND id_squad=:id_squad
+        ');
+        $stmt->bindParam(':id_user', $userID);
+        $stmt->bindParam(':id_squad', $squadID);
+        $stmt->execute();
+
+        $possibleDuplicate = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($possibleDuplicate['id_user'] != null) {
+            //users has already joined this squad
+            return false;
+        }
+
+        $stmt = $this->database->connect()->prepare('
+        INSERT INTO users_squads
+        VALUES (?,?)
+        ');
+
+        return $stmt->execute([
+            $userID,
+            $squadID
+        ]);
+    }
+
+    public function leave_squad($userID, $squadID)
+    {
+
+        $stmt = $this->database->connect()->prepare('
+        SELECT * FROM squads WHERE id=:squadID AND id_squad_creator=:creatorID
+        ');
+        $stmt->bindParam(':squadID', $squadID, PDO::PARAM_INT);
+        $stmt->bindParam(':creatorID', $userID, PDO::PARAM_INT);
+        $stmt->execute();
+        $possibleSquad = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($possibleSquad['id_squad_creator'] == $userID) {
+            $stmt = $this->database->connect()->prepare('
+                DELETE FROM squads
+                WHERE id=:squadID
+             ');
+            $stmt->bindParam(':squadID', $squadID, PDO::PARAM_INT);
+            return $stmt->execute();
+        }
+
+        $stmt = $this->database->connect()->prepare('
+        DELETE FROM users_squads
+        WHERE id_user=:userID AND id_squad=:squadID
+        ');
+
+        $stmt->bindParam(':squadID', $squadID, PDO::PARAM_INT);
+        $stmt->bindParam(':userID', $userID, PDO::PARAM_INT);
+        $stmt->execute();
     }
 
 

@@ -27,10 +27,9 @@ class Squad{
         $this->placeID=$placeID;
         $this->address=$address;
         $this->date=$date;
-        //die(var_dump($this->date));
 }
 
-    public function getId(): int
+    public function getID(): int
     {
         return $this->id;
     }

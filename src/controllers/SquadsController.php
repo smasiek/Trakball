@@ -18,24 +18,23 @@ class SquadsController extends AppController
     public function squads(){
 
         if (!isset($_COOKIE['user_id'])) {
-            $this->render('login');
+            return $this->render('login');
         }
 
-
         $squads=$this->squadRepository->getSquads();
+        //TODO ZAMIENIC NA getAvailableSquads() ktore zwroci squady w ktorym są wolne miejsca
         $this->render('squads',['squads'=>$squads]);
-
     }
 
     public function your_squads(){
 
         if (!isset($_COOKIE['user_id'])) {
-            $this->render('login');
+            return $this->render('login');
         }
 
-
         $squads=$this->squadRepository->getYourSquads();
-        $this->render('squads',['squads'=>$squads]);
+        //die(var_dump($squads));
+        $this->render('your_squads',['squads'=>$squads]);
 
     }
 
@@ -69,6 +68,78 @@ class SquadsController extends AppController
     }
 
 
+
+
+
+
+    /*public function join_squad(int $squadID){
+        //TODO getUserFromCookie()
+        // SquadRepository.addUserToSquad(squadID,userID)
+        $this->cookieCheck();
+        if(!$this->squadRepository->join_squad($_COOKIE['user_id'],$squadID)){
+           // $url = "http://$_SERVER[HTTP_HOST]";
+          //  header("Location: {$url}/squads");
+            http_response_code(299);
+            $squads=$this->squadRepository->getSquads();
+            return $this->render("squads",['squads'=>$squads,'messages' => "You have already joined this squad!"]);
+        };
+        http_response_code(200);
+
+        //Zabezpieczenie przed wyswietleniem sposobu dołączania do skladu
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/squads");
+    }*/
+
+    public function join_squad(int $squadID){
+        //TODO getUserFromCookie()
+        // SquadRepository.addUserToSquad(squadID,userID)
+        $this->cookieCheck();
+        if(!$this->squadRepository->join_squad($_COOKIE['user_id'],$squadID)){
+            // $url = "http://$_SERVER[HTTP_HOST]";
+            //  header("Location: {$url}/squads");
+            http_response_code(299);
+            $squads=$this->squadRepository->getSquads();
+            die(var_dump($this->render("squads",['squads'=>$squads,'messages' => "You have already joined this squad!"])));
+            return $this->render("squads",['squads'=>$squads,'messages' => "You have already joined this squad!"]);
+        };
+        http_response_code(200);
+
+        //Zabezpieczenie przed wyswietleniem sposobu dołączania do skladu
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/your_squads");
+    }
+
+    public function leave_squad(int $squadID){
+        //TODO getUserFromCookie()
+        // SquadRepository.addUserToSquad(squadID,userID)
+        $this->cookieCheck();
+        $this->squadRepository->leave_squad($_COOKIE['user_id'],$squadID);
+        http_response_code(200);
+
+        //Zabezpieczenie przed wyswietleniem sposobu dołączania do skladu
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/squads");
+    }
+
+    public function search(){
+        //TODO
+
+
+        $contentType= isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]): '';
+
+        if($contentType==="application/json"){
+            $content=trim(file_get_contents("php://input"));
+            $decoded=json_decode($content,true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+
+           die(vardump( $this->squadRepository->getSquadBySearch($decoded['search'])));
+
+            echo json_encode($this->squadRepository->getSquadBySearch($decoded['search']));
+        }
+    }
+
     private function validate(array $file): bool
     {
         if ($file['size'] > self::MAX_FILE_SIZE) {
@@ -80,18 +151,6 @@ class SquadsController extends AppController
             return false;
         }
         return true;
-    }
-
-    public function settings(){
-
-        if (isset($_COOKIE['user_id'])) {
-            return $this->render('settings',['image'=>$this->userRepository->getPhoto($_COOKIE['user_id'])]);
-        }
-
-        $this->render('login');
-
-
-        //$this->render('settings',['image'=>$this->userRepository->getImage($_COOKIE['user_email'])]);
     }
 }
 

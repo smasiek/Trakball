@@ -11,10 +11,4 @@ class Repository
         $this->database = new Database();
     }
 
-    protected function cookieCheck()
-    {
-        if (!isset($_COOKIE['user_id'])) {
-            $this->render('login');
-        }
-    }
 }

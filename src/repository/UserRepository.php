@@ -30,7 +30,7 @@ class UserRepository extends Repository
     public function getUserUsingID(int $id): ?User
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM (SELECT * FROM public.users NATURAL JOIN public.user_details)as alias WHERE alias.id=:id
+            SELECT * FROM users NATURAL JOIN user_details WHERE users.id=:id
         ');
 
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -41,7 +41,7 @@ class UserRepository extends Repository
     public function getUserUsingEmail(string $email): ?User
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM (SELECT * FROM public.users NATURAL JOIN public.user_details)as alias WHERE alias.email=:email
+            SELECT * FROM users NATURAL JOIN user_details WHERE email=:email
         ');
 
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);

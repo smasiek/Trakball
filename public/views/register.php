@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/security.css">
+    <script type="text/javascript" src="./public/js/registerValidationScript.js" defer></script>
     <title>LOGIN PAGE</title>
 </head>
 <body>
@@ -20,6 +21,7 @@
                 </div>
                 <input name="email" type="email" placeholder="email@email.com">
                 <input name="password" type="password" placeholder="password">
+                <input name="confirmedPassword" type="password" placeholder="confirm password">
                 <input name="name" type="text" placeholder="name">
                 <input name="surname" type="text" placeholder="surname">
                 <input name="phone" type="text" placeholder="phone">
@@ -27,7 +29,7 @@
                 <button type="submit" class="sign">sign up</button>
                 <div class="tease-container">
                     <p name="tease">Click here to </p>
-                    <a href="<?"http://$_SERVER[HTTP_HOST]"?>login"  class="sign-in"> sign in!</a>
+                    <a href="login"  class="sign-in"> sign in!</a>
                 </div>
             </form>
         </div>

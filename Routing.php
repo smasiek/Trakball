@@ -18,18 +18,19 @@ class Routing {
     }
 
     public static function run($url){
-        $action = explode("/", $url)[0];
+        $urlParts = explode("/", $url);
+        $action = $urlParts[0];
 
-        if(!array_key_exists($action, self::$routes)){
-            die("Wrong url!!");
+        if (!array_key_exists($action, self::$routes)) {
+            die("Wrong url!");
         }
 
         $controller = self::$routes[$action];
         $object = new $controller;
+        $action = $action ?: 'squads';
 
-        $action= $action?: 'login';
+        $id = $urlParts[1] ?? '';
 
-        $object->$action();
+        $object->$action($id);
     }
-
 }
