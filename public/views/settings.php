@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SQUADS PAGE</title>
+    <title>SETTINGS</title>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/settings.css">
+
     <script src="https://kit.fontawesome.com/346296466a.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -48,7 +49,7 @@
 
                 <input name="date_of_birth" placeholder="date of birth" type="date">
 
-                <button id="edit" type="submit">edit</button>
+                <button id="edit" type="submit">edit user info</button>
             </form>
 
         </div>

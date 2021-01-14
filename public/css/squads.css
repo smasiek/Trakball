@@ -23,7 +23,9 @@ section {
     margin: 0;
 }
 
-.squads > div >   img {
+
+
+.squads > div > div>   img {
     width: 15vh;
     height: 15vh;
     border-radius: 100%;
@@ -55,7 +57,7 @@ p {
     border: 3px solid #e57160;
 }
 
-.squads a {
+.squad-hyper {
     text-decoration: none;
     background: #FFFFFF 0 0 no-repeat padding-box;
     border: 1px solid #e57160;
@@ -72,4 +74,62 @@ p {
     font: normal normal normal 1em/2em Arial;
     letter-spacing: 0px;
     color: #E57160;
+}
+
+@media only screen and (max-device-width: 720px) {
+    main{
+        width: 100vw;
+    }
+    .squads{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #squad {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    h2{
+        font: normal normal bold 2em/0.5em Arial;
+    }
+    #squad>div {
+        display: flex;
+        flex-direction: column;
+        font: normal normal normal 2em/2em Arial;
+    }
+    #squad>img{
+        width:30vw;
+        height:30vw;
+        margin: 1em;
+    }
+    #squad_info{
+        width: 55%;
+    }
+
+    .footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 10vh;
+    }
+
+    h3{
+        font: normal normal bold 2em/0.5em Arial;
+        margin: 1em;
+    }
+
+    .decision{
+        flex-direction: column;
+        width: 30%;
+    }
+    .decision>.squad-hyper{
+        width: 90%;
+        height: 33%;
+        margin: 1% 5%;
+        font-size: 2em;
+    }
+
+
 }

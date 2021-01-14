@@ -5,6 +5,7 @@
     <title>SQUADS PAGE</title>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/new_squad.css">
+    <script type="text/javascript" src="./public/js/dynamicSuggestion.js" defer></script>
     <script src="https://kit.fontawesome.com/346296466a.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -24,20 +25,14 @@
                 </div>
                 <input list="cities" name="city" placeholder="City">
                 <datalist id="cities">
-                    <option value ="Kraków"></option>
-                    <option value ="Warszawa"></option>
                 </datalist>
 
                 <input list="streets" name="street" placeholder="Street">
                 <datalist id="streets">
-                    <option value ="Nowa Huta 15"></option>
-                    <option value ="Kamienna 17"></option>
                 </datalist>
 
                 <input list="names" name="name" placeholder="Place name">
                 <datalist id="names">
-                    <option value ="Comcom zone"></option>
-                    <option value ="Hala Politechniki Krakowskiej"></option>
                 </datalist>
 
                 <input list="sports" name="sport" placeholder="Sport">
@@ -50,15 +45,7 @@
                     <option value ="Hokej"></option>
                 </datalist>
 
-                <input list="players" name="max_players" placeholder="Max numer of players">
-                <datalist id="players">
-                    <option value ="1"></option>
-                    <option value ="2"></option>
-                    <option value ="3"></option>
-                    <option value ="4"></option>
-                    <option value ="5"></option>
-                    <option value ="6"></option>
-                </datalist>
+                <input name="max_players" placeholder="Max numer of players">
 
                 <input name="fee" type="text" placeholder="Entry fee">
 

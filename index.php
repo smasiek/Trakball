@@ -25,4 +25,6 @@ Routing::post('edit_data', 'SettingsController');
 Routing::post('publish_squad', 'NewSquadController');
 Routing::post('search', 'SquadsController');
 Routing::post('login', 'SecurityController');
+Routing::post('cities', 'NewSquadController');
+
 Routing::run($path);

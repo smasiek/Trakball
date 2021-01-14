@@ -1,4 +1,4 @@
-.main_content{
+.main_content {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -7,13 +7,13 @@
     height: 100%;
 }
 
-.new_squad_form{
+form {
     width: 35%;
     height: 90%;
     margin: auto;
 }
 
-.ball_logo{
+.ball_logo {
     width: 30vh;
     height: 30vh;
     overflow: auto;
@@ -21,16 +21,46 @@
     margin: auto;
 }
 
-div>form>input{
+div > form > input {
     width: 90%;
 }
-input{
+
+input {
     margin: 0.5em;
 }
 
-#publish{
+#publish {
     height: 4em;
     width: 100%;
     box-shadow: 0 3px 6px #00000029;
     margin: 0.5em;
+}
+
+@media only screen and (max-device-width: 720px) {
+
+    .ball_logo {
+        display: block;
+        height: 15vh;
+        width: 15vh;
+    }
+
+    form {
+        width: 90%;
+        margin: 0;
+        height: 70vh;
+    }
+
+    button {
+        width: 90%;
+        height: 33%;
+        margin: 1% 5%;
+        font-size: 2em;
+    }
+
+    .main_content{
+        height: 90vh;
+        flex-direction: column;
+        align-items: center;
+    }
+
 }

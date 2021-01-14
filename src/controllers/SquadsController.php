@@ -91,22 +91,40 @@ class SquadsController extends AppController
     }*/
 
     public function join_squad(int $squadID){
-        //TODO getUserFromCookie()
-        // SquadRepository.addUserToSquad(squadID,userID)
+
         $this->cookieCheck();
-        if(!$this->squadRepository->join_squad($_COOKIE['user_id'],$squadID)){
+       /* if(!$this->squadRepository->join_squad($_COOKIE['user_id'],$squadID)){
             // $url = "http://$_SERVER[HTTP_HOST]";
             //  header("Location: {$url}/squads");
             http_response_code(299);
             $squads=$this->squadRepository->getSquads();
             die(var_dump($this->render("squads",['squads'=>$squads,'messages' => "You have already joined this squad!"])));
             return $this->render("squads",['squads'=>$squads,'messages' => "You have already joined this squad!"]);
-        };
-        http_response_code(200);
+        };*/
 
-        //Zabezpieczenie przed wyswietleniem sposobu dołączania do skladu
-        $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/your_squads");
+
+        if(!$this->squadRepository->join_squad($_COOKIE['user_id'],$squadID)){
+            echo $this->sendResponse([
+                "message"=>"User have been already signed"
+            ],406);
+            return;
+        }
+
+
+        header("Content-type: application/json");
+        http_response_code(200);
+        echo json_encode([
+            "user_id"=>$_COOKIE["user_id"],
+            "squad_id" => $squadID,
+            "message"=>"U;ve joined squad"
+        ]);
+
+    }
+
+    private function sendResponse(array $array,int $code) :string{
+        header("Content-type: application/json");
+        http_response_code($code);
+        return json_encode($array);
     }
 
     public function leave_squad(int $squadID){
@@ -121,6 +139,8 @@ class SquadsController extends AppController
         header("Location: {$url}/squads");
     }
 
+
+
     public function search(){
         //TODO
 
@@ -134,7 +154,7 @@ class SquadsController extends AppController
             header('Content-type: application/json');
             http_response_code(200);
 
-           die(vardump( $this->squadRepository->getSquadBySearch($decoded['search'])));
+           die(var_dump( $this->squadRepository->getSquadBySearch($decoded['search'])));
 
             echo json_encode($this->squadRepository->getSquadBySearch($decoded['search']));
         }

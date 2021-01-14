@@ -7,7 +7,7 @@ class PlaceRepository extends Repository
 {
     public function getPlaceUsingID(int $id): ?Place
     {
-        if ($id == null ){
+        if ($id == null) {
             //make sql will have all needed parameters
             return null;
         }
@@ -39,11 +39,11 @@ class PlaceRepository extends Repository
 
     public function getPlaceUsingAddress(string $name, string $city, string $street): ?Place
     {
-        if ($name == null || $city == null || $street == null){
+        if ($name == null || $city == null || $street == null) {
             //make sql will have all needed parameters
             return null;
         }
-            $stmt = $this->database->connect()->prepare('
+        $stmt = $this->database->connect()->prepare('
             SELECT * FROM places WHERE  name=:name AND city=:city AND street=:street
         ');
 
@@ -74,7 +74,7 @@ class PlaceRepository extends Repository
     public function getPlaceID(string $name, string $city, string $street): int
     {
 
-        if ($name == null || $city == null || $street == null){
+        if ($name == null || $city == null || $street == null) {
             //make sql will have all needed parameters
             return 0;
         }
@@ -88,4 +88,24 @@ class PlaceRepository extends Repository
     // search place w pasku i sklady z tego miejsca
     // JS do sortowania squadow prawdopodobnie
 
+    public function getCitiesFromInput(string $input)
+    {
+        $cityTemplate= '%' . strtolower($input) . '%';
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM places WHERE  LOWER(city) like :city
+        ');
+
+        $stmt->bindParam(':city', $cityTemplate, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $placesInCity=$stmt->fetchAll();
+        $cities=[];
+
+        foreach ($placesInCity as $placeInCity){
+            if(!in_array($placeInCity['city'],$cities)){
+                $cities[]=$placeInCity['city'];
+            }
+        }
+        return $cities;
+    }
 }

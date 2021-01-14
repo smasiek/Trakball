@@ -1,21 +1,26 @@
-const joinButton=document.querySelectorAll('#join_squad')
+const joinButtons = document.querySelectorAll('.join-squad')
 
-function joinSquad(){
-    const join=this;
-    const container=join.parentElement.parentElement.parentElement;
-    const id= container.getAttribute("id");
+joinButtons.forEach(joinButton => joinButton.addEventListener("click", joinSquad));
 
-    fetch(`/join_squad/${id}`,{
-        method: 'GET', headers: {'Content-Type': 'application/json'},
-    }).then((response) => response.json().then(res => ({status: response.status, data: res})))
-        .then((apiResponse) => {
-            alert("TEST");
-            console.log(apiResponse)
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-    
+console.log(joinButtons);
+
+function joinSquad() {
+
+    const join = this;
+    const id = this.getAttribute("id");
+
+    fetch(`/join_squad/${id}`, {
+        method: 'GET',
+        headers: {'Content-Type': 'application/json'},
+    }).then(function (response){
+        switch (response.status) {
+            case 406:
+                return response.json();
+            case 200:
+                return response.json();
+        }
+    }).then(function (message){
+        console.log(message);
+        alert(message.message);
+    });
 }
-
-joinButton.forEach(button=>button.addEventListener("click",joinSquad))

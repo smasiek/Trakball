@@ -1,6 +1,13 @@
+<head>
+    <script type="text/javascript" src="./public/js/responsiveNaviBar.js" defer></script>
+</head>
 <nav>
-    <img src="public/img/Logo small.png">
-    <ul>
+    <div class="navbar_images">
+        <img src="/public/img/Logo small.png">
+        <label for="show-menu" class="show-menu"><img src="/public/img/hamburger.png" id="hamburger" alt="menu"></label>
+        <input type="checkbox" id="show-menu" role="button">
+    </div>
+    <ul id="menu">
         <li>
             <i class="fas fa-map-marked-alt"></i>
             <a href="<?= "http://$_SERVER[HTTP_HOST]/map" ?>" class="button">map</a>

@@ -26,7 +26,7 @@ body {
     width: 60%;
 }
 
-form.login {
+form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -86,4 +86,54 @@ input {
     letter-spacing: 0;
     color: #F4AC66;
     margin: 5px;
+}
+
+.no-valid{
+    border:3px solid red;
+    border-radius: 1em;
+    box-shadow: 0 0 0.2em red;
+    outline: none;
+}
+
+@media only screen and (max-device-width: 420px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .login-container {
+        width: 100%;
+    }
+
+    .logo {
+        background: url("../img/Logo small.png") no-repeat;
+        margin: 0;
+        width: 90%;
+        text-align: center;
+        background-size: 100%;
+    }
+
+    form {
+        margin: auto;
+        padding: 1% 1% 1% 1% ;
+    }
+    input{
+        width:70%;
+    }
+
+    #sign_up{
+        margin: 0.5em;
+    }
+
+    .register>input{
+        padding-top: 0.2em;
+    }
+
+    .tease-container {
+        font-size: 2em;
+        margin: 3px;
+    }
+    .sign-in, .sign-up{
+        font-size: 1.2em;
+    }
+
 }

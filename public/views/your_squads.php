@@ -23,6 +23,9 @@
                 $squadMembers = $squadRepository->getSquadMembers($squad->getID());}
                 ?>
                 <div id="<?= $squad->getID(); ?>">
+
+                    <!--TODO POPRAWIC STRUKTURE BY DOBRZE SIE WYSWIETLAL CSS-->
+
                     <img src="public/img/uploads/<?= $user->getPhoto() ?>">
                     <h2><?= $squad->getCreatorName(); ?></h2>
                     <p name="sport">Sport: <?= $squad->getSport(); ?></p>

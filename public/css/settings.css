@@ -1,9 +1,6 @@
 .main_content{
     display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
-
-
     width: 100%;
     height: 100%;
 }
@@ -27,7 +24,6 @@ input{
 
 }
 
-
 .edit_photo{
     display: flex;
     flex-direction: column;
@@ -42,9 +38,7 @@ input{
     width: 30vh;
     height: 30vh;
     border-radius: 100%;
-    overflow: auto;
     object-fit: cover;
-    margin: auto;
 }
 
 form > button {
@@ -52,5 +46,47 @@ form > button {
     height: 4em;
     margin: auto auto;
     box-shadow: 0px 3px 6px #00000029;
-    font-family: "Segoe UI", sans-serif;
+    font: normal normal normal 1em/2em Segoe UI;
+}
+
+@media only screen and (max-device-width: 720px) {
+
+    main{
+        width: 100vw;
+    }
+
+    .main_content{
+        flex-direction: column;
+    }
+
+    .edit_photo{
+        flex-direction: row;
+        width: 100%;
+        margin: 0;
+
+    }
+    .edit_photo>img{
+        width: 30vw;
+        height: 30vw;
+        border-radius: 100%;
+        object-fit: cover;
+        margin-left: 3vw;
+    }
+    .edit_photo>form{
+        margin: 0 3vw;
+        width: 60vw;
+        display: flex;
+        flex-direction: column;
+    }
+    form>button{
+        width: 70%;
+        height: auto;
+        font: normal normal normal 2em/3em Segoe UI;
+    }
+
+    .edit_data_form{
+        margin: 5%;
+        width: 90%;
+    }
+
 }

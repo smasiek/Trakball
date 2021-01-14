@@ -77,5 +77,20 @@ class NewSquadController extends AppController
 
     }
 
+    public function cities(){
+        $contentType= isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]): '';
+        $placeRepository=new PlaceRepository();
+
+        if($contentType==="application/json"){
+            $content=trim(file_get_contents("php://input"));
+            $decoded=json_decode($content,true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+
+            echo json_encode($placeRepository->getCitiesFromInput($decoded['city']));
+        }
+    }
+
 
 }
