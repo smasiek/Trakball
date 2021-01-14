@@ -26,12 +26,18 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5745737-4c3f-4299-8fdc-ed9040571d63" name="Default Changelist" comment="Responsive layouts implemented">
+    <list default="true" id="f5745737-4c3f-4299-8fdc-ed9040571d63" name="Default Changelist" comment="Search implementation backup">
+      <change afterPath="$PROJECT_DIR$/public/js/logoClickHandling.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/navigation_bar.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/navigation_bar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/views/squads.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/squads.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SecurityController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/SquadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SquadsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repository/SquadRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/SquadRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/UserRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +162,7 @@
       <workItem from="1610450627554" duration="6839000" />
       <workItem from="1610477238847" duration="9470000" />
       <workItem from="1610529399416" duration="20097000" />
-      <workItem from="1610621070905" duration="19665000" />
+      <workItem from="1610621070905" duration="32532000" />
     </task>
     <task id="LOCAL-00001" summary="Backup before implementing slider">
       <created>1605312339423</created>
@@ -214,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610627471036</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Search implementation backup">
+      <created>1610643185223</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1610643185223</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +265,8 @@
     <MESSAGE value="Join and leave squad button handling. When user leaves squad he created, squad is deleted. JavaScript search approach" />
     <MESSAGE value="Redundant HTML replaced by template" />
     <MESSAGE value="Responsive layouts implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Responsive layouts implemented" />
+    <MESSAGE value="Search implementation backup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Search implementation backup" />
   </component>
   <component name="WindowStateProjectService">
     <state x="426" y="182" key="#Docker" timestamp="1602753325939">
@@ -287,25 +301,25 @@
     </state>
     <state x="981" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1608221255753" />
     <state x="458" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609957191084" />
-    <state width="1124" height="242" key="GridCell.Tab.0.bottom" timestamp="1610640204986">
+    <state width="1124" height="242" key="GridCell.Tab.0.bottom" timestamp="1610662241300">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1124" height="242" key="GridCell.Tab.0.bottom/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610640204986" />
+    <state width="1124" height="242" key="GridCell.Tab.0.bottom/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610662241300" />
     <state width="1292" height="195" key="GridCell.Tab.0.bottom/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616040722" />
-    <state width="1124" height="242" key="GridCell.Tab.0.center" timestamp="1610640204985">
+    <state width="1124" height="242" key="GridCell.Tab.0.center" timestamp="1610662241299">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1124" height="242" key="GridCell.Tab.0.center/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610640204985" />
+    <state width="1124" height="242" key="GridCell.Tab.0.center/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610662241299" />
     <state width="1292" height="195" key="GridCell.Tab.0.center/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616040722" />
-    <state width="1124" height="242" key="GridCell.Tab.0.left" timestamp="1610640204985">
+    <state width="1124" height="242" key="GridCell.Tab.0.left" timestamp="1610662241299">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1124" height="242" key="GridCell.Tab.0.left/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610640204985" />
+    <state width="1124" height="242" key="GridCell.Tab.0.left/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610662241299" />
     <state width="1292" height="195" key="GridCell.Tab.0.left/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616040722" />
-    <state width="1124" height="242" key="GridCell.Tab.0.right" timestamp="1610640204985">
+    <state width="1124" height="242" key="GridCell.Tab.0.right" timestamp="1610662241299">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1124" height="242" key="GridCell.Tab.0.right/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610640204985" />
+    <state width="1124" height="242" key="GridCell.Tab.0.right/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610662241299" />
     <state width="1292" height="195" key="GridCell.Tab.0.right/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616040722" />
     <state x="1186" y="266" key="NewPhpClassDialog" timestamp="1608223893537">
       <screen x="0" y="0" width="1920" height="1080" />

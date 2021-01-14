@@ -287,11 +287,9 @@ class SquadRepository extends Repository
         $stmt->bindParam(':search', $searchString);
         $stmt->execute();
 
-        $info = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $basicSquadInfo=['basic'=>$info];
-
-
-        foreach ($basicSquadInfo['basic'] as $infos) {
+        $basicSquadInfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $export=[];
+        foreach ($basicSquadInfo as $infos) {
 
             $stmt = $this->database->connect()->prepare('
         SELECT * FROM users_squads
@@ -301,20 +299,21 @@ class SquadRepository extends Repository
             $stmt->execute();
 
             $members = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $basicSquadInfo["squad_count"] = sizeof($members);
-
+           // $export[]=array_merge($infos,$tempArray);
+            $memberPhotos=[];
             $i = 0;
             foreach($members as $member){
                 if ($i < 5 and $member['id_user']!=null) {
-                    $basicSquadInfo['basic'][]=["member_" . $i . "_photo" => $userRepository->getUserUsingID($member['id_user'])->getPhoto()];
+                    $memberPhotos=array_merge($memberPhotos,["member_" . $i . "_photo" => $userRepository->getUserUsingID($member['id_user'])->getPhoto()]);
                 } else {
                     break;
                 }
                 $i++;
             }
+            $export[]=array_merge($infos,["squad_count" => sizeof($members)],$memberPhotos);
         }
 
-        return $basicSquadInfo;
+        return $export;
     }
 
     public function join_squad($userID, $squadID): bool

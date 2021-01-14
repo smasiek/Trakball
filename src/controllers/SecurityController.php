@@ -30,17 +30,15 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['User with this email does not exist!']]);
         }
 
-        if ($user->getPassword() != $password) {
-            return $this->render('login', ['messages' => ['Wrong password!']]);
+        if(password_verify($password, $user->getPassword())) {
+            setcookie("user_id", $user->getId(), time() + 3600, '/'); // expires after 1 hour)
+
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/squads");
+
         }
+        return $this->render('login', ['messages' => ['Wrong password!']]);
 
-        //return $this->render('squads');
-
-        //  setcookie("user_email", $user->getEmail(), time() + 3600, '/'); // expires after 1 hour)
-        setcookie("user_id", $user->getId(), time() + 3600, '/'); // expires after 1 hour)
-
-        $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/squads");
     }
 
     public function sign_up()
@@ -79,9 +77,9 @@ class SecurityController extends AppController
             return $this->render('register', ['messages' => ['You have to enter date_of_birth!']]);
         }
 
+        $hashedPassword=password_hash($password,PASSWORD_DEFAULT);
 
-
-        if ($userRepository->newUser($email, $password, $name, $surname, $phone, $date_of_birth)) {
+        if ($userRepository->newUser($email, $hashedPassword, $name, $surname, $phone, $date_of_birth)) {
             return $this->render('login', ['messages' => ['You can Sign in!']]);
         } else {
             return $this->render('register', ['messages' => ['Something went wrong!']]);

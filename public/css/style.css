@@ -92,17 +92,16 @@ li:last-child {
     border: 1px solid #e57160;
 }
 
-li:nth-last-child(2) {
+li[name="settings"] {
     position: absolute;
     bottom: 3.5em;
     width: 100%;
 }
 
-li:nth-last-child(3) {
+li[name="log-out"], li[name="sign-in"] {
     position: absolute;
     bottom: 0;
     width: 100%;
-    display: none;
 }
 
 main {

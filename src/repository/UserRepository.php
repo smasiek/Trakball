@@ -164,7 +164,8 @@ class UserRepository extends Repository
         }
 
         if ($_POST['password_1'] != null && $_POST['password_2'] != null && $_POST['password_1'] == $_POST['password_2']) {
-            $this->editPassword($userID, $_POST['password_1']);
+            $hashedPassword=password_hash($_POST['password_1'],PASSWORD_DEFAULT);
+            $this->editPassword($userID, $hashedPassword);
         }
 
         if ($_POST['name'] != null) {
@@ -202,9 +203,6 @@ class UserRepository extends Repository
 
             $this->editDateOfBirth($userDetails['id'], $_POST['date_of_birth']);
         }
-
-
-
     }
 
     public function newUser($email, $password, $name, $surname, $phone, $date_of_birth)
@@ -224,7 +222,7 @@ class UserRepository extends Repository
         ]);
 
         $stmt = $this->database->connect()->prepare('  
-            SELECT MAX(id)
+            SELECT MAX(id_user_details)
             FROM public.user_details
         ');
         $stmt->execute();

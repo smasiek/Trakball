@@ -46,7 +46,6 @@
                             <p name="address"><?= $squad->getAddress(); ?></p>
                             <p name="date"><?= $squad->getDate(); ?></p>
 
-
                             <a href="#" class="squad-hyper">Show on map</a>
                         </div>
                     </div>
@@ -100,11 +99,6 @@
         <div class="footer">
             <h3>Squad</h3>
             <div class="members">
-                <img src="">
-                <img src="">
-                <img src="">
-                <img src="">
-                <img src="">
             </div>
             <div class="decision">
                 <a href="#" class="squad-hyper">Text organizator</a>

@@ -17,10 +17,6 @@ class SquadsController extends AppController
 
     public function squads(){
 
-        if (!isset($_COOKIE['user_id'])) {
-            return $this->render('login');
-        }
-
         $squads=$this->squadRepository->getSquads();
         //TODO ZAMIENIC NA getAvailableSquads() ktore zwroci squady w ktorym są wolne miejsca
         $this->render('squads',['squads'=>$squads]);
