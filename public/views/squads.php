@@ -47,8 +47,7 @@
                             <p name="date"><?= $squad->getDate(); ?></p>
 
 
-
-                        <a href="#" class="squad-hyper">Show on map</a>
+                            <a href="#" class="squad-hyper">Show on map</a>
                         </div>
                     </div>
                     <div class="footer">
@@ -85,15 +84,19 @@
 </html>
 <template id="squad-template">
     <div id="squad1">
-        <img src="" id="creatorPhoto">
-        <h2>creator name</h2>
-        <p name="sport">sport</p>
-        <p name="max-members">members</p>
-        <p name="fee">fee</p>
-        <p name="place">place</p>
-        <p name="address">address</p>
-        <p name="date">date</p>
-        <a href="#" class="squad-hyper">Show on map</a>
+        <div id="squad">
+            <img src="" id="creatorPhoto">
+            <div id="squad_info">
+                <h2>creator name</h2>
+                <p name="sport">sport</p>
+                <p name="max-members">members</p>
+                <p name="fee">fee</p>
+                <p name="place">place</p>
+                <p name="address">address</p>
+                <p name="date">date</p>
+                <a href="#" class="squad-hyper">Show on map</a>
+            </div>
+        </div>
         <div class="footer">
             <h3>Squad</h3>
             <div class="members">

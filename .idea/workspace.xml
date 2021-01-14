@@ -26,30 +26,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5745737-4c3f-4299-8fdc-ed9040571d63" name="Default Changelist" comment="Redundant HTML replaced by template">
-      <change afterPath="$PROJECT_DIR$/public/js/dynamicSuggestion.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/responsiveNaviBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/responsiveSearch.js" afterDir="false" />
+    <list default="true" id="f5745737-4c3f-4299-8fdc-ed9040571d63" name="Default Changelist" comment="Responsive layouts implemented">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/new_squad.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/new_squad.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/security.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/security.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/settings.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/settings.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/squads.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/squads.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/joinSquad.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/joinSquad.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/registerValidationScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/registerValidationScript.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/navigation_bar.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/navigation_bar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/new_squad.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/new_squad.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/settings.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/views/squads.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/squads.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/your_squads.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/your_squads.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/NewSquadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/NewSquadController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/SquadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SquadsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/PlaceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/PlaceRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/SquadRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/SquadRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +156,7 @@
       <workItem from="1610450627554" duration="6839000" />
       <workItem from="1610477238847" duration="9470000" />
       <workItem from="1610529399416" duration="20097000" />
-      <workItem from="1610621070905" duration="5877000" />
+      <workItem from="1610621070905" duration="19665000" />
     </task>
     <task id="LOCAL-00001" summary="Backup before implementing slider">
       <created>1605312339423</created>
@@ -225,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610451588998</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Responsive layouts implemented">
+      <created>1610627471036</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1610627471036</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +251,8 @@
     <MESSAGE value="Dynamically loaded you squads and squads with dynamically loaded creator photo, implemented adding new squad functionality, left menu buttons click handling" />
     <MESSAGE value="Join and leave squad button handling. When user leaves squad he created, squad is deleted. JavaScript search approach" />
     <MESSAGE value="Redundant HTML replaced by template" />
-    <option name="LAST_COMMIT_MESSAGE" value="Redundant HTML replaced by template" />
+    <MESSAGE value="Responsive layouts implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Responsive layouts implemented" />
   </component>
   <component name="WindowStateProjectService">
     <state x="426" y="182" key="#Docker" timestamp="1602753325939">
@@ -297,25 +287,25 @@
     </state>
     <state x="981" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1608221255753" />
     <state x="458" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609957191084" />
-    <state width="1124" height="245" key="GridCell.Tab.0.bottom" timestamp="1610395042080">
+    <state width="1124" height="242" key="GridCell.Tab.0.bottom" timestamp="1610640204986">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1124" height="245" key="GridCell.Tab.0.bottom/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610395042080" />
+    <state width="1124" height="242" key="GridCell.Tab.0.bottom/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610640204986" />
     <state width="1292" height="195" key="GridCell.Tab.0.bottom/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616040722" />
-    <state width="1124" height="245" key="GridCell.Tab.0.center" timestamp="1610395042080">
+    <state width="1124" height="242" key="GridCell.Tab.0.center" timestamp="1610640204985">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1124" height="245" key="GridCell.Tab.0.center/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610395042080" />
+    <state width="1124" height="242" key="GridCell.Tab.0.center/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610640204985" />
     <state width="1292" height="195" key="GridCell.Tab.0.center/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616040722" />
-    <state width="1124" height="245" key="GridCell.Tab.0.left" timestamp="1610395042079">
+    <state width="1124" height="242" key="GridCell.Tab.0.left" timestamp="1610640204985">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1124" height="245" key="GridCell.Tab.0.left/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610395042079" />
+    <state width="1124" height="242" key="GridCell.Tab.0.left/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610640204985" />
     <state width="1292" height="195" key="GridCell.Tab.0.left/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616040722" />
-    <state width="1124" height="245" key="GridCell.Tab.0.right" timestamp="1610395042080">
+    <state width="1124" height="242" key="GridCell.Tab.0.right" timestamp="1610640204985">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1124" height="245" key="GridCell.Tab.0.right/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610395042080" />
+    <state width="1124" height="242" key="GridCell.Tab.0.right/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610640204985" />
     <state width="1292" height="195" key="GridCell.Tab.0.right/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616040722" />
     <state x="1186" y="266" key="NewPhpClassDialog" timestamp="1608223893537">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -346,25 +336,29 @@
     </state>
     <state x="494" y="265" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1608221778485" />
     <state x="432" y="258" key="Vcs.Push.Dialog.v2/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610451597668" />
-    <state x="751" y="389" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1607611974413">
+    <state x="515" y="424" width="608" height="433" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1610636006975">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="751" y="389" key="com.intellij.database.actions.DdlActions$CreateObject$1/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1607611974413" />
+    <state x="515" y="424" width="608" height="433" key="com.intellij.database.actions.DdlActions$CreateObject$1/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610636006975" />
     <state x="2538" y="372" key="com.intellij.database.actions.DdlActions$CreateObject$1/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607000469783" />
     <state x="690" y="345" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1608207530175">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="345" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1608207530175" />
-    <state x="270" y="345" width="1102" height="251" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1610392697607">
+    <state x="270" y="345" width="1102" height="251" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1610629684307">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="270" y="345" width="1102" height="251" key="com.intellij.database.run.ParametersPanel.Standalone/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610392697607" />
+    <state x="270" y="345" width="1102" height="251" key="com.intellij.database.run.ParametersPanel.Standalone/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610629684307" />
     <state x="471" y="364" width="493" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1610285628978">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="531" y="213" width="800" height="519" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1608210121348" />
     <state x="471" y="364" width="493" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610285628978" />
     <state x="2211" y="250" width="664" height="664" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616077308" />
+    <state x="474" y="257" key="com.intellij.database.view.ui.DatabasePreviewDialog" timestamp="1610637040826">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="474" y="257" key="com.intellij.database.view.ui.DatabasePreviewDialog/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610637040826" />
     <state x="657" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609961321449">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

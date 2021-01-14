@@ -22,10 +22,10 @@ class SquadRepository extends Repository
         $placeRepository = new PlaceRepository();
         $userRepository = new UserRepository();
 
-        $user = $userRepository->getUserUsingID($_COOKIE['user_id']);
+
         foreach ($squads as $squad) {
             $place = $placeRepository->getPlaceUsingID($squad['id_place']);
-
+            $user = $userRepository->getUserUsingID($squad['id_squad_creator']);
             // die(var_dump($place->getName()));
 
 
@@ -278,19 +278,43 @@ class SquadRepository extends Repository
     public function getSquadBySearch(string $searchString)
     {
         $searchString = '%' . strtolower($searchString) . '%';
+        $userRepository = new UserRepository();
 
         $stmt = $this->database->connect()->prepare('
-        SELECT * FROM squads
-        INNER JOIN places ON squads.id_place=places.id_place
-        INNER JOIN users ON squads.id_squad_creator=users.id
-        INNER JOIN user_details on users.id_user_details = user_details.id
-        WHERE LOWER(places.name) LIKE :search OR LOWER(user_details.surname) LIKE :search OR date LIKE :search;
+        SELECT * FROM squad_info
+        WHERE LOWER(place) LIKE :search OR LOWER(surname) LIKE :search OR LOWER(name) LIKE :search OR CAST(date AS VARCHAR) = :search;
         ');
-
         $stmt->bindParam(':search', $searchString);
         $stmt->execute();
 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $info = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $basicSquadInfo=['basic'=>$info];
+
+
+        foreach ($basicSquadInfo['basic'] as $infos) {
+
+            $stmt = $this->database->connect()->prepare('
+        SELECT * FROM users_squads
+        WHERE id_squad=:id_squad
+        ');
+            $stmt->bindParam(':id_squad', $infos['id']);
+            $stmt->execute();
+
+            $members = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $basicSquadInfo["squad_count"] = sizeof($members);
+
+            $i = 0;
+            foreach($members as $member){
+                if ($i < 5 and $member['id_user']!=null) {
+                    $basicSquadInfo['basic'][]=["member_" . $i . "_photo" => $userRepository->getUserUsingID($member['id_user'])->getPhoto()];
+                } else {
+                    break;
+                }
+                $i++;
+            }
+        }
+
+        return $basicSquadInfo;
     }
 
     public function join_squad($userID, $squadID): bool
