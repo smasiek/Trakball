@@ -21,6 +21,7 @@ class SettingsController extends AppController
 
     public function edit_photo()
     {
+        $this->cookieCheck();
         if ( $this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
 
             move_uploaded_file(

@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/public/css/squads.css">
     <script type="text/javascript" src="./public/js/search.js" defer></script>
     <script type="text/javascript" src="./public/js/joinSquad.js" defer></script>
+    <script type="text/javascript" src="./public/js/deleteSquad.js" defer></script>
     <script src="https://kit.fontawesome.com/346296466a.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -28,13 +29,21 @@
             $userRepository = new UserRepository();
             $squadRepository = new SquadRepository();
 
-            foreach ($squads as $squad) {
+            if($_COOKIE['user_id']!=null) {
+                $currentUser = $userRepository->getUserUsingID($_COOKIE['user_id']);
+            }
+            foreach ($squads as $squad):
                 $user = $userRepository->getUserUsingID($squad->getCreatorID());
                 //BIORE ARRAY LUDZI ZE SQUADU, JESLI JEST WIEKSZY NIZ 5 TO OSTATNIE ZDJEICE ZAMIENIAM NA Zdjecie z liczbą
                 // reszte zamieniam odpowiednio user[0].getPhoto(), user[1]/getPhoto() itd..
                 $squadMembers = $squadRepository->getSquadMembers($squad->getID());
                 ?>
                 <div id="<?= $squad->getID(); ?>">
+                    <div id="admin_buttons">
+                        <? if ($currentUser!= null and $currentUser->getRole() === "admin"): ?>
+                            <button class="squad-hyper delete_squad" >Delete squad</button>
+                        <? endif; ?>
+                    </div>
                     <div id="squad">
                         <img src="/public/img/uploads/<?= $user->getPhoto(); ?>">
                         <div id="squad_info">
@@ -46,7 +55,7 @@
                             <p name="address"><?= $squad->getAddress(); ?></p>
                             <p name="date"><?= $squad->getDate(); ?></p>
 
-                            <a href="#" class="squad-hyper">Show on map</a>
+                            <button class="squad-hyper show_map">Show on map</button>
                         </div>
                     </div>
                     <div class="footer">
@@ -68,21 +77,23 @@
                         </div>
                         <div class="decision">
                             <a href="#" class="squad-hyper" id="text_organizator">Text organizator</a>
-                            <button class="squad-hyper join-squad" id="<?= $squad->getID() ?>">Join
+                            <button class="squad-hyper join_squad" id="<?= $squad->getID() ?>">Join
                                 squad
                             </button>
                         </div>
                     </div>
                 </div>
 
-            <?php } ?>
+            <?php endforeach; ?>
         </section>
     </main>
 </div>
 </body>
 </html>
 <template id="squad-template">
-    <div id="squad1">
+    <div id="squad_id">
+        <div id="admin_buttons">
+        </div>
         <div id="squad">
             <img src="" id="creatorPhoto">
             <div id="squad_info">
@@ -93,7 +104,7 @@
                 <p name="place">place</p>
                 <p name="address">address</p>
                 <p name="date">date</p>
-                <a href="#" class="squad-hyper">Show on map</a>
+                <button class="squad-hyper show_map">Show on map</button>
             </div>
         </div>
         <div class="footer">
@@ -102,7 +113,7 @@
             </div>
             <div class="decision">
                 <a href="#" class="squad-hyper">Text organizator</a>
-                <a href="" class="squad-hyper">Join squad</a>
+                <button class="squad-hyper join_squad" id="id">Join squad</button>
             </div>
         </div>
     </div>

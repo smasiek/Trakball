@@ -9,50 +9,44 @@ class NewSquadController extends AppController
 {
     public function publish_squad()
     {
-        $newSquadRepository=new SquadRepository();
-        $placeRepository=new PlaceRepository();
+        $newSquadRepository = new SquadRepository();
+        $placeRepository = new PlaceRepository();
         $userRepository = new UserRepository();
 
-        if (!$this->isPost()) {
-            if(isset($_COOKIE['user_id'])){
-                return $this->render('new_squad');
-            }
-            return $this->render('login');
-        }
+        $this->cookieCheck();
 
+        $userId = $_COOKIE["user_id"];
 
-        $userId=$_COOKIE["user_id"];
-
-        $addressCity=$_POST["city"];
-        $addressStreet=$_POST["street"];
-        $place=$_POST["name"];
-        $sport=$_POST["sport"];
-        $noMembers=$_POST["max_players"];
-        $fee=$_POST["fee"];
-        $date=$_POST["date"];
+        $addressCity = $_POST["city"];
+        $addressStreet = $_POST["street"];
+        $place = $_POST["name"];
+        $sport = $_POST["sport"];
+        $noMembers = $_POST["max_players"];
+        $fee = $_POST["fee"];
+        $date = $_POST["date"];
 
         if ($addressCity == null) {
             return $this->render('new_squad', ['messages' => ['Choose city!']]);
         }
-        if(!$newSquadRepository->findCity($addressCity)){
+        if (!$newSquadRepository->findCity($addressCity)) {
             return $this->render('new_squad', ['messages' => ['Choose correct city!']]);
         }
         if ($addressStreet == null) {
             return $this->render('new_squad', ['messages' => ['Choose street!']]);
         }
 
-        if(!$newSquadRepository->findStreet($addressStreet)){
+        if (!$newSquadRepository->findStreet($addressStreet)) {
             return $this->render('new_squad', ['messages' => ['Choose correct street!']]);
         }
 
         if ($place == null) {
             return $this->render('new_squad', ['messages' => ['Choose place!']]);
         }
-        if(!$newSquadRepository->findPlace($place)){
+        if (!$newSquadRepository->findPlace($place)) {
             return $this->render('new_squad', ['messages' => ['Choose correct place!']]);
         }
 
-        $placeId=$placeRepository->getPlaceID($place,$addressCity,$addressStreet);
+        $placeId = $placeRepository->getPlaceID($place, $addressCity, $addressStreet);
 
         if ($sport == null) {
             return $this->render('new_squad', ['messages' => ['Choose sport!']]);
@@ -64,26 +58,26 @@ class NewSquadController extends AppController
             return $this->render('new_squad', ['messages' => ['Choose entrance fee!']]);
         }
 
-         if ($date == null) {
-             return $this->render('new_squad', ['messages' => ['Choose date of event!']]);
-         }
+        if ($date == null) {
+            return $this->render('new_squad', ['messages' => ['Choose date of event!']]);
+        }
 
-        $newSquadRepository->addSquad( $userId,$sport,$noMembers,$fee,$date,$placeId);
-        $publishedSquad=$newSquadRepository->getPublishedSquad($userId,$date,$placeId);
+        $newSquadRepository->addSquad($userId, $sport, $noMembers, $fee, $date, $placeId);
+        $publishedSquad = $newSquadRepository->getPublishedSquad($userId, $date, $placeId);
         $newSquadRepository->addYourSquad($publishedSquad->getID());
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/squads");
-
     }
 
-    public function cities(){
-        $contentType= isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]): '';
-        $placeRepository=new PlaceRepository();
+    public function cities()
+    {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+        $placeRepository = new PlaceRepository();
 
-        if($contentType==="application/json"){
-            $content=trim(file_get_contents("php://input"));
-            $decoded=json_decode($content,true);
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
 
             header('Content-type: application/json');
             http_response_code(200);

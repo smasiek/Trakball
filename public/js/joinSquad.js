@@ -1,8 +1,7 @@
-const joinButtons = document.querySelectorAll('.join-squad')
+const joinButtons = document.querySelectorAll('.join_squad')
 
 joinButtons.forEach(joinButton => joinButton.addEventListener("click", joinSquad));
 
-console.log(joinButtons);
 
 function joinSquad() {
 
@@ -12,15 +11,17 @@ function joinSquad() {
     fetch(`/join_squad/${id}`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'},
-    }).then(function (response){
+    }).then(function (response) {
         switch (response.status) {
             case 406:
                 return response.json();
             case 200:
                 return response.json();
         }
-    }).then(function (message){
-        console.log(message);
+    }).then(function (message) {
         alert(message.message);
+
+            history.pushState({}, 'SQUADS', window.location.pathname);
+            window.location.assign(window.location.href)
     });
 }

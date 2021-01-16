@@ -26,5 +26,7 @@ Routing::post('publish_squad', 'NewSquadController');
 Routing::post('search', 'SquadsController');
 Routing::post('login', 'SecurityController');
 Routing::post('cities', 'NewSquadController');
+Routing::get('delete_squad', 'SquadsController');
+
 
 Routing::run($path);

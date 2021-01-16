@@ -11,9 +11,10 @@ class User
     private $phone;
     private $dateOfBirth;
     private $photo;
+    private $role;
 
 
-    public function __construct(string $id,string $email, string $password, string $name, string $surname, string $phone, $dateOfBirth, string $photo)
+    public function __construct(string $id,string $email, string $password, string $name, string $surname, string $phone, $dateOfBirth, string $photo,string $role)
     {
         $this->id = $id;
         $this->email = $email;
@@ -23,6 +24,7 @@ class User
         $this->phone = $phone;
         $this->dateOfBirth = $dateOfBirth;
         $this->photo = $photo;
+        $this->role = $role;
     }
 
 
@@ -79,6 +81,10 @@ class User
 
     public function getId(){
         return $this->id;
+    }
+
+    public function getRole(){
+        return $this->role;
     }
 
 }

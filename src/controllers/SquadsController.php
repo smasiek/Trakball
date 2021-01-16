@@ -112,7 +112,7 @@ class SquadsController extends AppController
         echo json_encode([
             "user_id"=>$_COOKIE["user_id"],
             "squad_id" => $squadID,
-            "message"=>"U;ve joined squad"
+            "message"=>"You have joined squad"
         ]);
 
     }
@@ -140,7 +140,7 @@ class SquadsController extends AppController
     public function search(){
         //TODO
 
-
+        $this->cookieCheck();
         $contentType= isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]): '';
 
         if($contentType==='application/json'){
@@ -152,7 +152,7 @@ class SquadsController extends AppController
 
           // die(var_dump( $this->squadRepository->getSquadBySearch($decoded['search'])));
 
-            echo json_encode($this->squadRepository->getSquadBySearch($decoded['search']));
+            echo json_encode($this->squadRepository->getSquadBySearch($decoded['search'],$_COOKIE['user_id']));
         }
     }
 
@@ -167,6 +167,32 @@ class SquadsController extends AppController
             return false;
         }
         return true;
+    }
+
+    public function delete_squad($id){
+        $this->cookieCheck();
+
+        $userRepository=new UserRepository();
+        if($userRepository->getUserUsingID($_COOKIE['user_id'])->getRole()==="admin") {
+            if (!$this->squadRepository->delete_squad($id)) {
+                echo $this->sendResponse([
+                    "message" => "U can't delete this squad"
+                ], 406);
+                return;
+            }
+            header("Content-type: application/json");
+            http_response_code(200);
+            echo json_encode([
+                "message" => "You have deleted this squad"
+            ]);
+        } else {
+            header("Content-type: application/json");
+            http_response_code(403);
+            echo json_encode([
+                "message" => "U are not admin, how did u get to this action? I'm calling the Police"
+            ]);
+        }
+
     }
 }
 

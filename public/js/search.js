@@ -22,7 +22,14 @@ search.addEventListener("keyup", function (event) {
             return response.json();
         }).then(function (squads) {
             squadContainer.innerHTML = "";
-            loadSquads(squads)
+            loadSquads(squads);
+
+            const joinButtons = document.querySelectorAll('.join_squad')
+            joinButtons.forEach(joinButton => joinButton.addEventListener("click", joinSquad));
+
+            const deleteButtons = document.querySelectorAll('.delete_squad')
+            deleteButtons.forEach(joinButton => joinButton.addEventListener("click", deleteSquad));
+
         });
     }
 });
@@ -38,9 +45,18 @@ function loadSquads(squads) {
 function createSquad(squad) {
     const template = document.getElementById('squad-template');
 
+    //TODO dodac poprawne dodanie buttonnu do usuwania
+
     const clone = template.content.cloneNode(true);
 
-    //TODO querySelectorem powybierac wszystkie elementy kafelka i podstawić odpowiednio
+    const div=clone.getElementById('admin_buttons');
+
+    console.log(squad.id + " "+ div);
+    if(squad.role==="admin"){
+        let html = "<button class=\"squad-hyper delete_squad\" >Delete squad</button>";
+        div.innerHTML = html;
+    }
+
     const image = clone.getElementById('creatorPhoto');
     image.src = `/public/img/uploads/${squad.photo}`;
 
@@ -49,7 +65,7 @@ function createSquad(squad) {
 
     const sport = clone.querySelector('p[name="sport"]');
     sport.innerHTML = "Sport: " + squad.sport;
-//TODO moze byc konieczne dodanie user_details.name/surname
+
     const max_members = clone.querySelector('p[name="max-members"]');
     max_members.innerHTML = "Zawodników: " + squad.max_members;
 
@@ -84,7 +100,12 @@ function createSquad(squad) {
         }
         html += tempHtml;
     }
-    members.innerHTML = html;
-    squadContainer.appendChild(clone);
+    //TODO dodac text organizator i join squad
 
+    members.innerHTML = html;
+
+    const joinButton=clone.getElementById("id");
+    joinButton.setAttribute("id",squad.id);
+
+    squadContainer.appendChild(clone);
 }

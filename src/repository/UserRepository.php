@@ -23,7 +23,8 @@ class UserRepository extends Repository
             $user['surname'],
             $user['phone'],
             $user['age'],
-            $user['photo']
+            $user['photo'],
+            $user['role']
         );
     }
 
@@ -64,7 +65,7 @@ class UserRepository extends Repository
          */
 
         $stmt = $this->database->connect()->prepare('
-            SELECT id_user_details FROM user_details LEFT JOIN users ON user_details.id=users.id_user_details WHERE users.id=:id
+            SELECT user_details.id_user_details FROM user_details LEFT JOIN users ON user_details.id_user_details=users.id_user_details WHERE users.id=:id
         ');
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
@@ -74,9 +75,9 @@ class UserRepository extends Repository
 
         $stmt = $this->database->connect()->prepare('
 
-            UPDATE public.user_details 
+            UPDATE user_details 
             SET photo=:photo
-            WHERE id=:id
+            WHERE id_user_details=:id
             
         ');
 
@@ -212,13 +213,14 @@ class UserRepository extends Repository
 
         $stmt = $this->database->connect()->prepare('
             INSERT INTO public.user_details (name,surname,phone,date_of_birth)
-            VALUES(?,?,?,?)
+            VALUES(?,?,?,?,?)
         ');
         $stmt->execute([
             $name,
             $surname,
             $phone,
-            $date_of_birth
+            $date_of_birth,
+            "user"
         ]);
 
         $stmt = $this->database->connect()->prepare('  

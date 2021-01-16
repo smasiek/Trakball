@@ -275,10 +275,12 @@ class SquadRepository extends Repository
         return $result;
     }
 
-    public function getSquadBySearch(string $searchString)
+    public function getSquadBySearch(string $searchString,  $currentUserID)
     {
         $searchString = '%' . strtolower($searchString) . '%';
         $userRepository = new UserRepository();
+
+        $currentUser=$userRepository->getUserUsingID($currentUserID);
 
         $stmt = $this->database->connect()->prepare('
         SELECT * FROM squad_info
@@ -310,7 +312,7 @@ class SquadRepository extends Repository
                 }
                 $i++;
             }
-            $export[]=array_merge($infos,["squad_count" => sizeof($members)],$memberPhotos);
+            $export[]=array_merge($infos,["squad_count" => sizeof($members)],$memberPhotos,["role"=>$currentUser->getRole()]);
         }
 
         return $export;
@@ -353,12 +355,7 @@ class SquadRepository extends Repository
         $stmt->execute();
         $possibleSquad = $stmt->fetch(PDO::FETCH_ASSOC);
         if ($possibleSquad['id_squad_creator'] == $userID) {
-            $stmt = $this->database->connect()->prepare('
-                DELETE FROM squads
-                WHERE id=:squadID
-             ');
-            $stmt->bindParam(':squadID', $squadID, PDO::PARAM_INT);
-            return $stmt->execute();
+            $this->delete_squad($squadID);
         }
 
         $stmt = $this->database->connect()->prepare('
@@ -369,6 +366,15 @@ class SquadRepository extends Repository
         $stmt->bindParam(':squadID', $squadID, PDO::PARAM_INT);
         $stmt->bindParam(':userID', $userID, PDO::PARAM_INT);
         $stmt->execute();
+    }
+
+    public function delete_squad($squadID){
+        $stmt = $this->database->connect()->prepare('
+                DELETE FROM squads
+                WHERE id=:squadID
+             ');
+        $stmt->bindParam(':squadID', $squadID, PDO::PARAM_INT);
+        return $stmt->execute();
     }
 
 
