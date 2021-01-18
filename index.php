@@ -15,10 +15,9 @@ Routing::get('settings', 'SettingsController');
 Routing::get('register', 'DefaultController');
 Routing::get('log_out', 'SecurityController');
 
-//TODO routing z squads do dodania uzytkownika do squadu
-
 Routing::post('join_squad', 'SquadsController');
 Routing::post('leave_squad', 'SquadsController');
+Routing::get('text_organizer', 'SquadsController');
 Routing::post('sign_up', 'SecurityController');
 Routing::post('edit_photo', 'SettingsController');
 Routing::post('edit_data', 'SettingsController');
@@ -26,6 +25,8 @@ Routing::post('publish_squad', 'NewSquadController');
 Routing::post('search', 'SquadsController');
 Routing::post('login', 'SecurityController');
 Routing::post('cities', 'NewSquadController');
+Routing::post('streets', 'NewSquadController');
+Routing::post('places', 'NewSquadController');
 Routing::get('delete_squad', 'SquadsController');
 
 

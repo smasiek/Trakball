@@ -26,17 +26,23 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5745737-4c3f-4299-8fdc-ed9040571d63" name="Default Changelist" comment="Hashed password, logo click handling, authorisation only when necessary, sign-in button when not logged">
-      <change afterPath="$PROJECT_DIR$/public/js/deleteSquad.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/views/squads_grid.php" afterDir="false" />
+    <list default="true" id="f5745737-4c3f-4299-8fdc-ed9040571d63" name="Default Changelist" comment="Admin only features">
+      <change afterPath="$PROJECT_DIR$/public/js/textOrganizer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/squads.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/squads.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/dynamicSuggestion.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/dynamicSuggestion.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/joinSquad.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/joinSquad.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/textOrganizator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/navigation_bar.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/navigation_bar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/new_squad.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/new_squad.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/views/squads.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/squads.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/views/your_squads.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/your_squads.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/AppController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/DefaultController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/NewSquadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/NewSquadController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SecurityController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SettingsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/SquadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SquadsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/User.php" afterDir="false" />
@@ -170,7 +176,9 @@
       <workItem from="1610621070905" duration="33245000" />
       <workItem from="1610701083325" duration="1092000" />
       <workItem from="1610709887678" duration="12227000" />
-      <workItem from="1610792351181" duration="1569000" />
+      <workItem from="1610792351181" duration="2015000" />
+      <workItem from="1610916529088" duration="12467000" />
+      <workItem from="1610966029888" duration="19222000" />
     </task>
     <task id="LOCAL-00001" summary="Backup before implementing slider">
       <created>1605312339423</created>
@@ -242,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610666145604</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Admin only features">
+      <created>1610794016122</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1610794016122</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +297,8 @@
     <MESSAGE value="Responsive layouts implemented" />
     <MESSAGE value="Search implementation backup" />
     <MESSAGE value="Hashed password, logo click handling, authorisation only when necessary, sign-in button when not logged" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hashed password, logo click handling, authorisation only when necessary, sign-in button when not logged" />
+    <MESSAGE value="Admin only features" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin only features" />
   </component>
   <component name="WindowStateProjectService">
     <state x="426" y="182" key="#Docker" timestamp="1602753325939">
@@ -306,36 +322,36 @@
     </state>
     <state x="588" y="196" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1602753334218" />
     <state x="2284" y="149" key="#com.intellij.execution.impl.EditConfigurationsDialog/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607000645791" />
-    <state x="1089" y="252" key="#com.intellij.ide.util.MemberChooser" timestamp="1609967027135">
+    <state x="1089" y="252" key="#com.intellij.ide.util.MemberChooser" timestamp="1610986220548">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="1245" y="259" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1608224129467" />
-    <state x="1089" y="252" key="#com.intellij.ide.util.MemberChooser/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609967027135" />
+    <state x="1089" y="252" key="#com.intellij.ide.util.MemberChooser/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610986220548" />
     <state x="2925" y="231" key="#com.intellij.ide.util.MemberChooser/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607001014493" />
     <state x="458" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1609957191084">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="981" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1608221255753" />
     <state x="458" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1609957191084" />
-    <state width="1124" height="242" key="GridCell.Tab.0.bottom" timestamp="1610662241300">
+    <state width="1124" height="242" key="GridCell.Tab.0.bottom" timestamp="1610987149100">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1124" height="242" key="GridCell.Tab.0.bottom/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610662241300" />
+    <state width="1124" height="242" key="GridCell.Tab.0.bottom/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610987149100" />
     <state width="1292" height="195" key="GridCell.Tab.0.bottom/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616040722" />
-    <state width="1124" height="242" key="GridCell.Tab.0.center" timestamp="1610662241299">
+    <state width="1124" height="242" key="GridCell.Tab.0.center" timestamp="1610987149100">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1124" height="242" key="GridCell.Tab.0.center/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610662241299" />
+    <state width="1124" height="242" key="GridCell.Tab.0.center/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610987149100" />
     <state width="1292" height="195" key="GridCell.Tab.0.center/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616040722" />
-    <state width="1124" height="242" key="GridCell.Tab.0.left" timestamp="1610662241299">
+    <state width="1124" height="242" key="GridCell.Tab.0.left" timestamp="1610987149099">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1124" height="242" key="GridCell.Tab.0.left/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610662241299" />
+    <state width="1124" height="242" key="GridCell.Tab.0.left/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610987149099" />
     <state width="1292" height="195" key="GridCell.Tab.0.left/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616040722" />
-    <state width="1124" height="242" key="GridCell.Tab.0.right" timestamp="1610662241299">
+    <state width="1124" height="242" key="GridCell.Tab.0.right" timestamp="1610987149100">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1124" height="242" key="GridCell.Tab.0.right/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610662241299" />
+    <state width="1124" height="242" key="GridCell.Tab.0.right/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610987149100" />
     <state width="1292" height="195" key="GridCell.Tab.0.right/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616040722" />
     <state x="1186" y="266" key="NewPhpClassDialog" timestamp="1608223893537">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -361,10 +377,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="92" y="92" width="1496" height="866" key="ShowDiffWithBranchDialog/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1606326044009" />
-    <state x="432" y="258" key="Vcs.Push.Dialog.v2" timestamp="1610666148995">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="494" y="265" key="Vcs.Push.Dialog.v2" timestamp="1610794018636">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="494" y="265" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1608221778485" />
+    <state x="494" y="265" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1610794018636" />
     <state x="432" y="258" key="Vcs.Push.Dialog.v2/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610666148995" />
     <state x="515" y="424" width="608" height="433" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1610636006975">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -375,15 +391,15 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="345" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1608207530175" />
-    <state x="270" y="345" width="1102" height="251" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1610629684307">
+    <state x="270" y="345" width="1102" height="251" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1610972984491">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="270" y="345" width="1102" height="251" key="com.intellij.database.run.ParametersPanel.Standalone/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610629684307" />
-    <state x="565" y="252" width="493" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1610793820734">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="270" y="345" width="1102" height="251" key="com.intellij.database.run.ParametersPanel.Standalone/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610972984491" />
+    <state x="471" y="364" width="493" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1610982433369">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="565" y="252" width="800" height="519" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1610793820734" />
-    <state x="471" y="364" width="493" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610710021603" />
+    <state x="471" y="364" width="493" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610982433369" />
     <state x="2211" y="250" width="664" height="664" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616077308" />
     <state x="474" y="257" key="com.intellij.database.view.ui.DatabasePreviewDialog" timestamp="1610637040826">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -408,7 +424,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/js/search.js</url>
-          <line>83</line>
+          <line>89</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

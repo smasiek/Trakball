@@ -8,6 +8,7 @@
     <script type="text/javascript" src="./public/js/search.js" defer></script>
     <script type="text/javascript" src="./public/js/joinSquad.js" defer></script>
     <script type="text/javascript" src="./public/js/deleteSquad.js" defer></script>
+    <script type="text/javascript" src="./public/js/textOrganizer.js" defer></script>
     <script src="https://kit.fontawesome.com/346296466a.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -29,8 +30,10 @@
             $userRepository = new UserRepository();
             $squadRepository = new SquadRepository();
 
-            if($_COOKIE['user_id']!=null) {
-                $currentUser = $userRepository->getUserUsingID($_COOKIE['user_id']);
+
+            if($_COOKIE['user_token']!=null) {
+                $currentUserID=$userRepository->cookieCheck($_COOKIE['user_token']);
+                $currentUser = $userRepository->getUserUsingID($currentUserID);
             }
             foreach ($squads as $squad):
                 $user = $userRepository->getUserUsingID($squad->getCreatorID());
@@ -76,7 +79,7 @@
                             <?php endif; ?>
                         </div>
                         <div class="decision">
-                            <a href="#" class="squad-hyper" id="text_organizator">Text organizator</a>
+                            <button class="squad-hyper text_organizer">Text organizer</button>
                             <button class="squad-hyper join_squad" id="<?= $squad->getID() ?>">Join
                                 squad
                             </button>
@@ -112,7 +115,7 @@
             <div class="members">
             </div>
             <div class="decision">
-                <a href="#" class="squad-hyper">Text organizator</a>
+                <button class="squad-hyper text_organizer">Text organizer</button>
                 <button class="squad-hyper join_squad" id="id">Join squad</button>
             </div>
         </div>

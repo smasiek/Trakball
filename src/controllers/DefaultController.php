@@ -7,67 +7,61 @@ class DefaultController extends AppController
 
     public function login()
     {
-        //TODO display login.php
-        if (isset($_COOKIE['user_id'])) {
+        if ($this->cookieCheck() != 0) {
             return $this->render('squads');
         }
-        $this->render('login');
+        return 0;
     }
 
     public function register()
     {
-        //TODO display login.php
-        $this->render('register');
+        if ($this->getCurrentUserID() == 0) {
+            return $this->render('register');
+        }else{
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/squads");
+            return 0;
+        }
     }
 
     public function squads()
     {
-        //TODO display squads.php
-        if (isset($_COOKIE['user_id'])) {
+        if ($this->cookieCheck() != 0) {
             return $this->render('squads');
         }
-
-        $this->render('login');
+        return 0;
     }
 
     public function new_squad()
     {
-        //TODO display squads.php
-        if (isset($_COOKIE['user_id'])) {
+        if ($this->cookieCheck() != 0) {
             return $this->render('new_squad');
         }
-
-        $this->render('login');
+        return 0;
     }
 
     public function your_places()
     {
-        //TODO display squads.php
-        if (isset($_COOKIE['user_id'])) {
+        if ($this->cookieCheck() != 0) {
             return $this->render('your_places');
         }
-
-        $this->render('login');
+        return 0;
     }
 
     public function your_squads()
     {
-        //TODO display squads.php
-        if (isset($_COOKIE['user_id'])) {
+        if ($this->cookieCheck() != 0) {
             return $this->render('your_squads');
         }
-
-        $this->render('login');
+        return 0;
     }
 
     public function settings()
     {
-        //TODO display squads.php
-        if (isset($_COOKIE['user_id'])) {
+        if ($this->cookieCheck() != 0) {
             return $this->render('settings');
         }
-
-        $this->render('login');
+        return 0;
     }
 
 

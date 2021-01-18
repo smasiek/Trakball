@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/squads.css">
     <script type="text/javascript" src="./public/js/deleteSquad.js" defer></script>
+    <script type="text/javascript" src="./public/js/textOrganizer.js" defer></script>
     <script src="https://kit.fontawesome.com/346296466a.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -74,7 +75,7 @@
                         <?php endif; ?>
                     </div>
                     <div class="decision">
-                            <a href="#" class="squad-hyper" id="text_organizator">Text organizator</a>
+                            <button class="squad-hyper text_organizer" >Text organizer</button>
                             <a href="leave_squad/<?= $squad->getID() ?>" class="squad-hyper">Leave squad</a>
                         </div>
                     </div>

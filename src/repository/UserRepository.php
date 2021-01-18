@@ -6,7 +6,8 @@ require_once __DIR__ . '/../models/User.php';
 class UserRepository extends Repository
 {
 
-    public function executeGetUserStmt(PDOStatement $stmt): ?User{
+    public function executeGetUserStmt(PDOStatement $stmt): ?User
+    {
         $stmt->execute();
 
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -86,7 +87,7 @@ class UserRepository extends Repository
         $stmt->execute();
     }
 
-    public function editEmail(int $userID,string $data)
+    public function editEmail(int $userID, string $data)
     {
         $stmt = $this->database->connect()->prepare('
             UPDATE public.users
@@ -100,7 +101,7 @@ class UserRepository extends Repository
 
     }
 
-    public function editPassword(int $userID,string $data)
+    public function editPassword(int $userID, string $data)
     {
         $stmt = $this->database->connect()->prepare('
             UPDATE public.users
@@ -113,7 +114,7 @@ class UserRepository extends Repository
         $stmt->execute();
     }
 
-    public function editName(int $userID,string $data)
+    public function editName(int $userID, string $data)
     {
         $stmt = $this->database->connect()->prepare('
             UPDATE public.user_details
@@ -126,7 +127,7 @@ class UserRepository extends Repository
         $stmt->execute();
     }
 
-    public function editSurname(int $userID,string $data)
+    public function editSurname(int $userID, string $data)
     {
         $stmt = $this->database->connect()->prepare('
             UPDATE public.user_details
@@ -139,7 +140,7 @@ class UserRepository extends Repository
         $stmt->execute();
     }
 
-    public function editDateOfBirth(int $userID,string $data)
+    public function editDateOfBirth(int $userID, string $data)
     {
         $stmt = $this->database->connect()->prepare('
             UPDATE public.user_details
@@ -165,7 +166,7 @@ class UserRepository extends Repository
         }
 
         if ($_POST['password_1'] != null && $_POST['password_2'] != null && $_POST['password_1'] == $_POST['password_2']) {
-            $hashedPassword=password_hash($_POST['password_1'],PASSWORD_DEFAULT);
+            $hashedPassword = password_hash($_POST['password_1'], PASSWORD_DEFAULT);
             $this->editPassword($userID, $hashedPassword);
         }
 
@@ -173,12 +174,12 @@ class UserRepository extends Repository
             $stmt = $this->database->connect()->prepare('
             SELECT * FROM user_details LEFT JOIN users ON user_details.id=users.id_user_details WHERE users.id=:id
         ');
-            $stmt->bindParam('id',$userID, PDO::PARAM_INT);
+            $stmt->bindParam('id', $userID, PDO::PARAM_INT);
             $stmt->execute();
 
-            $userDetails=$stmt->fetch(PDO::FETCH_ASSOC);
+            $userDetails = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            $this->editName($userDetails['id'],  $_POST['name']);
+            $this->editName($userDetails['id'], $_POST['name']);
         }
 
         if ($_POST['surname'] != null) {
@@ -197,10 +198,10 @@ class UserRepository extends Repository
             $stmt = $this->database->connect()->prepare('
             SELECT * FROM user_details LEFT JOIN users ON user_details.id=users.id_user_details WHERE users.id=:id
         ');
-            $stmt->bindParam('id',$userID, PDO::PARAM_INT);
+            $stmt->bindParam('id', $userID, PDO::PARAM_INT);
             $stmt->execute();
 
-            $userDetails=$stmt->fetch(PDO::FETCH_ASSOC);
+            $userDetails = $stmt->fetch(PDO::FETCH_ASSOC);
 
             $this->editDateOfBirth($userDetails['id'], $_POST['date_of_birth']);
         }
@@ -228,8 +229,8 @@ class UserRepository extends Repository
             FROM public.user_details
         ');
         $stmt->execute();
-        $userDetails=$stmt->fetch(PDO::FETCH_ASSOC);
-        $newUserDetailID=$userDetails['max'];
+        $userDetails = $stmt->fetch(PDO::FETCH_ASSOC);
+        $newUserDetailID = $userDetails['max'];
 
         $stmt = $this->database->connect()->prepare('
             INSERT INTO public.users (email,password,id_user_details)
@@ -240,6 +241,100 @@ class UserRepository extends Repository
             $password,
             $newUserDetailID
         ]);
+    }
+
+    public function cookieCheck($user_token): int
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM cookie_session WHERE token=:token
+        ');
+        $stmt->bindParam(':token', $user_token, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $cookieInfo = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+        if ($cookieInfo == null) {
+            return 0;
+        }
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM cookie_session WHERE token=:token AND expiration>:currentDate
+        ');
+        $currentDate=date("Y-m-d H:i:s");
+       // die(var_dump($currentDate));
+        $stmt->bindParam(':token', $user_token, PDO::PARAM_STR);
+        $stmt->bindParam(':currentDate', $currentDate, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $cookieInfo = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($cookieInfo == null) {
+            return 0;
+        }
+        //TODO pomyslec jak pozbyc sie redundancji
+
+        return $cookieInfo['id_user'];
+    }
+
+    public function setCookie($id, $token)
+    {
+        $stmt=$this->database->connect()->prepare('
+        DELETE FROM cookie_session
+        WHERE id_user=:id
+        ');
+        $stmt->bindParam(':id',$id,PDO::PARAM_INT);
+        $stmt->execute();
+
+        $stmt = $this->database->connect()->prepare('
+            INSERT INTO cookie_session (id_user,token,expiration)
+            VALUES(?,?,?)
+        ');
+
+        $time = date("Y-m-d H:i:s", time() + 3600);
+        try {
+            $stmt->execute([
+                $id,
+                $token,
+                $time
+            ]);
+        } catch (PDOException $e) {
+            //TODO mozna zrobic aktualizacje expiration w przypadku resetu cookie'sa
+            die("Exception happened while setting cookie. Message: " . $e->getMessage());
+        }
+
+
+    }
+
+  /*  public function getCurrentUserID($token): int
+    {
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM cookie_session WHERE token=:token
+        ');
+        $stmt->bindParam(':token', $token, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $cookieInfo = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($cookieInfo != null) {
+            return $cookieInfo['id_user'];
+        }
+        return 0;
+    }*/
+
+    public function unsetCookie($token) :string
+    {
+        try {
+            $stmt = $this->database->connect()->prepare('
+            DELETE FROM cookie_session 
+            WHERE token=:token
+        ');
+            $stmt->bindParam(':token', $token, PDO::PARAM_STR);
+            $stmt->execute();
+            return ("You have logged out");
+        } catch (PDOException $e) {
+            return ("Exception happened while unsetting cookie. Message: " . $e->getMessage());
+        }
+
     }
 
 }

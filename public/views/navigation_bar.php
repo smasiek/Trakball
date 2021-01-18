@@ -27,7 +27,16 @@
         </li>
 
         <?
-        if ($_COOKIE['user_id'] == null):
+        require_once __DIR__ . '/../../src/repository/UserRepository.php';
+
+        $userRepository = new UserRepository();
+
+        $currentUserID =0;
+        if($_COOKIE['user_token']!=null) {
+            $currentUserID=$userRepository->cookieCheck($_COOKIE['user_token']);
+           // die(var_dump($currentUserID));
+        }
+        if ($currentUserID == 0):
             ?>
         <li name="sign-in">
             <i class="fas fa-user-alt"></i>

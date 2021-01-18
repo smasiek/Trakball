@@ -30,6 +30,9 @@ search.addEventListener("keyup", function (event) {
             const deleteButtons = document.querySelectorAll('.delete_squad')
             deleteButtons.forEach(joinButton => joinButton.addEventListener("click", deleteSquad));
 
+            const textButtons = document.querySelectorAll('.text_organizer')
+            textButtons.forEach(textButton => textButton.addEventListener("click", textOrganizer));
+
         });
     }
 });
@@ -48,6 +51,9 @@ function createSquad(squad) {
     //TODO dodac poprawne dodanie buttonnu do usuwania
 
     const clone = template.content.cloneNode(true);
+
+    const squad_div=clone.getElementById('squad_id');
+    squad_div.setAttribute('id',squad.id);
 
     const div=clone.getElementById('admin_buttons');
 

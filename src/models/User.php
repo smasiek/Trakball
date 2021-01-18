@@ -87,4 +87,10 @@ class User
         return $this->role;
     }
 
+    public function getPhone(): string
+    {
+        return $this->phone;
+    }
+
+
 }

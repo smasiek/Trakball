@@ -49,14 +49,6 @@ p {
     background: #F4AC66 0% 0% no-repeat padding-box;
 }
 
-.footer > div > img {
-    height: 5vh;
-    width: 5vh;
-    border-radius: 100%;
-    margin: -0.5em;
-    border: 3px solid #e57160;
-}
-
 .squad-hyper {
     text-decoration: none;
     background: #FFFFFF 0 0 no-repeat padding-box;
@@ -77,6 +69,16 @@ p {
 }
 .show_map, #admin_buttons, .delete_squad{
     width: 90%;
+}
+
+.members>img{
+    height: 5vh;
+    width: 5vh;
+    border-radius: 100%;
+    margin: -0.5em;
+    border: 3px solid #e57160;
+    object-fit: cover;
+    background: #F4AC66 0% 0% no-repeat padding-box;
 }
 
 

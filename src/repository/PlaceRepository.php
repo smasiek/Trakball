@@ -104,4 +104,52 @@ class PlaceRepository extends Repository
         }
         return $cities;
     }
+
+    public function getStreetsFromInput(string $cityInput,string $streetInput)
+    {
+        $cityTemplate= '%' . strtolower($cityInput) . '%';
+        $streetTemplate= '%' . strtolower($streetInput) . '%';
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM places WHERE  LOWER(city) like :city AND LOWER(street) like :street
+        ');
+
+        $stmt->bindParam(':city', $cityTemplate, PDO::PARAM_STR);
+        $stmt->bindParam(':street', $streetTemplate, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $streetsInCity=$stmt->fetchAll();
+        $streets=[];
+
+        foreach ($streetsInCity as $streetInCity){
+            if(!in_array($streetInCity['street'],$streets)){
+                $streets[]=$streetInCity['street'];
+            }
+        }
+        return $streets;
+    }
+
+    public function getPlaceFromInput(string $cityInput, string $streetInput, string $placeInput)
+    {
+        $cityTemplate= '%' . strtolower($cityInput) . '%';
+        $streetTemplate= '%' . strtolower($streetInput) . '%';
+        $placeTemplate= '%' . strtolower($placeInput) . '%';
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM places WHERE  LOWER(city) like :city AND LOWER(street) like :street AND LOWER(name) like :place
+        ');
+
+        $stmt->bindParam(':city', $cityTemplate, PDO::PARAM_STR);
+        $stmt->bindParam(':street', $streetTemplate, PDO::PARAM_STR);
+        $stmt->bindParam(':place', $placeTemplate, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $placesInCity=$stmt->fetchAll();
+        $places=[];
+
+        foreach ($placesInCity as $placeInCity){
+            if(!in_array($placeInCity['name'],$places)){
+                $places[]=$placeInCity['name'];
+            }
+        }
+        return $places;
+    }
 }

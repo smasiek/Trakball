@@ -1,7 +1,7 @@
 <?php
 
 require_once 'AppController.php';
-require_once __DIR__.'/../repository/UserRepository.php';
+require_once __DIR__ . '/../repository/UserRepository.php';
 
 class SettingsController extends AppController
 {
@@ -16,36 +16,38 @@ class SettingsController extends AppController
     public function __construct()
     {
         parent::__construct();
-        $this->userRepository=new UserRepository();
+        $this->userRepository = new UserRepository();
     }
 
     public function edit_photo()
     {
-        $this->cookieCheck();
-        if ( $this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
+        $userID = $this->cookieCheck();
+        if ($userID != 0) {
 
-            move_uploaded_file(
-                $_FILES['file']['tmp_name'],
-                dirname(__DIR__) . self::UPLOAD_DIRECTORY . $_FILES['file']['name']
-            );
+            if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
+                move_uploaded_file(
+                    $_FILES['file']['tmp_name'],
+                    dirname(__DIR__) . self::UPLOAD_DIRECTORY . $_FILES['file']['name']
+                );
 
-            $this->userRepository->setPhoto($_COOKIE['user_id'],$_FILES['file']['name']);
-            return $this->render('settings', ['messages' => $this->messages,'image'=>$this->userRepository->getPhoto($_COOKIE['user_id'])]);
+                $image = $this->userRepository->setPhoto($userID, $_FILES['file']['name']);
+                return $this->render('settings', ['messages' => $this->messages, 'image' => $image]);
 
+            }
         }
-        //For debugging purpose
-        $this->render('squads', ['messages' => $this->messages]);
+        return 0;
     }
 
     public function edit_data()
     {
-        if ($this->isPost()) {
-
-            $this->userRepository->editUserData($_COOKIE['user_id']);
-            return $this->render('settings',  ['messages' => $this->messages,'image'=>$this->userRepository->getPhoto($_COOKIE['user_id'])]);
+        $userID=$this->cookieCheck();
+        if($userID!=0) {
+            if ($this->isPost()) {
+                $this->userRepository->editUserData($userID);
+                return $this->render('settings', ['messages' => $this->messages, 'image' => $this->userRepository->getPhoto($userID)]);
+            }
         }
-        //For debugging purpose
-        $this->render('squads', ['messages' => $this->messages]);
+        return 0;
     }
 
 
@@ -62,16 +64,14 @@ class SettingsController extends AppController
         return true;
     }
 
-    public function settings(){
+    public function settings()
+    {
 
-        if (isset($_COOKIE['user_id'])) {
-            return $this->render('settings',['image'=>$this->userRepository->getPhoto($_COOKIE['user_id'])]);
+        $userID=$this->cookieCheck();
+        if($userID!=0) {
+            return $this->render('settings', ['image' => $this->userRepository->getPhoto($userID)]);
         }
-
-        $this->render('login');
-
-
-        //$this->render('settings',['image'=>$this->userRepository->getImage($_COOKIE['user_email'])]);
+        return 0;
     }
 
 }

@@ -13,6 +13,7 @@ class SquadRepository extends Repository
 
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM squads
+            WHERE date > current_date
         ');
 
 
@@ -46,7 +47,7 @@ class SquadRepository extends Repository
         return $result;
     }
 
-    public function getYourSquads(): array
+    public function getYourSquads($userID): array
     {
         $result = [];
 
@@ -54,18 +55,18 @@ class SquadRepository extends Repository
             SELECT * FROM users_squads
             INNER JOIN squads ON squads.id=users_squads.id_squad
             INNER JOIN users ON users.id=users_squads.id_user
-            WHERE users.id=:id
+            WHERE users.id=:id and squads.date > current_date
         ');
 
 
-        $stmt->bindParam(':id', $_COOKIE['user_id']);
+        $stmt->bindParam(':id', $userID);
         $stmt->execute();
         $squads = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $placeRepository = new PlaceRepository();
         $userRepository = new UserRepository();
 
-        $user = $userRepository->getUserUsingID($_COOKIE['user_id']);
+        $user = $userRepository->getUserUsingID($userID);
         foreach ($squads as $squad) {
             $place = $placeRepository->getPlaceUsingID($squad['id_place']);
 
@@ -87,7 +88,7 @@ class SquadRepository extends Repository
         return $result;
     }
 
-    public function addYourSquad(int $squadID)
+    public function addYourSquad(int $squadID,int $userID)
     {
         $stmt = $this->database->connect()->prepare('
             INSERT INTO users_squads
@@ -96,12 +97,12 @@ class SquadRepository extends Repository
 
 
         $stmt->execute([
-            $_COOKIE['user_id'],
+            $userID,
             $squadID
         ]);
     }
 
-    public function getSquadUsingID(int $id): ?Squad
+    /*public function getSquadUsingID(int $id): ?Squad
     {
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM squads WHERE  id=:id 
@@ -135,7 +136,7 @@ class SquadRepository extends Repository
             $squad['date']
         );
 
-    }
+    }*/
 
     public function getPublishedSquad($creatorID, $date, $placeID): ?Squad
     {
@@ -280,11 +281,17 @@ class SquadRepository extends Repository
         $searchString = '%' . strtolower($searchString) . '%';
         $userRepository = new UserRepository();
 
-        $currentUser=$userRepository->getUserUsingID($currentUserID);
+        if($currentUserID!=0){
+            //check user login state
+            $currentUser=$userRepository->getUserUsingID($currentUserID);
+            $currentUserRole=$currentUser->getRole();
+        }else{
+            $currentUserRole="unlogged";
+        }
 
         $stmt = $this->database->connect()->prepare('
         SELECT * FROM squad_info
-        WHERE LOWER(place) LIKE :search OR LOWER(surname) LIKE :search OR LOWER(name) LIKE :search OR CAST(date AS VARCHAR) = :search;
+        WHERE date > current_date and (LOWER(place) LIKE :search OR LOWER(surname) LIKE :search OR LOWER(name) LIKE :search OR CAST(date AS VARCHAR) LIKE :search);
         ');
         $stmt->bindParam(':search', $searchString);
         $stmt->execute();
@@ -312,7 +319,7 @@ class SquadRepository extends Repository
                 }
                 $i++;
             }
-            $export[]=array_merge($infos,["squad_count" => sizeof($members)],$memberPhotos,["role"=>$currentUser->getRole()]);
+            $export[]=array_merge($infos,["squad_count" => sizeof($members)],$memberPhotos,["role"=>$currentUserRole]);
         }
 
         return $export;
@@ -375,6 +382,20 @@ class SquadRepository extends Repository
              ');
         $stmt->bindParam(':squadID', $squadID, PDO::PARAM_INT);
         return $stmt->execute();
+    }
+
+    public function getSquadCreator(int $id)
+    {
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM squads where id=:squadID
+        ');
+
+        $stmt->bindParam(':squadID', $id);
+        $stmt->execute();
+        $squad=$stmt->fetch(PDO::FETCH_ASSOC);
+        $userRepository=new UserRepository();
+        return $userRepository->getUserUsingID($squad['id_squad_creator']);
     }
 
 

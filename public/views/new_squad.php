@@ -23,19 +23,19 @@
                     }
                     ?>
                 </div>
-                <input list="cities" name="city" placeholder="City">
+                <input list="cities" class="city" placeholder="City">
                 <datalist id="cities">
                 </datalist>
 
-                <input list="streets" name="street" placeholder="Street">
+                <input list="streets" class="street" placeholder="Street">
                 <datalist id="streets">
                 </datalist>
 
-                <input list="names" name="name" placeholder="Place name">
+                <input list="names" class="name" placeholder="Place name">
                 <datalist id="names">
                 </datalist>
 
-                <input list="sports" name="sport" placeholder="Sport">
+                <input list="sports" class="sport" placeholder="Sport">
                 <datalist id="sports">
                     <option value ="Piłka nożna"></option>
                     <option value ="Koszykówka"></option>
@@ -45,11 +45,11 @@
                     <option value ="Hokej"></option>
                 </datalist>
 
-                <input name="max_players" placeholder="Max numer of players">
+                <input type="number" min="1" max="30" class="max_players" placeholder="Max numer of players">
 
-                <input name="fee" type="text" placeholder="Entry fee">
+                <input class="fee" type="text" placeholder="Entry fee">
 
-                <input name="date" type="datetime-local">
+                <input class="date" type="datetime-local">
                 <!-- TODO zrobic zabezpieczenie przed dodaniem daty wczesnieszej niz dzis-->
 
                 <button id="publish" type="submit">publish</button>

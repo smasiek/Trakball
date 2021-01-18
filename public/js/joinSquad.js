@@ -20,8 +20,9 @@ function joinSquad() {
         }
     }).then(function (message) {
         alert(message.message);
-
-            history.pushState({}, 'SQUADS', window.location.pathname);
-            window.location.assign(window.location.href)
+            if(message.message!=="You have joined this squad earlier!") {
+                history.pushState({}, 'SQUADS', window.location.pathname);
+                window.location.assign(window.location.href)
+            }
     });
 }
