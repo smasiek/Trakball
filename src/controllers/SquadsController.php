@@ -116,9 +116,7 @@ class SquadsController extends AppController
 
     public function text_organizer(int $id)
     {
-        $userID = $this->cookieCheck();
 
-        if ($userID != 0) {
             $creator = $this->squadRepository->getSquadCreator($id);
 
             $message = "Phone number: " . $creator->getPhone() . "\n" .
@@ -127,6 +125,5 @@ class SquadsController extends AppController
             echo $this->sendResponse([
                 "message" => $message
             ], 200);
-        }
     }
 }

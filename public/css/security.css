@@ -95,6 +95,11 @@ input {
     outline: none;
 }
 
+.messages{
+    color: red;
+    font: normal normal normal 1.2em/2em Segoe UI;
+}
+
 @media only screen and (max-device-width: 720px) {
     .container {
         flex-direction: column;
@@ -134,5 +139,9 @@ input {
     }
     .sign-in, .sign-up{
         font-size: 1.2em;
+    }
+
+    .messages{
+        font: normal normal normal 2em/2em Segoe UI;
     }
 }

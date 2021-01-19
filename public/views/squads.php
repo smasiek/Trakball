@@ -36,8 +36,8 @@
                 <p name="place">place</p>
                 <p name="address">address</p>
                 <p name="date">date</p>
+                <button class="squad-hyper show_map">Show on map</button>
             </div>
-            <button class="squad-hyper show_map">Show on map</button>
         </div>
         <div class="footer">
             <h3>Squad</h3>

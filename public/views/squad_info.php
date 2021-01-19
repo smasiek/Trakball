@@ -8,8 +8,7 @@
         <p name="place"><?= $squad->getPlaceName(); ?></p>
         <p name="address"><?= $squad->getAddress(); ?></p>
         <p name="date"><?= $squad->getDate(); ?></p>
-
-
+        <button class="squad-hyper show_map">Show on map</button>
     </div>
-    <button class="squad-hyper show_map">Show on map</button>
+
 </div>
