@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SQUADS PAGE</title>
+    <title>New Squad</title>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/new_squad.css">
     <script type="text/javascript" src="./public/js/dynamicSuggestion.js" defer></script>
@@ -15,14 +15,7 @@
         <?php include('header.php')?>
         <div class="main_content">
             <form class="new_squad_form" action="publish_squad" method="POST">
-                <div class="messages">
-                    <?php if(isset($messages)){
-                        foreach ($messages as $message){
-                            echo $message;
-                        }
-                    }
-                    ?>
-                </div>
+                <?php include('messages.php')?>
                 <input list="cities" class="city" placeholder="City">
                 <datalist id="cities">
                 </datalist>
@@ -49,8 +42,9 @@
 
                 <input class="fee" type="text" placeholder="Entry fee">
 
-                <input class="date" type="datetime-local">
-                <!-- TODO zrobic zabezpieczenie przed dodaniem daty wczesnieszej niz dzis-->
+                <input class="date" type="datetime-local" min="<?php
+                echo date('Y-m-d')."T".date('H:i',time()+3600);
+                ?>">
 
                 <button id="publish" type="submit">publish</button>
             </form>

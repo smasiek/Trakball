@@ -82,5 +82,10 @@ class AppController
         }
     }
 
-    //TODO PRZESLEDZIC CZEMU SIE LOGIN DWA RAZY WYSWIETLA. Gdzies przy sprawdzaniu cookie musi byc redundancja
+    protected function sendResponse(array $array, int $code): string
+    {
+        header("Content-type: application/json");
+        http_response_code($code);
+        return json_encode($array);
+    }
 }

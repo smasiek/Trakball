@@ -1,11 +1,3 @@
-/*section {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2em;
-    padding: 2em;
-    overflow: hidden;
-}
- */
 .your_places{
     display: flex;
     flex-direction: column;;
@@ -29,6 +21,7 @@
     font-size: 1.5em;
     outline: none;
     padding: 1em 2em 2em 1em;
+    color: #E57160;
 }
 
 .glide__arrows .glide__arrow.glide__arrow--right{

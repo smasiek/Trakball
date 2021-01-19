@@ -5,21 +5,14 @@
 
     <link rel="stylesheet" type="text/css" href="public/css/security.css">
     <script type="text/javascript" src="./public/js/registerValidationScript.js" defer></script>
-    <title>LOGIN PAGE</title>
+    <title>Register Page</title>
 </head>
 <body>
     <div class="container">
         <div class="logo"></div>
         <div class="login-container">
             <form class="register" action="sign_up" method="POST">
-                <div class="messages">
-                    <?php if(isset($messages)){
-                        foreach ($messages as $message){
-                            echo $message;
-                        }
-                    }
-                    ?>
-                </div>
+                <?php include('messages.php')?>
                 <input name="email" type="email" placeholder="email@email.com">
                 <input name="password" type="password" placeholder="password">
                 <input name="confirmedPassword" type="password" placeholder="confirm password">

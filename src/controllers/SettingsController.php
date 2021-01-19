@@ -43,13 +43,22 @@ class SettingsController extends AppController
         $userID=$this->cookieCheck();
         if($userID!=0) {
             if ($this->isPost()) {
-                $this->userRepository->editUserData($userID);
+                $this->messages=$this->userRepository->editUserData($userID);
                 return $this->render('settings', ['messages' => $this->messages, 'image' => $this->userRepository->getPhoto($userID)]);
             }
         }
         return 0;
     }
 
+    public function settings()
+    {
+
+        $userID=$this->cookieCheck();
+        if($userID!=0) {
+            return $this->render('settings', ['image' => $this->userRepository->getPhoto($userID)]);
+        }
+        return 0;
+    }
 
     private function validate(array $file): bool
     {
@@ -63,17 +72,6 @@ class SettingsController extends AppController
         }
         return true;
     }
-
-    public function settings()
-    {
-
-        $userID=$this->cookieCheck();
-        if($userID!=0) {
-            return $this->render('settings', ['image' => $this->userRepository->getPhoto($userID)]);
-        }
-        return 0;
-    }
-
 }
 
 

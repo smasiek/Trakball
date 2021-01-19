@@ -3,20 +3,19 @@
 require_once __DIR__.'/../models/Place.php';
 
 class Squad{
-    //TODO zaimplementowac cookie i dodać tutaj obiekt user
 
-    private $id;
-    private $creatorID;
-    private $creatorName;
-    private $sport;
-    private $maxMembers;
-    private $fee;
-    private $placeName;
-    private $placeID;
-    private $address;
+    private int $id;
+    private int $creatorID;
+    private string $creatorName;
+    private string $sport;
+    private int $maxMembers;
+    private string $fee;
+    private string $placeName;
+    private int $placeID;
+    private string $address;
     private $date;
 
-    public function __construct(int $id,int $userId, string $creatorName,string $sport,int $maxMembers, float $fee, int $placeID, string $placeName, string $address, $date){
+    public function __construct(int $id,int $userId, string $creatorName,string $sport,int $maxMembers, string $fee, int $placeID, string $placeName, string $address, $date){
         $this->id=$id;
         $this->creatorID=$userId;
         $this->creatorName=$creatorName;

@@ -3,15 +3,15 @@
 
 class User
 {
-    private $id;
-    private $email;
-    private $password;
-    private $name;
-    private $surname;
-    private $phone;
+    private int $id;
+    private string $email;
+    private string $password;
+    private string $name;
+    private string $surname;
+    private string $phone;
     private $dateOfBirth;
-    private $photo;
-    private $role;
+    private string $photo;
+    private string $role;
 
 
     public function __construct(string $id,string $email, string $password, string $name, string $surname, string $phone, $dateOfBirth, string $photo,string $role)

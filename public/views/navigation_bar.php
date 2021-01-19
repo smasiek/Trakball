@@ -1,4 +1,5 @@
 <head>
+    <link rel="stylesheet" type="text/css" href="/public/css/navigation_bar.css">
     <script type="text/javascript" src="./public/js/responsiveNaviBar.js" defer></script>
     <script type="text/javascript" src="./public/js/logoClickHandling.js" defer></script>
 </head>

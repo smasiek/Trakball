@@ -70,8 +70,7 @@ class NewSquadController extends AppController
         return 0;
     }
 
-    public function cities()
-    {
+    public function squadData($dataType){
         $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
         $placeRepository = new PlaceRepository();
 
@@ -79,43 +78,34 @@ class NewSquadController extends AppController
             $content = trim(file_get_contents("php://input"));
             $decoded = json_decode($content, true);
 
-            header('Content-type: application/json');
-            http_response_code(200);
+            switch($dataType){
 
-            echo json_encode($placeRepository->getCitiesFromInput($decoded['cityInput']));
+                case('cities'): echo $this->sendResponse([
+                    $placeRepository->getDataFromInput('city',$decoded['cityInput'],$decoded['streetInput'],$decoded['placeInput'])
+                ], 200); break;
+                case('streets'): echo $this->sendResponse([
+                    $placeRepository->getDataFromInput('street',$decoded['cityInput'],$decoded['streetInput'],$decoded['placeInput'])
+                ], 200); break;
+                case('places'): echo $this->sendResponse([
+                    $placeRepository->getDataFromInput('name',$decoded['cityInput'],$decoded['streetInput'],$decoded['placeInput'])
+                ], 200); break;
+            }
         }
+    }
+
+    public function cities()
+    {
+            echo $this->squadData('cities');
     }
 
     public function streets()
     {
-        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
-        $placeRepository = new PlaceRepository();
-
-        if ($contentType === "application/json") {
-            $content = trim(file_get_contents("php://input"));
-            $decoded = json_decode($content, true);
-
-            header('Content-type: application/json');
-            http_response_code(200);
-
-            echo json_encode($placeRepository->getStreetsFromInput($decoded['cityInput'],$decoded['streetInput']));
-        }
+        echo $this->squadData('streets');
     }
 
     public function places()
     {
-        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
-        $placeRepository = new PlaceRepository();
-
-        if ($contentType === "application/json") {
-            $content = trim(file_get_contents("php://input"));
-            $decoded = json_decode($content, true);
-
-            header('Content-type: application/json');
-            http_response_code(200);
-
-            echo json_encode($placeRepository->getPlaceFromInput($decoded['cityInput'],$decoded['streetInput'],$decoded['placeInput']));
-        }
+        echo $this->squadData('places');
     }
 
 

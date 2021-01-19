@@ -16,5 +16,4 @@ function textOrganizer(){
     }).then(function (message) {
         alert(message.message);
     });
-
 }

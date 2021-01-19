@@ -14,10 +14,11 @@ Routing::get('your_places', 'DefaultController');
 Routing::get('settings', 'SettingsController');
 Routing::get('register', 'DefaultController');
 Routing::get('log_out', 'SecurityController');
-
-Routing::post('join_squad', 'SquadsController');
-Routing::post('leave_squad', 'SquadsController');
 Routing::get('text_organizer', 'SquadsController');
+Routing::get('delete_squad', 'SquadsController');
+Routing::get('join_squad', 'SquadsController');
+Routing::get('leave_squad', 'SquadsController');
+
 Routing::post('sign_up', 'SecurityController');
 Routing::post('edit_photo', 'SettingsController');
 Routing::post('edit_data', 'SettingsController');
@@ -27,7 +28,5 @@ Routing::post('login', 'SecurityController');
 Routing::post('cities', 'NewSquadController');
 Routing::post('streets', 'NewSquadController');
 Routing::post('places', 'NewSquadController');
-Routing::get('delete_squad', 'SquadsController');
-
 
 Routing::run($path);

@@ -95,7 +95,7 @@ input {
     outline: none;
 }
 
-@media only screen and (max-device-width: 420px) {
+@media only screen and (max-device-width: 720px) {
     .container {
         flex-direction: column;
     }
@@ -135,5 +135,4 @@ input {
     .sign-in, .sign-up{
         font-size: 1.2em;
     }
-
 }

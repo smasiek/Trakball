@@ -13,7 +13,7 @@ class UserRepository extends Repository
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user == false) {
-            //TODO zwrocic exception i potem w security controllerze odebrac ten bladi poprawnie obsluzyc
+            //TODO zwrocic exception i potem obsluzyc
             return null;
         }
         return new User(
@@ -153,13 +153,15 @@ class UserRepository extends Repository
         $stmt->execute();
     }
 
-    public function editUserData(string $userID): void
+    public function editUserData(string $userID): array
     {
         /*
          * UPDATE tableName
             SET column1=value1, column2=value2,...
             WHERE filterColumn=filterValue
          */
+
+        $messages=[];
 
         if ($_POST['email'] != null) {
             $this->editEmail($userID, $_POST['email']);
@@ -168,6 +170,8 @@ class UserRepository extends Repository
         if ($_POST['password_1'] != null && $_POST['password_2'] != null && $_POST['password_1'] == $_POST['password_2']) {
             $hashedPassword = password_hash($_POST['password_1'], PASSWORD_DEFAULT);
             $this->editPassword($userID, $hashedPassword);
+        } else if($_POST['password_1'] != null && $_POST['password_2'] == null){
+            $messages[]="Powtórz zmieniane hasło!";
         }
 
         if ($_POST['name'] != null) {
@@ -205,12 +209,12 @@ class UserRepository extends Repository
 
             $this->editDateOfBirth($userDetails['id'], $_POST['date_of_birth']);
         }
+        return $messages;
     }
 
     public function newUser($email, $password, $name, $surname, $phone, $date_of_birth)
     {
-        //TODO przydaloby sie to zamienic na transakcje ale nie wiem jak, lub w jakis sposob pozyskac ID tworzonego user_details
-
+        $this->database->connect()->beginTransaction();
 
         $stmt = $this->database->connect()->prepare('
             INSERT INTO public.user_details (name,surname,phone,date_of_birth)
@@ -236,33 +240,21 @@ class UserRepository extends Repository
             INSERT INTO public.users (email,password,id_user_details)
             VALUES(?,?,?)
         ');
-        return $stmt->execute([
+        $outcome = $stmt->execute([
             $email,
             $password,
             $newUserDetailID
         ]);
+        $this->database->connect()->commit();
+        return $outcome;
     }
 
     public function cookieCheck($user_token): int
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM cookie_session WHERE token=:token
-        ');
-        $stmt->bindParam(':token', $user_token, PDO::PARAM_STR);
-        $stmt->execute();
-
-        $cookieInfo = $stmt->fetch(PDO::FETCH_ASSOC);
-
-
-        if ($cookieInfo == null) {
-            return 0;
-        }
-
-        $stmt = $this->database->connect()->prepare('
             SELECT * FROM cookie_session WHERE token=:token AND expiration>:currentDate
         ');
         $currentDate=date("Y-m-d H:i:s");
-       // die(var_dump($currentDate));
         $stmt->bindParam(':token', $user_token, PDO::PARAM_STR);
         $stmt->bindParam(':currentDate', $currentDate, PDO::PARAM_STR);
         $stmt->execute();
@@ -271,13 +263,13 @@ class UserRepository extends Repository
         if ($cookieInfo == null) {
             return 0;
         }
-        //TODO pomyslec jak pozbyc sie redundancji
 
         return $cookieInfo['id_user'];
     }
 
     public function setCookie($id, $token)
     {
+        //Delete old cookies of this user.
         $stmt=$this->database->connect()->prepare('
         DELETE FROM cookie_session
         WHERE id_user=:id
@@ -304,22 +296,6 @@ class UserRepository extends Repository
 
 
     }
-
-  /*  public function getCurrentUserID($token): int
-    {
-
-        $stmt = $this->database->connect()->prepare('
-            SELECT * FROM cookie_session WHERE token=:token
-        ');
-        $stmt->bindParam(':token', $token, PDO::PARAM_STR);
-        $stmt->execute();
-
-        $cookieInfo = $stmt->fetch(PDO::FETCH_ASSOC);
-        if ($cookieInfo != null) {
-            return $cookieInfo['id_user'];
-        }
-        return 0;
-    }*/
 
     public function unsetCookie($token) :string
     {

@@ -12,11 +12,7 @@ class SecurityController extends AppController
             $userRepository = new UserRepository();
 
             if (!$this->isPost()) {
-                /*if (isset($_COOKIE['user_id'])) {
-                    return $this->render('squads');
-                }*/
                 return $this->render('login');
-                //return 0;
             }
 
             $email = $_POST["email"];
@@ -35,7 +31,7 @@ class SecurityController extends AppController
 
             if (password_verify($password, $user->getPassword())) {
 
-                $this->setCookie($user->getId(), password_hash($email, PASSWORD_DEFAULT));
+                $this->setCookie($user->getId(), uniqid());
 
                 $url = "http://$_SERVER[HTTP_HOST]";
                 header("Location: {$url}/squads");
@@ -102,7 +98,10 @@ class SecurityController extends AppController
 
     public function log_out()
     {
-        $this->cookieCheck();
-        $this->render('login', ['messages' => [$this->unsetCookie($_COOKIE['user_token'])]]);
+        $currID=$this->getCurrentUserID();
+        if($currID==0){
+            return $this->render('login', ['messages' => ["You're session expired"]]);
+        }
+        return $this->render('login', ['messages' => [$this->unsetCookie($_COOKIE['user_token'])]]);
     }
 }

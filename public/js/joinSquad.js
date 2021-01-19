@@ -5,7 +5,6 @@ joinButtons.forEach(joinButton => joinButton.addEventListener("click", joinSquad
 
 function joinSquad() {
 
-    const join = this;
     const id = this.getAttribute("id");
 
     fetch(`/join_squad/${id}`, {

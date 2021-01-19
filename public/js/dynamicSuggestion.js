@@ -5,15 +5,14 @@ const streetInput = form.querySelector('.street');
 const streetData = document.getElementById('streets');
 const placeInput = form.querySelector('.name');
 const placeData = document.getElementById('names');
-const sportInput = form.querySelector('.sport');
-const sportData = document.getElementById('sports');
-const maxPlayersInput = form.querySelector('.max_players');
-const feeInput = form.querySelector('.fee');
-const publishButton = document.getElementById('publish');
 
-function appendCities(city) {
+function appendCities(city, street, place) {
 
-    const data = {cityInput: city};
+    const data = {
+        cityInput: city,
+        streetInput: street,
+        placeInput: place
+    };
 
     fetch(`/cities`, {
         method: 'POST',
@@ -25,19 +24,17 @@ function appendCities(city) {
         return response.json();
     }).then(function (cities) {
 
-        let count = cityData.childElementCount;
-        for (let i = 0; i < count; i++) {
-            cityData.removeChild(cityData.childNodes[i]);
-        }
-        loadCities(cities);
+        cityData.innerHTML = "";
+        loadElements(cities, cityData);
     });
 }
 
-function appendStreets(city, street) {
+function appendStreets(city, street, place) {
 
     const data = {
         cityInput: city,
-        streetInput: street
+        streetInput: street,
+        placeInput: place
     };
 
     fetch(`/streets`, {
@@ -50,11 +47,8 @@ function appendStreets(city, street) {
         return response.json();
     }).then(function (streets) {
 
-        let count = streetData.childElementCount;
-        for (let i = 0; i < count; i++) {
-            streetData.removeChild(streetData.childNodes[i]);
-        }
-        loadStreets(streets);
+        streetData.innerHTML = "";
+        loadElements(streets, streetData);
     });
 }
 
@@ -76,59 +70,42 @@ function appendPlaces(city, street, place) {
         return response.json();
     }).then(function (places) {
 
-        let count = placeData.childElementCount;
-        for (let i = 0; i < count; i++) {
-            placeData.removeChild(placeData.childNodes[i]);
-        }
-        loadPlaces(places);
+        placeData.innerHTML = "";
+        loadElements(places, placeData);
     });
 }
 
-function loadCities(cities) {
-    //cities to powinna byc tablica cities["Kraków","Warszawa",...];
-    cities.forEach(city => {
+function loadElements(elements, data) {
+    elements.forEach(element => {
         let node = document.createElement("OPTION");
-        let textNode = document.createTextNode(city);
+        let textNode = document.createTextNode(element);
         node.appendChild(textNode);
-        cityData.appendChild(node);
+        data.appendChild(node);
     });
 }
-
-function loadStreets(streets) {
-    streets.forEach(street => {
-        let node = document.createElement("OPTION");
-        let textNode = document.createTextNode(street);
-        node.appendChild(textNode);
-        streetData.appendChild(node);
-    });
-}
-
-function loadPlaces(places) {
-    places.forEach(place => {
-        let node = document.createElement("OPTION");
-        let textNode = document.createTextNode(place);
-        node.appendChild(textNode);
-        placeData.appendChild(node);
-    });
-}
-
 
 cityInput.addEventListener('keyup', function () {
-    /*    setTimeout(
-      ()=>appendCities(cityInput.value)
-      , 500);*/
-    if (cityInput.value != null)
-        appendCities(cityInput.value);
-
+    setNulls()
+    appendCities(cityInput.value, streetInput.value, placeInput.value);
 });
 
 streetInput.addEventListener('keyup', function () {
-    if (cityInput.value != null && streetInput.value != null)
-        appendStreets(cityInput.value, streetInput.value);
+    setNulls()
+    appendStreets(cityInput.value, streetInput.value, placeInput.value);
+
 });
 
 placeInput.addEventListener('keyup', function () {
-    if (cityInput.value != null && streetInput.value != null && placeInput.value != null)
-        appendPlaces(cityInput.value, streetInput.value, placeInput.value);
+    setNulls()
+    appendPlaces(cityInput.value, streetInput.value, placeInput.value);
 });
+
+function setNulls() {
+    if (cityInput.value == null)
+        cityInput.value = '';
+    if (placeInput.value == null)
+        placeInput.value = '';
+    if (streetInput.value == null)
+        streetInput.value = '';
+}
 

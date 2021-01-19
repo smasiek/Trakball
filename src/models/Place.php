@@ -3,14 +3,14 @@
 
 class Place
 {
-    private $id;
-    private $name;
-    private $city;
-    private $postal_code;
-    private $street;
-    private $latitude;
-    private $longitude;
-    private $photo;
+    private int $id;
+    private string $name;
+    private string $city;
+    private string $postal_code;
+    private string $street;
+    private float $latitude;
+    private float $longitude;
+    private string $photo;
 
 
     public function __construct(int $id, string $name, string $city, string $postal_code, string $street, float $latitude, float $longitude,string $photo)

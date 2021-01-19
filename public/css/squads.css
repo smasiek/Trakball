@@ -16,16 +16,14 @@ section {
     object-fit: cover;
     text-align: center;
     font: normal normal normal 14px/30px Arial;
-    letter-spacing: 0px;
+    letter-spacing: 0;
     color: #F4AC66;
     border-radius: 1em 1em 0 0;
     background: #E9FFDB 0% 0% no-repeat padding-box;
     margin: 0;
 }
 
-
-
-.squads > div > div>   img {
+.squads > div > div> img {
     width: 15vh;
     height: 15vh;
     border-radius: 100%;
@@ -78,7 +76,7 @@ p {
     margin: -0.5em;
     border: 3px solid #e57160;
     object-fit: cover;
-    background: #F4AC66 0% 0% no-repeat padding-box;
+    background: #F4AC66 0 0 no-repeat padding-box;
 }
 
 
@@ -141,7 +139,4 @@ p {
         font: normal normal normal 2em/3em Arial;
         margin-right: 4%;
     }
-
-
-
 }

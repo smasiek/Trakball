@@ -23,87 +23,6 @@ input {
     height: 100vh;
 }
 
-nav {
-    width: 20vw;
-    height: 100%;
-    background: transparent linear-gradient(180deg, #7AB390 0%, #7AB390 58%, #2C563C 100%, #170000 100%) 0 0 no-repeat padding-box;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-nav > div>img {
-    width: 90%;
-    margin: 2em 1em;
-}
-
-a.button {
-    text-decoration: none;
-    display: inline-block;
-    line-height: 2em;
-}
-
-li i {
-    font-size: 1.5em;
-}
-
-.button {
-    border: 1px solid white;
-    border-radius: 1em;
-    margin-left: 1em;
-    text-align: center;
-    letter-spacing: 0.7px;
-    color: white;
-    padding: 0.2em;
-    width: 60%;
-    font-family: "Segoe UI", sans-serif;
-}
-
-ul {
-    list-style-type: none;
-    color: white;
-    font: normal normal normal 1.2em/1.3em Segoe UI;
-    letter-spacing: 0.72px;
-    height: 100%;
-    margin: 0 auto;
-    padding: 0;
-    width: calc(100% - 3em);
-    position: relative;
-}
-
-li {
-    text-align: center;
-    margin-bottom: 1em;
-}
-
-li:last-child {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-.fa, .fas {
-    font-weight: 900;
-    width: 1em;
-}
-
-.button:hover {
-    border: 1px solid #e57160;
-}
-
-li[name="settings"] {
-    position: absolute;
-    bottom: 3.5em;
-    width: 100%;
-}
-
-li[name="log-out"], li[name="sign-in"] {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
 main {
     display: flex;
     flex-direction: column;
@@ -146,9 +65,10 @@ header {
 }
 
 .messages {
-    margin: 1% 35% 0 35%;
+    margin: 1% 0 0 10%;
     color: RED;
     font-family: "Segoe UI", sans-serif;
+    width: 90%;
 }
 
 #hamburger{
@@ -162,88 +82,6 @@ input[type=checkbox]{
 
 
 @media only screen and (max-device-width: 720px) {
-
-    .navbar_images{
-        display: flex;
-        flex-direction: row;
-        height: 100%;
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .base-container {
-        flex-direction: column;
-    }
-
-    main{
-        margin-top: 10vh;
-    }
-
-    nav {
-        height: 10vh;
-        width: 100%;
-        position: fixed;
-        background: #7AB390 no-repeat padding-box;
-    }
-
-    nav > div> img,nav > div> label>img {
-        width: 25%;
-        margin: 2em 2em;
-    }
-
-    #hamburger{
-        display: block;
-        width: 12vw;
-        height: 100%;
-        margin: auto 3em;
-        object-fit: scale-down;
-
-    }
-    #menu{
-        margin: 0;
-        width: 100%;
-        position: absolute;
-        z-index: 3;
-        top:30vh;
-        display: none;
-
-    }
-
-    li {
-        text-align: center;
-        margin-bottom: 0;
-        width: 100%;
-
-        display:block;
-        min-width:140px;
-        padding:0 1em;
-        color: #fff;
-        background: #E57160;
-        text-decoration: none;
-        border-bottom: 2px solid white;
-        line-height: 9.3vh;
-
-        z-index: 4;
-
-    }
-
-    .button{
-        border: 0;
-        font-size: 2.5em;
-        width: 90%;
-        margin:0
-    }
-    li>i{
-        font-size: 2.5em;
-    }
-
-    li:last-child,li:nth-last-child(2),li:nth-last-child(3) {
-            position: static;
-            width: 100%;
-    }
-    .show-menu {
-        display:block;
-    }
 
     header{
         flex-direction: column;

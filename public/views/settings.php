@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SETTINGS</title>
+    <title>Settings</title>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/settings.css">
 
@@ -19,24 +19,14 @@
 
                 <img src="public/img/uploads/<?=$image?>">
                 <form action="edit_photo" method="POST" ENCTYPE="multipart/form-data">
-                    <?php if(isset($messages)){
-                        foreach ($messages as $message){
-                            echo $message;
-                        }
-                    }
-                    ?>
+                    <?php include('messages.php')?>
                     <input type="file" name="file">
                     <button id="edit_photo_button" type="submit">edit photo</button>
                 </form>
 
             </div>
             <form class="edit_data_form" action="edit_data" method="POST" ENCTYPE="multipart/form-data">
-                <?php if(isset($messages)){
-                    foreach ($messages as $message){
-                        echo $message;
-                    }
-                }
-                ?>
+                <?php include('messages.php')?>
                 <input name="email" placeholder="email" type="email">
 
                 <input name="password_1" placeholder="password" type="password">
@@ -47,7 +37,7 @@
 
                 <input name="surname" placeholder="surname">
 
-                <input name="date_of_birth" placeholder="date of birth" type="date">
+                <input name="date_of_birth" placeholder="date of birth" type="date" max="<? echo date('Y-m-d')?>">
 
                 <button id="edit" type="submit">edit user info</button>
             </form>

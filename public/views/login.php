@@ -4,21 +4,14 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="public/css/security.css">
     <script type="text/javascript" src="./public/js/logoClickHandling.js" defer></script>
-    <title>LOGIN PAGE</title>
+    <title>Login Page</title>
 </head>
 <body>
     <div class="container">
         <div class="logo"></div>
         <div class="login-container">
             <form class="login" action="login" method="POST">
-                <div class="messages">
-                    <?php if(isset($messages)){
-                        foreach ($messages as $message){
-                            echo $message;
-                        }
-                    }
-                    ?>
-                </div>
+                <?php include('messages.php')?>
                 <input name="email" type="email" placeholder="email@email.com">
                 <input name="password" type="password" placeholder="password">
                 <button type="submit" class="sign">sign in</button>

@@ -24,6 +24,7 @@ search.addEventListener("keyup", function (event) {
             squadContainer.innerHTML = "";
             loadSquads(squads);
 
+            //Reset click listeners
             const joinButtons = document.querySelectorAll('.join_squad')
             joinButtons.forEach(joinButton => joinButton.addEventListener("click", joinSquad));
 
@@ -47,8 +48,6 @@ function loadSquads(squads) {
 
 function createSquad(squad) {
     const template = document.getElementById('squad-template');
-
-    //TODO dodac poprawne dodanie buttonnu do usuwania
 
     const clone = template.content.cloneNode(true);
 
@@ -106,7 +105,6 @@ function createSquad(squad) {
         }
         html += tempHtml;
     }
-    //TODO dodac text organizator i join squad
 
     members.innerHTML = html;
 

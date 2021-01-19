@@ -12,34 +12,25 @@ class SquadRepository extends Repository
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM squads
+            SELECT * FROM squad_info
             WHERE date > current_date
         ');
-
 
         $stmt->execute();
         $squads = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $placeRepository = new PlaceRepository();
-        $userRepository = new UserRepository();
-
-
         foreach ($squads as $squad) {
-            $place = $placeRepository->getPlaceUsingID($squad['id_place']);
-            $user = $userRepository->getUserUsingID($squad['id_squad_creator']);
-            // die(var_dump($place->getName()));
-
 
             $result[] = new Squad(
                 $squad['id'],
                 $squad['id_squad_creator'],
-                $user->getName() . " " . $user->getSurname(),
+                $squad['name'] . " " . $squad['surname'],
                 $squad['sport'],
                 $squad['max_members'],
                 $squad['fee'],
                 $squad['id_place'],
-                $place->getName(),
-                $place->getAddress(),
+                $squad['place'],
+                $squad['city']." ".$squad['street'],
                 $squad['date']
             );
         }
@@ -57,7 +48,6 @@ class SquadRepository extends Repository
             INNER JOIN users ON users.id=users_squads.id_user
             WHERE users.id=:id and squads.date > current_date
         ');
-
 
         $stmt->bindParam(':id', $userID);
         $stmt->execute();
@@ -84,7 +74,6 @@ class SquadRepository extends Repository
                 $squad['date']
             );
         }
-
         return $result;
     }
 
@@ -95,55 +84,17 @@ class SquadRepository extends Repository
             VALUES (?,?)
         ');
 
-
         $stmt->execute([
             $userID,
             $squadID
         ]);
     }
 
-    /*public function getSquadUsingID(int $id): ?Squad
-    {
-        $stmt = $this->database->connect()->prepare('
-            SELECT * FROM squads WHERE  id=:id 
-        ');
-
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        $stmt->execute();
-
-        $squad = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        $placeRepository = new PlaceRepository();
-        $userRepository = new UserRepository();
-
-        $place = $placeRepository->getPlaceUsingID($squad['id_place']);
-        $user = $userRepository->getUserUsingID($_COOKIE['user_id']);
-
-        if ($squad == false) {
-            //TODO zwrocic exception i potem w security controllerze odebrac ten bladi poprawnie obsluzyc
-            return null;
-        }
-        return new Squad(
-            $squad['id'],
-            $squad['id_squad_creator'],
-            $user->getName() . " " . $user->getSurname(),
-            $squad['sport'],
-            $squad['max_members'],
-            $squad['fee'],
-            $squad['id_place'],
-            $squad[$place->getName()],
-            $squad[$place->getAddress()],
-            $squad['date']
-        );
-
-    }*/
-
     public function getPublishedSquad($creatorID, $date, $placeID): ?Squad
     {
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM squads WHERE  id_squad_creator=:creatorID AND date=:date AND id_place=:placeID 
         ');
-
 
         $stmt->bindParam(':creatorID', $creatorID, PDO::PARAM_INT);
         $stmt->bindParam(':date', $date, PDO::PARAM_STR);
@@ -159,7 +110,7 @@ class SquadRepository extends Repository
         $user = $userRepository->getUserUsingID($creatorID);
 
         if ($squad == false) {
-            //TODO zwrocic exception i potem w security controllerze odebrac ten bladi poprawnie obsluzyc
+            //TODO zwrocic exception i potem obsluzyc
             return null;
         }
         return new Squad(
@@ -183,8 +134,6 @@ class SquadRepository extends Repository
         INSERT INTO squads (id_squad_creator,sport,max_members,fee,created_at,date,id_place)
         VALUES(?,?,?,?,?,?,?)
         ');
-        //todo POBRAC TO Z SESJI A NIE KODOWANE NA SZTYWNO
-
 
         $stmt->execute([
             $creatorID,
@@ -397,8 +346,6 @@ class SquadRepository extends Repository
         $userRepository=new UserRepository();
         return $userRepository->getUserUsingID($squad['id_squad_creator']);
     }
-
-
 }
 
 
