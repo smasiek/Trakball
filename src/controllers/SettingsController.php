@@ -24,16 +24,19 @@ class SettingsController extends AppController
         $userID = $this->cookieCheck();
         if ($userID != 0) {
 
+
             if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
                 move_uploaded_file(
                     $_FILES['file']['tmp_name'],
                     dirname(__DIR__) . self::UPLOAD_DIRECTORY . $_FILES['file']['name']
                 );
 
-                $image = $this->userRepository->setPhoto($userID, $_FILES['file']['name']);
-                return $this->render('settings', ['messages' => $this->messages, 'image' => $image]);
+                $this->userRepository->setPhoto($userID, $_FILES['file']['name']);
+                return $this->render('settings', ['messages' => $this->messages, 'image' => $_FILES['file']['name']]);
 
             }
+
+            return $this->render('settings', ['messages' => ["No photo loaded"], 'image' => $this->userRepository->getPhoto($userID)]);
         }
         return 0;
     }

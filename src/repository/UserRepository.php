@@ -59,11 +59,6 @@ class UserRepository extends Repository
 
     public function setPhoto(string $id, string $photoName): void
     {
-        /*
-         * UPDATE tableName
-            SET column1=value1, column2=value2,...
-            WHERE filterColumn=filterValue
-         */
 
         $stmt = $this->database->connect()->prepare('
             SELECT user_details.id_user_details FROM user_details LEFT JOIN users ON user_details.id_user_details=users.id_user_details WHERE users.id=:id
@@ -214,10 +209,11 @@ class UserRepository extends Repository
 
     public function newUser($email, $password, $name, $surname, $phone, $date_of_birth)
     {
-        $this->database->connect()->beginTransaction();
+        $PDO=$this->database->connect();
+        $PDO->beginTransaction();
 
-        $stmt = $this->database->connect()->prepare('
-            INSERT INTO public.user_details (name,surname,phone,date_of_birth)
+        $stmt = $PDO->prepare('
+            INSERT INTO public.user_details (name,surname,phone,date_of_birth,role)
             VALUES(?,?,?,?,?)
         ');
         $stmt->execute([
@@ -228,7 +224,7 @@ class UserRepository extends Repository
             "user"
         ]);
 
-        $stmt = $this->database->connect()->prepare('  
+        $stmt = $PDO->prepare('  
             SELECT MAX(id_user_details)
             FROM public.user_details
         ');
@@ -236,7 +232,7 @@ class UserRepository extends Repository
         $userDetails = $stmt->fetch(PDO::FETCH_ASSOC);
         $newUserDetailID = $userDetails['max'];
 
-        $stmt = $this->database->connect()->prepare('
+        $stmt = $PDO->prepare('
             INSERT INTO public.users (email,password,id_user_details)
             VALUES(?,?,?)
         ');
@@ -245,7 +241,8 @@ class UserRepository extends Repository
             $password,
             $newUserDetailID
         ]);
-        $this->database->connect()->commit();
+
+        $PDO->commit();
         return $outcome;
     }
 

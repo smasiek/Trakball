@@ -26,68 +26,15 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5745737-4c3f-4299-8fdc-ed9040571d63" name="Default Changelist" comment="Admin only features">
-      <change afterPath="$PROJECT_DIR$/Diagram ERD database.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/navigation_bar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/hamburger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/blank.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/default_place_photo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/numbers/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/numbers/1.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/numbers/10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/numbers/11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/numbers/12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/numbers/13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/numbers/14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/numbers/15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/numbers/16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/numbers/17.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/numbers/18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/numbers/19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/numbers/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/numbers/20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/numbers/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/numbers/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/numbers/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/numbers/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/numbers/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/numbers/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/numbers/9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/pobrane.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/views/members.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/views/messages.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/views/squad_info.php" afterDir="false" />
+    <list default="true" id="f5745737-4c3f-4299-8fdc-ed9040571d63" name="Default Changelist" comment="Cosmetic changes and removal of redundant code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Trakball Database Diagram.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/Trakball Database Diagram.drawio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/places.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/places.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/security.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/security.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/squads.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/squads.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/dynamicSuggestion.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/dynamicSuggestion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/joinSquad.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/joinSquad.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/logoClickHandling.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/logoClickHandling.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/textOrganizer.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/textOrganizer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/navigation_bar.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/navigation_bar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/Database.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/views/new_squad.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/new_squad.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/views/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/squads.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/squads.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/squads_grid.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/squads_grid.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/your_squads.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/your_squads.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/AppController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/NewSquadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/NewSquadController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SecurityController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SettingsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/SquadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SquadsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Place.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Place.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Squad.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Squad.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/PlaceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/PlaceRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/SquadRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/SquadRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/UserRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,6 +55,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PHPCodeSnifferBlackList">
@@ -219,7 +171,7 @@
       <workItem from="1610792351181" duration="2015000" />
       <workItem from="1610916529088" duration="12467000" />
       <workItem from="1610966029888" duration="19222000" />
-      <workItem from="1610993645603" duration="30369000" />
+      <workItem from="1610993645603" duration="36062000" />
     </task>
     <task id="LOCAL-00001" summary="Backup before implementing slider">
       <created>1605312339423</created>
@@ -298,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610794016122</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Cosmetic changes and removal of redundant code">
+      <created>1611077323389</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1611077323390</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,7 +298,8 @@
     <MESSAGE value="Search implementation backup" />
     <MESSAGE value="Hashed password, logo click handling, authorisation only when necessary, sign-in button when not logged" />
     <MESSAGE value="Admin only features" />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin only features" />
+    <MESSAGE value="Cosmetic changes and removal of redundant code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cosmetic changes and removal of redundant code" />
   </component>
   <component name="WindowStateProjectService">
     <state x="426" y="182" key="#Docker" timestamp="1602753325939">
@@ -423,10 +383,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="92" y="92" width="1496" height="866" key="ShowDiffWithBranchDialog/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1606326044009" />
-    <state x="494" y="265" key="Vcs.Push.Dialog.v2" timestamp="1610794018636">
+    <state x="494" y="265" key="Vcs.Push.Dialog.v2" timestamp="1611077330906">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="494" y="265" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1610794018636" />
+    <state x="494" y="265" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1611077330906" />
     <state x="432" y="258" key="Vcs.Push.Dialog.v2/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610666148995" />
     <state x="515" y="424" width="608" height="433" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1610636006975">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -449,10 +409,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="270" y="345" width="1102" height="251" key="com.intellij.database.run.ParametersPanel.Standalone/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610972984491" />
-    <state x="806" y="245" width="493" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1611072332032">
+    <state x="622" y="240" width="493" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1611082607297">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="806" y="245" width="800" height="519" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1611072332032" />
+    <state x="622" y="240" width="800" height="519" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1611082607297" />
     <state x="471" y="364" width="493" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610982433369" />
     <state x="2211" y="250" width="664" height="664" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616077308" />
     <state x="542" y="264" key="com.intellij.database.view.ui.DatabasePreviewDialog" timestamp="1611073906663">

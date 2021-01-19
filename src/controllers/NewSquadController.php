@@ -80,15 +80,15 @@ class NewSquadController extends AppController
 
             switch($dataType){
 
-                case('cities'): echo $this->sendResponse([
+                case('cities'): echo $this->sendResponse(
                     $placeRepository->getDataFromInput('city',$decoded['cityInput'],$decoded['streetInput'],$decoded['placeInput'])
-                ], 200); break;
-                case('streets'): echo $this->sendResponse([
+                , 200); break;
+                case('streets'): echo $this->sendResponse(
                     $placeRepository->getDataFromInput('street',$decoded['cityInput'],$decoded['streetInput'],$decoded['placeInput'])
-                ], 200); break;
-                case('places'): echo $this->sendResponse([
+                , 200); break;
+                case('places'): echo $this->sendResponse(
                     $placeRepository->getDataFromInput('name',$decoded['cityInput'],$decoded['streetInput'],$decoded['placeInput'])
-                ], 200); break;
+                , 200); break;
             }
         }
     }

@@ -9,7 +9,6 @@ class Database
     private $host;
     private $database;
 
-
     public function __construct()
     {
         $this->username = USERNAME;

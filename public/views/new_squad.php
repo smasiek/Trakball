@@ -16,19 +16,19 @@
         <div class="main_content">
             <form class="new_squad_form" action="publish_squad" method="POST">
                 <?php include('messages.php')?>
-                <input list="cities" class="city" placeholder="City">
+                <input list="cities" class="city" name="city" placeholder="City">
                 <datalist id="cities">
                 </datalist>
 
-                <input list="streets" class="street" placeholder="Street">
+                <input list="streets" class="street" name="street"placeholder="Street">
                 <datalist id="streets">
                 </datalist>
 
-                <input list="names" class="name" placeholder="Place name">
+                <input list="names" class="name" name="name" placeholder="Place name">
                 <datalist id="names">
                 </datalist>
 
-                <input list="sports" class="sport" placeholder="Sport">
+                <input list="sports" class="sport" name="sport" placeholder="Sport">
                 <datalist id="sports">
                     <option value ="Piłka nożna"></option>
                     <option value ="Koszykówka"></option>
@@ -38,11 +38,11 @@
                     <option value ="Hokej"></option>
                 </datalist>
 
-                <input type="number" min="1" max="30" class="max_players" placeholder="Max numer of players">
+                <input type="number" min="1" max="30" class="max_players" name="max_players" placeholder="Max numer of players">
 
-                <input class="fee" type="text" placeholder="Entry fee">
+                <input class="fee" name="fee" type="text" placeholder="Entry fee">
 
-                <input class="date" type="datetime-local" min="<?php
+                <input class="date" name="date" type="datetime-local" min="<?php
                 echo date('Y-m-d')."T".date('H:i',time()+3600);
                 ?>">
 

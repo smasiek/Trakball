@@ -42,7 +42,7 @@ class SquadsController extends AppController
         if ($userID != 0) {
             if (!$this->squadRepository->join_squad($userID, $squadID)) {
                 echo $this->sendResponse([
-                    "message" => "You have joined this squad already!"
+                    "message" => "You have joined this squad earlier!"
                 ], 406);
                 return 0;
             }
@@ -50,7 +50,7 @@ class SquadsController extends AppController
             echo $this->sendResponse([
                 "user_id" => $userID,
                 "squad_id" => $squadID,
-                "message" => "You have joined squad"
+                "message" => "You joined this squad :)"
             ],200);
         }
         return 0;

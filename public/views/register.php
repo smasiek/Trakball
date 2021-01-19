@@ -19,7 +19,7 @@
                 <input name="name" type="text" placeholder="name">
                 <input name="surname" type="text" placeholder="surname">
                 <input name="phone" type="text" placeholder="phone">
-                <input name="date_of_birth" type="date" placeholder="date of birth">
+                <input name="date_of_birth" type="date" placeholder="date of birth" max="<? echo date("Y-m-d")?>">
                 <button type="submit" class="sign" id="sign_up">sign up</button>
                 <div class="tease-container">
                     <p name="tease">Click here to </p>
