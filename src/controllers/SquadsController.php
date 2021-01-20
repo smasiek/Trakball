@@ -79,7 +79,6 @@ class SquadsController extends AppController
             $content = trim(file_get_contents("php://input"));
             $decoded = json_decode($content, true);
 
-
             echo $this->sendResponse($this->squadRepository->getSquadBySearch($decoded['search'], $userID),200);
         }
     }
@@ -100,16 +99,15 @@ class SquadsController extends AppController
                 echo $this->sendResponse([
                     "message" => "You have deleted this squad"
                 ], 200);
-                return 0;
+
 
             } else {
 
                 echo $this->sendResponse([
                     "message" => "U are not admin, how did u get to this action? I'm calling the Police"
                 ], 403);
-                return 0;
-            }
 
+            }
         }
         return 0;
     }

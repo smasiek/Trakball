@@ -41,14 +41,10 @@ class SecurityController extends AppController
             }
 
             return $this->render('login', ['messages' => ['Wrong password!']]);
-        } else {
-
+        }
             $url = "http://$_SERVER[HTTP_HOST]";
             header("Location: {$url}/squads");
             return 0;
-        }
-
-
     }
 
     public function sign_up()
@@ -95,9 +91,9 @@ class SecurityController extends AppController
 
         if ($userRepository->newUser($email, $hashedPassword, $name, $surname, $phone, $date_of_birth)) {
             return $this->render('login', ['messages' => ['You can Sign in!']]);
-        } else {
-            return $this->render('register', ['messages' => ['Something went wrong!']]);
         }
+            return $this->render('register', ['messages' => ['Something went wrong!']]);
+
     }
 
     public function log_out()

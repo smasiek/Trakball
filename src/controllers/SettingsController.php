@@ -35,7 +35,6 @@ class SettingsController extends AppController
                 return $this->render('settings', ['messages' => $this->messages, 'image' => $_FILES['file']['name']]);
 
             }
-
             return $this->render('settings', ['messages' => ["No photo loaded"], 'image' => $this->userRepository->getPhoto($userID)]);
         }
         return 0;

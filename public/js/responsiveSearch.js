@@ -2,14 +2,17 @@ const searchBar = document.getElementById("search-bar");
 const newSquad = document.querySelector(".add-squad");
 
 function showMenu() {
-    // If the checkbox is checked, display the output text
+    // If the checkbox is checked, display searchbar
     if (checkbox.checked === true){
-        searchBar.style.display = "block";
-        newSquad.style.display = "block";
+        searchDisplay("block");
     } else {
-        searchBar.style.display = "none";
-        newSquad.style.display = "none";
+        searchDisplay("none");
     }
 }
 
 checkbox.addEventListener("click",showMenu);
+
+function searchDisplay(value){
+    searchBar.style.display = value;
+    newSquad.style.display = value;
+}

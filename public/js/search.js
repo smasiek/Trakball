@@ -51,15 +51,16 @@ function createSquad(squad) {
 
     const clone = template.content.cloneNode(true);
 
-    const squad_div=clone.getElementById('squad_id');
-    squad_div.setAttribute('id',squad.id);
+    const squad_div = clone.getElementById('squad_id');
+    squad_div.setAttribute('id', squad.id);
 
-    const div=clone.getElementById('admin_buttons');
+    const div = clone.getElementById('admin_buttons');
 
-    console.log(squad.id + " "+ div);
-    if(squad.role==="admin"){
-        let html = "<button class=\"squad-hyper delete_squad\" >Delete squad</button>";
-        div.innerHTML = html;
+    console.log(squad.id + " " + div);
+    if (squad.role === "admin") {
+        let btn=div.createElement("BUTTON");
+        btn.innerText="Delete squad";
+        btn.setAttribute("class","squad-hyper delete_squad")
     }
 
     const image = clone.getElementById('creatorPhoto');
@@ -91,25 +92,42 @@ function createSquad(squad) {
     let html = "";
     for (let i = 0; i < squad.squad_count; i++) {
 
+        //TODO replace switch with for loop somehow
         let tempHtml = "<img src=\"/public/img/uploads/";
-        if (i === 0) tempHtml += squad.member_0_photo + "\">";
-        if (i === 1) tempHtml += squad.member_1_photo + "\">";
-        if (i === 2) tempHtml += squad.member_2_photo + "\">";
-        if (i === 3) tempHtml += squad.member_3_photo + "\">";
-        if (i === 4) tempHtml += squad.member_4_photo + "\">";
-        if (i === 5) {
-            let count = squad.squad_count - 5;
-            tempHtml += "numbers/" + count + ".png\">";
-            html += tempHtml;
-            break;
+        switch (i) {
+            case 0:
+                tempHtml += squad.member_0_photo + "\">";
+                break;
+
+            case 1:
+                tempHtml += squad.member_1_photo + "\">";
+                break;
+
+            case 2:
+                tempHtml += squad.member_2_photo + "\">";
+                break;
+
+            case 3:
+                tempHtml += squad.member_3_photo + "\">";
+                break;
+
+            case 4:
+                tempHtml += squad.member_4_photo + "\">";
+                break;
+
+            case 5:
+                let count = squad.squad_count - 5;
+                tempHtml += "numbers/" + count + ".png\">";
+                html += tempHtml;
+                break;
         }
         html += tempHtml;
     }
 
     members.innerHTML = html;
 
-    const joinButton=clone.getElementById("id");
-    joinButton.setAttribute("id",squad.id);
+    const joinButton = clone.getElementById("id");
+    joinButton.setAttribute("id", squad.id);
 
     squadContainer.appendChild(clone);
 }

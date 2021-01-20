@@ -6,6 +6,10 @@ const streetData = document.getElementById('streets');
 const placeInput = form.querySelector('.name');
 const placeData = document.getElementById('names');
 
+function appendSuggestions(type,optionsData,city,street,place){
+    //TODO Wrap append functions in one
+}
+
 function appendCities(city, street, place) {
 
     const data = {

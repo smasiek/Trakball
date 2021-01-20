@@ -66,9 +66,10 @@ class AppController
 
         if (isset($_COOKIE['user_token'])) {
             return $userRepository->cookieCheck($_COOKIE['user_token']);
-        } else {
-            return 0;
         }
+        //TODO Replace each return 0 with throwing Exception
+            return 0;
+
     }
 
     protected function cookieCheck(): int
@@ -76,10 +77,11 @@ class AppController
         $userID=$this->getCurrentUserID();
         if($userID!=0){
             return $userID;
-        }else{
+        }
+
             $this->render('login');
             return 0;
-        }
+
     }
 
     protected function sendResponse(array $array, int $code): string

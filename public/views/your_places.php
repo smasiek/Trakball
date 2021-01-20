@@ -12,6 +12,9 @@
     <!-- Optional Theme Stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.min.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
+    <script type="text/javascript" src="./public/js/glideJS.js" defer></script>
+
     <script src="https://kit.fontawesome.com/346296466a.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -115,17 +118,6 @@
         </div>
     </main>
 </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
-
-<script>
-    new Glide('.glide', {
-        type: 'carousel',
-        startAt: 0,
-        perView: 3,
-        focusAt: 'center',
-    }).mount()
-</script>
 
 </body>
 </html>
