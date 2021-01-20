@@ -26,12 +26,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5745737-4c3f-4299-8fdc-ed9040571d63" name="Default Changelist" comment="Transaction change and edit photo bugfix">
+    <list default="true" id="f5745737-4c3f-4299-8fdc-ed9040571d63" name="Default Changelist" comment="Cosmetic changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/security.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/security.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/squad_info.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/squad_info.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/squads.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/squads.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/SquadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SquadsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Diagram ERD database.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Diagram ERD database.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/UserRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +167,10 @@
       <workItem from="1610916529088" duration="12467000" />
       <workItem from="1610966029888" duration="19222000" />
       <workItem from="1610993645603" duration="36382000" />
-      <workItem from="1611083508073" duration="2725000" />
+      <workItem from="1611083508073" duration="4077000" />
+      <workItem from="1611141586318" duration="1482000" />
+      <workItem from="1611145431634" duration="50000" />
+      <workItem from="1611164018826" duration="855000" />
     </task>
     <task id="LOCAL-00001" summary="Backup before implementing slider">
       <created>1605312339423</created>
@@ -261,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611083255688</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Cosmetic changes">
+      <created>1611093021191</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1611093021191</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +313,8 @@
     <MESSAGE value="Admin only features" />
     <MESSAGE value="Cosmetic changes and removal of redundant code" />
     <MESSAGE value="Transaction change and edit photo bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Transaction change and edit photo bugfix" />
+    <MESSAGE value="Cosmetic changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cosmetic changes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="426" y="182" key="#Docker" timestamp="1602753325939">
@@ -406,6 +416,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="825" y="383" width="617" height="314" key="com.intellij.database.actions.DdlActions$ModifyObject$1/0.0.1920.1080@0.0.1920.1080" timestamp="1611073579649" />
+    <state x="540" y="195" key="com.intellij.database.dbimport.ImportDialog" timestamp="1611142293717">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="540" y="195" key="com.intellij.database.dbimport.ImportDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1611142293717" />
     <state x="690" y="345" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1608207530175">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -414,10 +428,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="270" y="345" width="1102" height="251" key="com.intellij.database.run.ParametersPanel.Standalone/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610972984491" />
-    <state x="622" y="240" width="493" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1611082607297">
+    <state x="622" y="240" width="493" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1611142655925">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="622" y="240" width="800" height="519" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1611082607297" />
+    <state x="622" y="240" width="800" height="519" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1611142655925" />
     <state x="471" y="364" width="493" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610982433369" />
     <state x="2211" y="250" width="664" height="664" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-28.1920.1080/0.0.1680.1050@1680.-28.1920.1080" timestamp="1607616077308" />
     <state x="542" y="264" key="com.intellij.database.view.ui.DatabasePreviewDialog" timestamp="1611073906663">
@@ -434,10 +448,11 @@
     </state>
     <state x="567" y="250" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1611017360761" />
     <state x="496" y="243" key="run.anything.popup/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610545687359" />
-    <state x="560" y="247" width="672" height="705" key="search.everywhere.popup" timestamp="1610288146852">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="640" y="254" width="768" height="726" key="search.everywhere.popup" timestamp="1611093641926">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="560" y="238" width="672" height="678" key="search.everywhere.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1602753432021" />
+    <state x="640" y="254" width="768" height="726" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1611093641926" />
     <state x="560" y="247" width="672" height="705" key="search.everywhere.popup/1680.-28.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1610288146852" />
   </component>
   <component name="XDebuggerManager">

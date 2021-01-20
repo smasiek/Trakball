@@ -32,7 +32,8 @@ class UserRepository extends Repository
     public function getUserUsingID(int $id): ?User
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM users NATURAL JOIN user_details WHERE users.id=:id
+            SELECT * FROM user_details NATURAL JOIN users NATURAL JOIN roles WHERE users.id=:id
+            
         ');
 
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -43,7 +44,7 @@ class UserRepository extends Repository
     public function getUserUsingEmail(string $email): ?User
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM users NATURAL JOIN user_details WHERE email=:email
+            SELECT * FROM user_details NATURAL JOIN users NATURAL JOIN roles WHERE email=:email
         ');
 
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
@@ -150,58 +151,36 @@ class UserRepository extends Repository
 
     public function editUserData(string $userID): array
     {
-        /*
-         * UPDATE tableName
-            SET column1=value1, column2=value2,...
-            WHERE filterColumn=filterValue
-         */
 
-        $messages=[];
+        $messages = [];
 
         if ($_POST['email'] != null) {
-            $this->editEmail($userID, $_POST['email']);
+            if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+                $this->editEmail($userID, $_POST['email']);
+            } else $messages[] = "Podaj poprawny email!";
         }
 
         if ($_POST['password_1'] != null && $_POST['password_2'] != null && $_POST['password_1'] == $_POST['password_2']) {
             $hashedPassword = password_hash($_POST['password_1'], PASSWORD_DEFAULT);
             $this->editPassword($userID, $hashedPassword);
-        } else if($_POST['password_1'] != null && $_POST['password_2'] == null){
-            $messages[]="Powtórz zmieniane hasło!";
+        } else if ($_POST['password_1'] != null && $_POST['password_2'] == null) {
+            $messages[] = "Powtórz zmieniane hasło!";
+        } else if ($_POST['password_1'] != $_POST['password_2']) {
+            $messages[] = "Hasła nie są identyczne!";
         }
 
         if ($_POST['name'] != null) {
-            $stmt = $this->database->connect()->prepare('
-            SELECT * FROM user_details LEFT JOIN users ON user_details.id=users.id_user_details WHERE users.id=:id
-        ');
-            $stmt->bindParam('id', $userID, PDO::PARAM_INT);
-            $stmt->execute();
-
-            $userDetails = $stmt->fetch(PDO::FETCH_ASSOC);
-
+            $userDetails = $this->getUserDetails($userID);
             $this->editName($userDetails['id'], $_POST['name']);
         }
 
         if ($_POST['surname'] != null) {
-            $stmt = $this->database->connect()->prepare('
-            SELECT * FROM user_details LEFT JOIN users ON user_details.id=users.id_user_details WHERE users.id=:id
-        ');
-            $stmt->bindParam('id', $userID, PDO::PARAM_INT);
-            $stmt->execute();
-
-            $userDetails = $stmt->fetch(PDO::FETCH_ASSOC);
-
+            $userDetails = $this->getUserDetails($userID);
             $this->editSurname($userDetails['id'], $_POST['surname']);
         }
 
         if ($_POST['date_of_birth'] != null) {
-            $stmt = $this->database->connect()->prepare('
-            SELECT * FROM user_details LEFT JOIN users ON user_details.id=users.id_user_details WHERE users.id=:id
-        ');
-            $stmt->bindParam('id', $userID, PDO::PARAM_INT);
-            $stmt->execute();
-
-            $userDetails = $stmt->fetch(PDO::FETCH_ASSOC);
-
+            $userDetails = $this->getUserDetails($userID);
             $this->editDateOfBirth($userDetails['id'], $_POST['date_of_birth']);
         }
         return $messages;
@@ -209,7 +188,7 @@ class UserRepository extends Repository
 
     public function newUser($email, $password, $name, $surname, $phone, $date_of_birth)
     {
-        $PDO=$this->database->connect();
+        $PDO = $this->database->connect();
         $PDO->beginTransaction();
 
         $stmt = $PDO->prepare('
@@ -251,7 +230,7 @@ class UserRepository extends Repository
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM cookie_session WHERE token=:token AND expiration>:currentDate
         ');
-        $currentDate=date("Y-m-d H:i:s");
+        $currentDate = date("Y-m-d H:i:s");
         $stmt->bindParam(':token', $user_token, PDO::PARAM_STR);
         $stmt->bindParam(':currentDate', $currentDate, PDO::PARAM_STR);
         $stmt->execute();
@@ -267,11 +246,11 @@ class UserRepository extends Repository
     public function setCookie($id, $token)
     {
         //Delete old cookies of this user.
-        $stmt=$this->database->connect()->prepare('
+        $stmt = $this->database->connect()->prepare('
         DELETE FROM cookie_session
         WHERE id_user=:id
         ');
-        $stmt->bindParam(':id',$id,PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
 
         $stmt = $this->database->connect()->prepare('
@@ -294,7 +273,7 @@ class UserRepository extends Repository
 
     }
 
-    public function unsetCookie($token) :string
+    public function unsetCookie($token): string
     {
         try {
             $stmt = $this->database->connect()->prepare('
@@ -308,6 +287,17 @@ class UserRepository extends Repository
             return ("Exception happened while unsetting cookie. Message: " . $e->getMessage());
         }
 
+    }
+
+    private function getUserDetails($userID)
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM user_details LEFT JOIN users ON user_details.id=users.id_user_details WHERE users.id=:id
+        ');
+        $stmt->bindParam('id', $userID, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
 }
