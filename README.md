@@ -17,4 +17,4 @@ and how they make it easier for us to implement basic routing and take care abou
 + Handles cookies by storing them in database to make sure connection is secure.
 
 ##### ERD Diagram of database
-[database-erd](https://github.com/smasiek/Trakball/blob/master/ERD%20Diagram.png?raw=true)
+![database-erd](https://github.com/smasiek/Trakball/blob/master/ERD%20Diagram.png?raw=true)
