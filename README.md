@@ -1,6 +1,6 @@
 # Trakball
 
-** App connecting people willing to book up a sport hall and play group sports. **
+**App connecting people willing to book up a sport hall and play group sports.**
 
 #### Technologies:
 
