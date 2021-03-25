@@ -5,8 +5,9 @@
 #### Technologies:
 
 ##### Back-end written in PHP, front-end in HTML+CSS+JavaScript
-Connected with PostgreSQL database
-Docker used to provide temporary server and to take care about version of the implemented technologies
+Connected with PostgreSQL database. 
+
+Docker used to provide temporary server and to take care about versions of the implemented technologies.
 
 This is a small project created to learn how frameworks work behind the scene 
 and how they make it easier for us to implement basic routing and take care about security.
