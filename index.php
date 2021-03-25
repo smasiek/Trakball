@@ -18,6 +18,7 @@ Routing::get('text_organizer', 'SquadsController');
 Routing::get('delete_squad', 'SquadsController');
 Routing::get('join_squad', 'SquadsController');
 Routing::get('leave_squad', 'SquadsController');
+Routing::get('map','MapController');
 
 Routing::post('sign_up', 'SecurityController');
 Routing::post('edit_photo', 'SettingsController');
@@ -28,5 +29,6 @@ Routing::post('login', 'SecurityController');
 Routing::post('cities', 'NewSquadController');
 Routing::post('streets', 'NewSquadController');
 Routing::post('places', 'NewSquadController');
+
 
 Routing::run($path);

@@ -1,0 +1,19 @@
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+#main_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+h4{
+    font: normal normal normal 2em/0 Segoe UI;
+    color: #e57160;
+}
+
+#map {
+    height: 80%;
+    width: 80%;
+}

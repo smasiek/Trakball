@@ -29,7 +29,7 @@
                     <ul class="glide__slides">
                         <li class="glide__slide">
                             <div id="place1">
-                                <img src="public/img/uploads/meme.jpg">
+                                <img src="public/img/uploads/place1.jpg">
                                 <div class="footer">
                                     <p class="place_name">Place name</p>
                                     <p class="place_address">Place address</p>
@@ -42,7 +42,7 @@
                         </li>
                         <li class="glide__slide">
                             <div id="place2">
-                                <img src="public/img/uploads/meme2.jpg">
+                                <img src="public/img/uploads/place2.jpg">
                                 <div class="footer">
                                     <p class="place_name">Place name</p>
                                     <p class="place_address">Place address</p>
@@ -53,7 +53,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="glide__slide">
+                        <!--<li class="glide__slide">
                             <div id="place3">
                                 <img src="public/img/uploads/meme.jpg">
                                 <div class="footer">
@@ -104,7 +104,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
                 <div class="glide__arrows" data-glide-el="controls">

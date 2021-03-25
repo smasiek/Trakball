@@ -1,6 +1,6 @@
 <?php
 
-const USERNAME ='uwctziadihnznb';
-const PASSWORD='d2f6c72678f6ff818dd5472ca99f6f8d45c393b271da88779dc2b3d0f5e5fec6';
-const HOST='ec2-52-208-175-161.eu-west-1.compute.amazonaws.com';
-const DATABASE = 'd543t3skm9pg7o';
+const USERNAME ='bptlpyfbyfejze';
+const PASSWORD='13850bb9f7906a31bd13266590f3e177cce99b7cd01bd0ba2114ea734e988ed9';
+const HOST='ec2-34-240-75-196.eu-west-1.compute.amazonaws.com';
+const DATABASE = 'd834qrcfn23ink';

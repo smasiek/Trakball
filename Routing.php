@@ -5,6 +5,7 @@ require_once 'src/controllers/SecurityController.php';
 require_once 'src/controllers/SettingsController.php';
 require_once 'src/controllers/NewSquadController.php';
 require_once 'src/controllers/SquadsController.php';
+require_once 'src/controllers/MapController.php';
 
 class Routing {
     public static $routes;
